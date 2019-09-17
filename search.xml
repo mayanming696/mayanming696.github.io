@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Vue-路由</title>
+      <link href="/2019/09/16/vue-lu-you/"/>
+      <url>/2019/09/16/vue-lu-you/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vue-路由详解"><a href="#Vue-路由详解" class="headerlink" title="Vue-路由详解"></a><strong>Vue-路由详解</strong></h1><hr><h1 id="路由的核心文件"><a href="#路由的核心文件" class="headerlink" title="路由的核心文件"></a><strong>路由的核心文件</strong></h1><p><strong><em>src文件目录下会有一个router文件夹</em></strong><br><strong><em>src/router/index.js</em></strong><br><strong>核心文件</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue-router路由详解</title>
+      <link href="/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/"/>
+      <url>/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><em>基本介绍</em></p></blockquote><hr><h1 id="1-什么是-vue-router"><a href="#1-什么是-vue-router" class="headerlink" title="1.什么是 vue-router?"></a><strong>1.什么是 vue-router?</strong></h1><p> (1)<strong><em>vue-router</em></strong> 是Vue官方提供前端路由插件包，借助它我们实现可以基于路由和组件的单页面应用，路径管理器<br> (2)它与传统的页面区别在于：</p><ul><li>传统的页面应用采用的是后端路由，即通过超链接来实现页面切换和跳转的。</li><li>而在 <strong><em>vue-router</em></strong> 单页面应用中，则是通过路径之间的切换（实际上就是组件的切换）。</li></ul><hr><h1 id="2-安装配置"><a href="#2-安装配置" class="headerlink" title="2.安装配置"></a><strong>2.安装配置</strong></h1><p> (1)如果我们使用 <strong><em>vue-cli</em></strong> 脚手架来搭建项目，在开始配置过程会选择是否需要安装路由，具体参考我之前的这篇文章：</p><ul><li><a href="/2019/09/07/vue-quan-jia-tong/">Vue.js - 使用vue-cli搭建项目（附：详细操作步骤）</a></li></ul><p>(2)如果项目搭建时没有安装也没关系，可以执行如下命令手动安装：</p><pre><code>npm install vue-router</code></pre><hr><blockquote><h1 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a><strong>创建组件</strong></h1></blockquote><p>用Vue-cli脚手架创建了项目结构，<strong><em>src文件目录下会有一个router文件夹</em></strong>,编写路由组件的地方在 <strong><em>编写路由组件的地方</em></strong><br><strong><em>路由的核心文件:src/router/index.js</em></strong> </p><h2 id="router-link制作导航"><a href="#router-link制作导航" class="headerlink" title="router-link制作导航"></a>router-link制作导航</h2><ul><li><p>router-link 是一个组件，它默认会被渲染成一个带有链接的a标签，通过to属性指定链接地址。</p></li><li><p>注意：被选中的router-link将自动添加一个class属性值 <strong><em>.router-link-active</em></strong></p><pre><code>  &lt;router-link to=&quot;/&quot;&gt;[text]&lt;/router-link&gt;</code></pre></li><li><p>to：导航路径，要填写的是你在router/index.js文件里配置的path值，如果要导航到默认首页，只需要写成 to=”/“ ，</p></li><li><p>[text] ：就是我们要显示给用户的导航名称。</p><h2 id="router-view-用于渲染匹配到的组件"><a href="#router-view-用于渲染匹配到的组件" class="headerlink" title="router-view 用于渲染匹配到的组件"></a>router-view 用于渲染匹配到的组件</h2><p><strong><em>运行网页时，<router-view> 会根据当前路由动态渲染不同的页面组件</router-view></em></strong><br><strong><em>而页面中的其它部分（比如本样例顶部的图片）的内容，在路由切换时，是不会发生变化的</em></strong></p></li></ul><hr><p><img src="//mayanming696.github.io/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/1.JPG" alt="sa"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue 全家桶</title>
+      <link href="/2019/09/07/vue-quan-jia-tong/"/>
+      <url>/2019/09/07/vue-quan-jia-tong/</url>
+      
+        <content type="html"><![CDATA[<h1 id="搭建项目架构-技术胖大神"><a href="#搭建项目架构-技术胖大神" class="headerlink" title="搭建项目架构,技术胖大神"></a>搭建项目架构,<strong>技术胖大神</strong></h1><hr><h1 id="Vue本地搭建"><a href="#Vue本地搭建" class="headerlink" title="Vue本地搭建"></a><strong>Vue本地搭建</strong></h1><h1 id="安装-npm"><a href="#安装-npm" class="headerlink" title="安装 npm"></a><strong>安装 npm</strong></h1><p>环境安装<br><strong><em>可以在命令行工具里输入</em></strong></p><blockquote><p><strong><em>npm -v</em></strong></p></blockquote><ul><li><p>检测和查询版本</p></li><li><p>下载地址 ：<strong><em><a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a></em></strong></p></li><li><p>用 npm命令来安装Vue-cli<br>Vue-cli是脚手架工具，作用是用配置好的模板迅速搭建一个项目工程，省去Webpack默认打包配置规则</p></li></ul><p><strong><em>在命令行输入下面命令</em></strong></p><blockquote><p><strong><em>npm install vue-cli -g</em></strong></p></blockquote><ul><li>-g 代表全局安装</li></ul><hr><h1 id="安装-vue"><a href="#安装-vue" class="headerlink" title="安装 vue"></a><strong>安装 vue</strong></h1><blockquote><p><strong><em>vue -V</em></strong></p></blockquote><ul><li>用来检测安装版本以及是否安装成功</li></ul><hr><h1 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a><strong>初始化项目</strong></h1><blockquote><p><strong><em>$ vue init webpack 项目名称</em></strong></p></blockquote><p>(init :初始化项目)</p><ul><li>Project name：项目名称（直接回车则使用括号中默认名字）</li><li>Project description：项目描述（直接点击回车则使用默认名字）</li><li>Author：作者 (如果你有配置git的作者，他会读取。)</li><li>Runtime + Compiler: recommended for most users：运行加编译</li><li>Runtime-only：仅运行时</li><li>Install vue-router?：是否安装 vue-route（这是官方的路由，大多数情况下都使用 Y）</li><li>Use ESLint to lint your code?：是否使用 ESLint 管理代码（ESLint 是个代码风格管理工具，是用来统一代码风格的，一般项目中都会使用。)</li><li>Pick an ESLint preset：选择一个 ESLint 预设，编写 vue 项目时的代码风格</li><li>Setup unit tests with Karma + Mocha?：是否安装单元测试 N</li><li>Setup e2e tests with Nightwatch?：是否安装 e2e 测试 N</li></ul><blockquote><p><strong>cd 项目名称</strong></p></blockquote><p>  进入我们的vue项目目录</p><blockquote><p><strong>npm install</strong></p></blockquote><p>NPM通常称为node包管理器，主要功能就是管理node包，包括：安装、卸载、更新、查看、搜索、发布等。NPM是基于couchdb一个数据库，详细记录了每个包的信息（作者、版本、依赖、授权信息等）</p><ul><li>安装我们的项目依赖包，也就是安装package.json里的包</li><li>1.允许用户从 npm 服务器下载别人编写的第三方包到本地使用。</li><li>2.允许用户从 npm 服务器下载并安装别人编写的命令行程序到本地使用。</li><li>3.允许用户将自己编写的包或命令行程序上传到 npm 服务器供别人使用。  </li></ul><hr><h1 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a><strong>运行项目</strong></h1><blockquote><p><strong>npm run dev</strong></p></blockquote><p>  开发模式下运行我们的程序。给我们自动构建了开发用的服务器环境和在浏览器中打开，并实时监视我们的代码更改，即时呈现给我们。</p><hr><h1 id="打包发布项目"><a href="#打包发布项目" class="headerlink" title="打包发布项目"></a><strong>打包发布项目</strong></h1><blockquote><p><strong>npm run build</strong></p></blockquote><ul><li>在项目开发完成之后，我们可以执行如下命令来进行打包工作。</li><li>打包完成后，项目中会生成 <strong><em>dist</em></strong> 文件夹，我们只需要 <strong><em>dist</em></strong> 文件夹里的内容放到服务器上就行了。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo博客 +GitHub 搭建与关联</title>
+      <link href="/2019/09/06/2019-conclusion/"/>
+      <url>/2019/09/06/2019-conclusion/</url>
+      
+        <content type="html"><![CDATA[<div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=407679465&auto=1&height=66"></iframe></div><h1 id="搭建Hexo博客-Github"><a href="#搭建Hexo博客-Github" class="headerlink" title="搭建Hexo博客 - Github"></a>搭建Hexo博客 - Github</h1><blockquote><p>搭建Hexo博客 - Github 大体流程：</p><ul><li>1.Hexo本地搭建</li><li>2.Github 搭建</li><li>3.Hexo关联Github 并且通过本地上线到Github</li><li>4.域名与 github 绑定 </li></ul></blockquote><hr><h2 id="1-Hexo-本地搭建，韦阳大神"><a href="#1-Hexo-本地搭建，韦阳大神" class="headerlink" title="1.Hexo 本地搭建，韦阳大神"></a><strong>1.Hexo 本地搭建</strong>，<strong>韦阳大神</strong></h2><p><strong>环境安装</strong><br><strong><em>安装 Node.js </em></strong><br><strong><em>检验是否安装成功 </em></strong></p><blockquote><ul><li><strong>Win + R</strong><br> 1.<strong><em>  -node -v</em></strong><br> 2.<strong><em>  -npm -v</em></strong></li></ul></blockquote><p> 出现序列号就是安装成功<br><strong><em> 安装 Git </em></strong><br> 输入自己的项目名字，后面加入 <em>.github.io</em> 后缀，然后README 初始化也勾选上，名称一定要和前面的github名字完全一样<br><strong><em> 在设置里面选择主题 </em></strong></p><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a><strong>安装Hexo</strong></h2><ul><li><strong>本地合适的地方新建一个文件夹</strong><br>在该目录右键点击 <strong><em>Git Bash Here</em></strong> ,打开git的控制窗口，就不用再windows 自带的运行窗口进行了</li><li><strong>定位到该目录下</strong> 安装Hexo<br>出现报错无视</li></ul><blockquote><p><strong><em>npm i hexo-cli -g</em></strong> </p></blockquote><p>安装完成后输入</p><blockquote><p><strong><em>hexo -v</em></strong></p></blockquote><p> 检测是否安装完成初始化hexo 文件<br>输入</p><blockquote><p><strong><em>hexo init</em></strong> </p></blockquote><p>初始化文件夹 ，然后安装 </p><blockquote><p><strong><em>npm install</em></strong> </p></blockquote><p>安装必备的组件,完成检测<br>输入</p><blockquote><p><strong><em>hexo g</em></strong> </p></blockquote><p>生成静态文件<br>输入</p><blockquote><p><strong><em>hexo s</em></strong></p></blockquote><p>  打开本地服务器，出现 <strong><em><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></em></strong> 则完成安装<br>关闭本地服务器 </p><blockquote><p><strong><em>ctrl +c </em></strong> </p></blockquote><hr><h1 id="2-连接Github与本地"><a href="#2-连接Github与本地" class="headerlink" title="2.连接Github与本地"></a>2.连接Github与本地</h1><p>对着目标文件夹右键 <strong><em>git bash</em></strong>,然后输入下面命令</p><blockquote><ul><li><strong>git config –global user.name “用户名”</strong></li></ul></blockquote><blockquote><ul><li><strong>git config –global user.email “注册邮箱”</strong></li></ul></blockquote><p>  生成密匙SSH key</p><blockquote><ul><li><strong>ssh-keygen -t rsa -C “注册邮箱”</strong></li></ul></blockquote><p>  一直默认回车 在git bash</p><blockquote><ul><li><strong>cat ~/.ssh/id_rsa.pub</strong> </li></ul></blockquote><p>  将输出内容处置到Github 账号设置里面的SSH key</p><blockquote><ul><li><strong>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></strong></li></ul></blockquote><p>  在git bash 输入出现你的用户名等信息就是成功了<br>  在博客根目录的 <strong>_config.yml</strong> 文件配置信息  </p><hr><h1 id="3-本地上传文章，发布文章"><a href="#3-本地上传文章，发布文章" class="headerlink" title="3.本地上传文章，发布文章"></a>3.本地上传文章，发布文章</h1><p>首先在博客根目录右键打开 <strong><em>git bash</em></strong> ,<br>安装一个拓展 </p><blockquote><p><strong><em>npm i hexo-deployer-git</em></strong></p></blockquote><p><strong><em>然后输入</em></strong> </p><blockquote><p><strong><em>hexo new post “名称”</em></strong>，</p></blockquote><p>新建一篇文章 <strong><em>\blog\source_posts</em></strong>的目录，可以发现下面多了一个文件夹和一个 <strong><em>.md</em></strong>文件，一个用来存放你的图片等数据，另一个就是你的文章文件啦,编写完文件后，根目录下</p><p><strong><em>输入</em></strong> </p><blockquote><p><strong><em>hexo g</em></strong></p></blockquote><p>生成静态网页，然后<br><strong><em>输入</em></strong> </p><blockquote><p><strong><em>hexo s</em></strong></p></blockquote><p> 可以本地预览效果，最后<br> <strong><em>输入</em></strong></p><blockquote><p><strong><em>hexo d</em></strong></p></blockquote><p> 上传到github上。这时打开你的github.io主页就能看到发布的文章啦</p><hr><h1 id="4-域名绑定"><a href="#4-域名绑定" class="headerlink" title="4.域名绑定"></a>4.域名绑定</h1><p>//</p><blockquote><p>我遇见谁，会有怎样的对白。<br>我等的人，她在多远的未来。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

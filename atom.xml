@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mayanming</title>
+  
+  <subtitle>Mayanming</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://mayanming696.github.io/"/>
+  <updated>2019-09-16T08:21:22.044Z</updated>
+  <id>https://mayanming696.github.io/</id>
+  
+  <author>
+    <name>Marco</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue-路由</title>
+    <link href="https://mayanming696.github.io/2019/09/16/vue-lu-you/"/>
+    <id>https://mayanming696.github.io/2019/09/16/vue-lu-you/</id>
+    <published>2019-09-16T07:24:00.160Z</published>
+    <updated>2019-09-16T08:21:22.044Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Vue-路由详解&quot;&gt;&lt;a href=&quot;#Vue-路由详解&quot; class=&quot;headerlink&quot; title=&quot;Vue-路由详解&quot;&gt;&lt;/a&gt;&lt;strong&gt;Vue-路由详解&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;h1 id=&quot;路由的核心文件&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Vue学习" scheme="https://mayanming696.github.io/categories/Vue%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Vue" scheme="https://mayanming696.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue-router路由详解</title>
+    <link href="https://mayanming696.github.io/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/"/>
+    <id>https://mayanming696.github.io/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/</id>
+    <published>2019-09-07T08:50:15.642Z</published>
+    <updated>2019-09-17T09:12:47.425Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;基本介绍&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;1-什么是-vue-router&quot;&gt;&lt;a href=&quot;#1-什么是-vue-router&quot; class=&quot;headerlink&quot; title=&quot;1.什么是
+        
+      
+    
+    </summary>
+    
+      <category term="Vue学习" scheme="https://mayanming696.github.io/categories/Vue%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Vue" scheme="https://mayanming696.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 全家桶</title>
+    <link href="https://mayanming696.github.io/2019/09/07/vue-quan-jia-tong/"/>
+    <id>https://mayanming696.github.io/2019/09/07/vue-quan-jia-tong/</id>
+    <published>2019-09-07T04:07:57.528Z</published>
+    <updated>2019-09-09T06:16:55.965Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;搭建项目架构-技术胖大神&quot;&gt;&lt;a href=&quot;#搭建项目架构-技术胖大神&quot; class=&quot;headerlink&quot; title=&quot;搭建项目架构,技术胖大神&quot;&gt;&lt;/a&gt;搭建项目架构,&lt;strong&gt;技术胖大神&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;h1
+        
+      
+    
+    </summary>
+    
+      <category term="Vue学习" scheme="https://mayanming696.github.io/categories/Vue%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Vue" scheme="https://mayanming696.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo博客 +GitHub 搭建与关联</title>
+    <link href="https://mayanming696.github.io/2019/09/06/2019-conclusion/"/>
+    <id>https://mayanming696.github.io/2019/09/06/2019-conclusion/</id>
+    <published>2019-09-06T09:42:36.895Z</published>
+    <updated>2019-09-17T09:03:09.736Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;div align=&quot;middle&quot;&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Hexo学习" scheme="https://mayanming696.github.io/categories/Hexo%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Hexo" scheme="https://mayanming696.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
