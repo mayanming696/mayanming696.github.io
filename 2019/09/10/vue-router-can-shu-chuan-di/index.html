@@ -4,12 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue-路由, Web前端">
+    <meta name="keywords" content="Vue-router参数传递, Web前端">
     
     
-    <meta name="description" content="Vue-路由详解
-路由的核心文件src文件目录下会有一个router文件夹src/router/index.js核心文件
-">
+    <meta name="description" content="一、使用冒号（:）的形式传递参数(URL传递参数)
+1，路由列表的参数设置
+
+（1）路由列表的 path 是可以带参数的，我们在路由配置文件（router/index.js）里以冒号的形式设置参数。（2）下面样例代码中，我在跳转到欢迎页面（">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Vue-路由 | Mayanming</title>
+    <title>Vue-router参数传递 | Mayanming</title>
     <link rel="icon" type="image/jpeg" href="/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +259,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Vue-路由
+                        Vue-router参数传递
                     </div>
                 </div>
             </div>
@@ -399,7 +400,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-09-16
+                    2019-09-10
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -413,14 +414,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    32
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
                 
@@ -431,8 +432,112 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vue-路由详解"><a href="#Vue-路由详解" class="headerlink" title="Vue-路由详解"></a><strong>Vue-路由详解</strong></h1><hr>
-<h1 id="路由的核心文件"><a href="#路由的核心文件" class="headerlink" title="路由的核心文件"></a><strong>路由的核心文件</strong></h1><p><strong><em>src文件目录下会有一个router文件夹</em></strong><br><strong><em>src/router/index.js</em></strong><br><strong>核心文件</strong></p>
+                <h1 id="一、使用冒号（-）的形式传递参数-URL传递参数"><a href="#一、使用冒号（-）的形式传递参数-URL传递参数" class="headerlink" title="一、使用冒号（:）的形式传递参数(URL传递参数)"></a><strong>一、使用冒号（:）的形式传递参数(URL传递参数)</strong></h1><blockquote>
+<p><strong>1，路由列表的参数设置</strong></p>
+</blockquote>
+<p>（1）路由列表的 path 是可以带参数的，我们在路由配置文件（router/index.js）里以冒号的形式设置参数。<br>（2）下面样例代码中，我在跳转到欢迎页面（/hello）时，带有两个参数 : <strong>id</strong> 和 <strong>userName</strong>。</p>
+<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/1.png" alt="路由参数"></p>
+<blockquote>
+<p><strong>2，参数的传递</strong></p>
+</blockquote>
+<p>（1）如果使用 <router-link> 组件跳转的话，可以这么携带参数：</router-link></p>
+<pre><code>    &lt;router-link to=&quot;/hello/123/hangge&quot;&gt;跳转到 hello&lt;/router-link&gt;</code></pre><p>（2）如果使用 js 代码跳转的话，可以这么携带参数：</p>
+<pre><code>    this.$router.push(&quot;/hello/123/hangge&quot;);</code></pre><blockquote>
+<p><strong>3，参数的获取</strong></p>
+</blockquote>
+<p>页面中通过 $route.params.xxx 获取传递过来的数据。</p>
+<pre><code>    &lt;template&gt;
+&lt;div&gt;
+    &lt;h1&gt;ID：{{ $route.params.id}}&lt;/h1&gt;
+    &lt;h1&gt;用户名：{{ $route.params.userName}}&lt;/h1&gt;
+&lt;/div&gt;
+&lt;/template&gt;</code></pre><blockquote>
+<p><strong>4，运行效果</strong></p>
+</blockquote>
+<p>可以看到点击首页链接进行跳转后，参数成功传递并显示。</p>
+<hr>
+<h1 id="二、使用-query-方式传递参数-to传递，参数显示URL"><a href="#二、使用-query-方式传递参数-to传递，参数显示URL" class="headerlink" title="二、使用 query 方式传递参数(to传递，参数显示URL)"></a><strong>二、使用 query 方式传递参数(to传递，参数显示URL)</strong></h1><blockquote>
+<p><strong>1，路由列表</strong></p>
+</blockquote>
+<p>query 方式类似 get 传参，即通过 URL 传递参数。而路由列表的 path 不需要配置参数：</p>
+<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/2.png" alt="路由参数"></p>
+<blockquote>
+<p><strong>2，参数的传递</strong></p>
+</blockquote>
+<p>（1）如果使用 <router-link> 组件跳转的话，可以这么携带参数：</router-link></p>
+<pre><code>    &lt;router-link :to=&quot;{path:&#39;/hello&#39;, query:{id:123, userName:&#39;hangge&#39;}}&quot;&gt;
+    跳转到 hello
+    &lt;/router-link&gt;</code></pre><p>（2）如果使用 js 代码跳转的话，可以这么携带参数：</p>
+<pre><code>    this.$router.push({
+    path:&#39;/hello&#39;,
+    query:{id:123, userName:&#39;hangge&#39;}
+    });</code></pre><blockquote>
+<p><strong>3，参数的获取</strong></p>
+</blockquote>
+<p>页面中通过 $route.query.xxx 获取传递过来的数据。</p>
+<pre><code>    &lt;template&gt;
+    &lt;div&gt;
+        &lt;h1&gt;ID：{{ $route.query.id}}&lt;/h1&gt;
+        &lt;h1&gt;用户名：{{ $route.query.userName}}&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;/template&gt;</code></pre><blockquote>
+<p><strong>4，运行效果</strong></p>
+</blockquote>
+<p>可以看到点击首页链接进行跳转后，参数是自动拼接到 url 后面进行传递的。</p>
+<hr>
+<h1 id="三、使用-params-方式传递参数-to传递，参数不显示URL-推荐"><a href="#三、使用-params-方式传递参数-to传递，参数不显示URL-推荐" class="headerlink" title="三、使用 params 方式传递参数(to传递，参数不显示URL 推荐)"></a><strong>三、使用 params 方式传递参数(to传递，参数不显示URL 推荐)</strong></h1><blockquote>
+<p><strong>1，路由列表</strong></p>
+</blockquote>
+<p>params 方式类似于 post 传参，即传递的参数不会显示在 URL 上。同上面的 query 方式一样，路由列表的 path 不需要配置参数：</p>
+<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/3.png" alt="路由参数"></p>
+<blockquote>
+<p><strong>2，参数的传递</strong></p>
+</blockquote>
+<p> <strong>注意：params 只能用 name 来引入路由，而不能用 path。</strong><br> （1）如果使用 <router-link> 组件跳转的话，可以这么携带参数：</router-link></p>
+<pre><code>    &lt;router-link :to=&quot;{name:&#39;hello&#39;, params:{id:123, userName:&#39;hangge&#39;}}&quot;&gt;
+    跳转到 hello
+    &lt;/router-link&gt;</code></pre><p>（2）如果使用 js 代码跳转的话，可以这么携带参数：</p>
+<pre><code>    this.$router.push({
+    name:&#39;hello&#39;,
+    params:{id:123, userName:&#39;hangge&#39;}
+    });</code></pre><blockquote>
+<p><strong>3，参数的获取</strong></p>
+</blockquote>
+<p>页面中通过 $route.params.xxx 获取传递过来的数据。</p>
+<pre><code>    &lt;template&gt;
+    &lt;div&gt;
+        &lt;h1&gt;ID：{{ $route.params.id}}&lt;/h1&gt;
+        &lt;h1&gt;用户名：{{ $route.params.userName}}&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;/template&gt;</code></pre><blockquote>
+<p><strong>4，运行效果</strong></p>
+</blockquote>
+<p>可以看到这种方式，参数的传递不会拼接到 url 后面。</p>
+<hr>
+<h1 id="附：使用-props-实现参数解耦"><a href="#附：使用-props-实现参数解耦" class="headerlink" title="附：使用 props 实现参数解耦"></a>附：使用 props 实现参数解耦</h1><p> 从上面的样例可以看出，当路由携带参数跳转时，页面这边通过 <strong><em>$route.params.xxx</em></strong> 或 <strong><em>$route.query.xxx</em></strong> 来获取传递过来的数据。但这样有个问题，由于组件中使用 $route 会使之与其对应路由形成高度耦合，从而使组件只能在某些特定的 URL 上使用，限制了其灵活性。<br>    要解决这个问题，我们可以使用 props 将组件和路由解耦。props 共有如下三种模式。</p>
+<blockquote>
+<p><strong>1，布尔模式</strong></p>
+</blockquote>
+<p>（1）直接将路由配置中的 props 属性被设置为 true，那么参数将会被设置为组件属性。</p>
+<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/4.png" alt="布尔模式"></p>
+<p>（2）然后我们页面组件这边不再需要通过 $route.params.xxx 或 $route.query.xxx 来获取传递过来的数据。</p>
+<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/5.png" alt="布尔模式"></p>
+<blockquote>
+<p><strong>2，对象模式</strong></p>
+</blockquote>
+<p>（1）我们可以将 props 设置为一个对象，对象内容会被设置为组件属性。这种方式常用来配置静态参数。</p>
+<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/6.png" alt="对象模式"></p>
+<p>（2）然后页面组件这边获取数据方式和前面一样。</p>
+<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/7.png" alt="对象模式"></p>
+<blockquote>
+<p><strong>3，函数模式</strong></p>
+</blockquote>
+<p>（1）我们还可以创建一个函数返回 props，在函数中对参数值进行处理，或者将静态值与基于路由的值结合。</p>
+<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/8.png" alt="函数模式"></p>
+<p>（2）这里假设我们使用 JS 进行跳转，代码如下：</p>
+<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/9.png" alt="函数模式"></p>
+<p>（3）目标页面组件代码，以及运行结果如下：</p>
+<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/10.png" alt="函数模式"></p>
 
             </div>
             <hr />
@@ -599,24 +704,24 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/09/16/vue-lu-you/">
+                <a href="/2019/09/10/vue-router-can-shu-chuan-di/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Vue-路由">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Vue-router参数传递">
                         
-                        <span class="card-title">Vue-路由</span>
+                        <span class="card-title">Vue-router参数传递</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue路由详解
+                            Vue-router参数传递
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-10
                             </span>
                         <span class="publish-author">
                             
@@ -839,7 +944,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">1.8k</span>
+            <span class="white-color">3.5k</span>
             
 
             <br>

@@ -11,9 +11,9 @@
 基本介绍
 
 
-1.什么是 vue-router? (1)vue-router 是Vue官方提供前端路由插件包，借助它我们实现可以基于路由和组件的单页面应用，路径管理器 (2)它与传统的页面区别在于：
+什么是 vue-router? (1)vue-router 是Vue官方提供前端路由插件包，借助它我们实现可以基于路由和组件的单页面应用，路径管理器 (2)它与传统的页面区别在于：
 
-传统的页面应用采用的是后端路由，即通">
+传统的页面应用采用的是后端路由，即通过超">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -417,14 +417,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    489
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
                 
@@ -439,34 +439,85 @@
 <p><em>基本介绍</em></p>
 </blockquote>
 <hr>
-<h1 id="1-什么是-vue-router"><a href="#1-什么是-vue-router" class="headerlink" title="1.什么是 vue-router?"></a><strong>1.什么是 vue-router?</strong></h1><p> (1)<strong><em>vue-router</em></strong> 是Vue官方提供前端路由插件包，借助它我们实现可以基于路由和组件的单页面应用，路径管理器<br> (2)它与传统的页面区别在于：</p>
+<h1 id="什么是-vue-router"><a href="#什么是-vue-router" class="headerlink" title="什么是 vue-router?"></a><strong>什么是 vue-router?</strong></h1><p> (1)<strong><em>vue-router</em></strong> 是Vue官方提供前端路由插件包，借助它我们实现可以基于路由和组件的单页面应用，路径管理器<br> (2)它与传统的页面区别在于：</p>
 <ul>
 <li>传统的页面应用采用的是后端路由，即通过超链接来实现页面切换和跳转的。</li>
 <li>而在 <strong><em>vue-router</em></strong> 单页面应用中，则是通过路径之间的切换（实际上就是组件的切换）。</li>
 </ul>
 <hr>
-<h1 id="2-安装配置"><a href="#2-安装配置" class="headerlink" title="2.安装配置"></a><strong>2.安装配置</strong></h1><p> (1)如果我们使用 <strong><em>vue-cli</em></strong> 脚手架来搭建项目，在开始配置过程会选择是否需要安装路由，具体参考我之前的这篇文章：</p>
+<h1 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a><strong>安装配置</strong></h1><p> (1)如果我们使用 <strong><em>vue-cli</em></strong> 脚手架来搭建项目，在开始配置过程会选择是否需要安装路由，具体参考我之前的这篇文章：</p>
 <ul>
 <li><a href="/2019/09/07/vue-quan-jia-tong/">Vue.js - 使用vue-cli搭建项目（附：详细操作步骤）</a></li>
 </ul>
 <p>(2)如果项目搭建时没有安装也没关系，可以执行如下命令手动安装：</p>
 <pre><code>npm install vue-router</code></pre><hr>
 <blockquote>
-<h1 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a><strong>创建组件</strong></h1></blockquote>
-<p>用Vue-cli脚手架创建了项目结构，<strong><em>src文件目录下会有一个router文件夹</em></strong>,编写路由组件的地方在 <strong><em>编写路由组件的地方</em></strong><br><strong><em>路由的核心文件:src/router/index.js</em></strong> </p>
-<h2 id="router-link制作导航"><a href="#router-link制作导航" class="headerlink" title="router-link制作导航"></a>router-link制作导航</h2><ul>
-<li><p>router-link 是一个组件，它默认会被渲染成一个带有链接的a标签，通过to属性指定链接地址。</p>
+<p><strong>路由分类</strong></p>
+</blockquote>
+<h1 id="1-router-link-制作导航"><a href="#1-router-link-制作导航" class="headerlink" title="1.router-link 制作导航"></a>1.router-link 制作导航</h1><ul>
+<li><p>router-link 是一个组件，它默认会被渲染成一个带有链接的a标签，通过to属性指定链接地址,当然也可以使用 v-bind 来动态设置</p>
+</li>
+<li><p>使用 <strong><em> <router-link></router-link></em></strong>，在 HTML5 的 History 模式下会拦截点击，避免浏览器重新加载页面。</p>
 </li>
 <li><p>注意：被选中的router-link将自动添加一个class属性值 <strong><em>.router-link-active</em></strong></p>
 <pre><code>  &lt;router-link to=&quot;/&quot;&gt;[text]&lt;/router-link&gt;</code></pre></li>
-<li><p>to：导航路径，要填写的是你在router/index.js文件里配置的path值，如果要导航到默认首页，只需要写成 to=”/“ ，</p>
+<li><p>除了 to 属性外，<router-link> 还有一些其他常用的 prop：</router-link></p>
+<ul>
+<li><p><strong>tag</strong> 可以指定渲染成什么标签。比如下面渲染的结果就是 <strong><em>li</em></strong> 而不是 <strong><em>a</em></strong></p>
+<pre><code>&lt;router-link to=&quot;/hello&quot; tag=&quot;li&quot;&gt;跳转到 hello&lt;/router-link&gt;</code></pre></li>
+<li><p><strong>replace</strong> 配置后不会留下 History 记录，即导航后不能用后退键返回上一个页面。</p>
+<pre><code>&lt;router-link to=&quot;/hello&quot; replace&gt;跳转到 hello&lt;/router-link&gt;</code></pre></li>
+<li><p>active-class</p>
+<ul>
+<li>当 <router-link> 对应的路由匹配成功时，会自动给当前元素设置一个名为 router-link-active 的 class。我们通常会利用它来高亮显示当前页面对应的导航菜单项。</router-link></li>
+<li>而通过设置 active-class 可以修改默认的 class 样式名称（router-link-active），不过一般情况下我们也不需要改它，使用默认就好了。                   </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>to：导航路径，要填写的是你在router/index.js文件里配置的path值，<br>如果要导航到默认首页，只需要写成 to=”/“ ，</p>
 </li>
 <li><p>[text] ：就是我们要显示给用户的导航名称。</p>
-<h2 id="router-view-用于渲染匹配到的组件"><a href="#router-view-用于渲染匹配到的组件" class="headerlink" title="router-view 用于渲染匹配到的组件"></a>router-view 用于渲染匹配到的组件</h2><p><strong><em>运行网页时，<router-view> 会根据当前路由动态渲染不同的页面组件</router-view></em></strong><br><strong><em>而页面中的其它部分（比如本样例顶部的图片）的内容，在路由切换时，是不会发生变化的</em></strong></p>
 </li>
 </ul>
 <hr>
-<p><img src="//mayanming696.github.io/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/1.JPG" alt="sa"></p>
+<h1 id="2-router-view-用于渲染匹配到的组件"><a href="#2-router-view-用于渲染匹配到的组件" class="headerlink" title="2.router-view 用于渲染匹配到的组件"></a>2.router-view 用于渲染匹配到的组件</h1><p>会根据当前路由动态渲染不同的页面组件<br>用Vue-cli脚手架创建了项目结构，<strong><em>src文件目录下会有一个router文件夹</em></strong>,编写路由组件的地方在<br> <strong><em>编写路由组件的地方</em></strong><br><strong><em>路由的核心文件:src/router/index.js</em></strong><br> <strong><em>运行网页时，<router-view> 会根据当前路由动态渲染不同的页面组件</router-view></em></strong><br> <strong><em>而页面中的其它部分（比如本样例顶部的图片）的内容，在路由切换时，是不会发生变化的</em></strong></p>
+<blockquote>
+<p>下面是核心文件解析</p>
+</blockquote>
+<p><img src="//mayanming696.github.io/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/1.jpg" alt></p>
+<hr>
+<h1 id="3-vue-router配置子路由（嵌套路由、二级路由）"><a href="#3-vue-router配置子路由（嵌套路由、二级路由）" class="headerlink" title="3.vue-router配置子路由（嵌套路由、二级路由）"></a>3.vue-router配置子路由（嵌套路由、二级路由）</h1><p>在Hi页面的下面新建两个子页面，分别是 “Hi页面1” 和 “Hi页面2”，来实现子路由。<br>把Hi.vue改成一个通用(母版)的模板，加入 <strong><em><router-view></router-view></em></strong>标签，给子模板提供插入位置。“Hi页面1” 和 “Hi页面2” 都相当于“Hi页面”的子页面，有点想继承关系。我们在“Hi页面”里加入 <strong><em><router-view></router-view></em></strong>标签。<br><strong><em>然后路由配置如图</em></strong></p>
+<p><img src="//mayanming696.github.io/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/2.PNG" alt></p>
+<hr>
+<h1 id="4-使用-JS-代码进行跳转"><a href="#4-使用-JS-代码进行跳转" class="headerlink" title="4.使用 JS 代码进行跳转"></a>4.使用 JS 代码进行跳转</h1><p>除了使用 <strong><em><router-link></router-link></em></strong> 进行跳转外，我们也可以借助如下几个方法在 JavaScript 里进行页面跳转。</p>
+<ul>
+<li><p><strong>1，this.$router.push()</strong></p>
+<pre><code> &lt;template&gt;
+ &lt;div&gt;
+     &lt;h1&gt;首页&lt;/h1&gt;
+     &lt;a @click=&quot;handleRouter&quot;&gt;跳转到 hello&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/template&gt;
+
+ &lt;script&gt;
+ export default {
+ methods: {
+     handleRouter() {
+     this.$router.push(&quot;/hello&quot;);
+     }
+ }
+ }
+ &lt;/script&gt;</code></pre></li>
+<li><p><strong>2，this.$router.replace()</strong><br>该方法则类似于 <router-link> 的 replace 功能，它不会向 history 添加新记录，而是替换掉当前的 history 记录。</router-link></p>
+<pre><code>  this.$router.replace(&quot;/hello&quot;);</code></pre></li>
+<li><p><strong>3，this.$router.go()</strong><br>该方法类似与 <strong>window.history.go()</strong>，在 history 记录中向前或者后退多少步，参数是整数。</p>
+<pre><code>  //后退1页
+  this.$router.go(-1);
+
+  //前进2页
+  this.$router.go(2);</code></pre></li>
+</ul>
 
             </div>
             <hr />
@@ -632,24 +683,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/09/16/vue-lu-you/">
+                <a href="/2019/09/10/vue-router-can-shu-chuan-di/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Vue-路由">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Vue-router参数传递">
                         
-                        <span class="card-title">Vue-路由</span>
+                        <span class="card-title">Vue-router参数传递</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue路由详解
+                            Vue-router参数传递
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-10
                         </span>
                         <span class="publish-author">
                             
@@ -871,7 +922,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">1.8k</span>
+            <span class="white-color">3.5k</span>
             
 
             <br>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mayanming696.github.io/"/>
-  <updated>2019-09-16T08:21:22.044Z</updated>
+  <updated>2019-09-18T09:14:33.980Z</updated>
   <id>https://mayanming696.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Vue-路由</title>
-    <link href="https://mayanming696.github.io/2019/09/16/vue-lu-you/"/>
-    <id>https://mayanming696.github.io/2019/09/16/vue-lu-you/</id>
-    <published>2019-09-16T07:24:00.160Z</published>
-    <updated>2019-09-16T08:21:22.044Z</updated>
+    <title>Vue-router参数传递</title>
+    <link href="https://mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/"/>
+    <id>https://mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/</id>
+    <published>2019-09-10T08:03:11.000Z</published>
+    <updated>2019-09-18T09:14:33.980Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,7 @@
       
         
         
-          &lt;h1 id=&quot;Vue-路由详解&quot;&gt;&lt;a href=&quot;#Vue-路由详解&quot; class=&quot;headerlink&quot; title=&quot;Vue-路由详解&quot;&gt;&lt;/a&gt;&lt;strong&gt;Vue-路由详解&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
-&lt;h1 id=&quot;路由的核心文件&quot;&gt;&lt;a
+          &lt;h1 id=&quot;一、使用冒号（-）的形式传递参数-URL传递参数&quot;&gt;&lt;a href=&quot;#一、使用冒号（-）的形式传递参数-URL传递参数&quot; class=&quot;headerlink&quot;
         
       
     
@@ -48,7 +47,7 @@
     <link href="https://mayanming696.github.io/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/"/>
     <id>https://mayanming696.github.io/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/</id>
     <published>2019-09-07T08:50:15.642Z</published>
-    <updated>2019-09-17T09:12:47.425Z</updated>
+    <updated>2019-09-18T07:50:46.195Z</updated>
     
     <summary type="html">
     
@@ -60,7 +59,7 @@
 &lt;p&gt;&lt;em&gt;基本介绍&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;1-什么是-vue-router&quot;&gt;&lt;a href=&quot;#1-什么是-vue-router&quot; class=&quot;headerlink&quot; title=&quot;1.什么是
+&lt;h1 id=&quot;什么是-vue-router&quot;&gt;&lt;a href=&quot;#什么是-vue-router&quot; class=&quot;headerlink&quot; title=&quot;什么是
         
       
     
