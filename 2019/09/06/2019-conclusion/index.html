@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    636
+                    642
                 </div>
                 
 
@@ -458,95 +458,44 @@
 <h2 id="1-Hexo-本地搭建，韦阳大神"><a href="#1-Hexo-本地搭建，韦阳大神" class="headerlink" title="1.Hexo 本地搭建，韦阳大神"></a><strong>1.Hexo 本地搭建</strong>，<strong>韦阳大神</strong></h2><p><strong>环境安装</strong><br><strong><em>安装 Node.js </em></strong><br><strong><em>检验是否安装成功 </em></strong></p>
 <blockquote>
 <ul>
-<li><strong>Win + R</strong><br> 1.<strong><em>  node -v</em></strong><br> 2.<strong><em>  npm -v</em></strong></li>
+<li><strong>Win + R</strong></li>
 </ul>
 </blockquote>
-<p> 出现序列号就是安装成功<br><strong><em> 安装 Git </em></strong><br> 输入自己的项目名字，后面加入 <em>.github.io</em> 后缀，然后README 初始化也勾选上，名称一定要和前面的github名字完全一样<br><strong><em> 在设置里面选择主题 </em></strong></p>
+<pre><code>node -v
+
+npm -v</code></pre><p> 出现序列号就是安装成功<br><strong><em> 安装 Git </em></strong><br> 输入自己的项目名字，后面加入 <em>.github.io</em> 后缀，然后README 初始化也勾选上，名称一定要和前面的github名字完全一样<br><strong><em> 在设置里面选择主题 </em></strong></p>
 <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a><strong>安装Hexo</strong></h2><ul>
-<li><strong>本地合适的地方新建一个文件夹</strong><br>在该目录右键点击 <strong><em>Git Bash Here</em></strong> ,打开git的控制窗口，就不用再windows 自带的运行窗口进行了</li>
-<li><strong>定位到该目录下</strong> 安装Hexo<br>出现报错无视</li>
+<li><p><strong>本地合适的地方新建一个文件夹</strong><br>在该目录右键点击 <strong><em>Git Bash Here</em></strong> ,打开git的控制窗口，就不用再windows 自带的运行窗口进行了</p>
+</li>
+<li><p><strong>定位到该目录下</strong> 安装Hexo<br>出现报错无视</p>
+<p>  npm i hexo-cli -g</p>
+</li>
 </ul>
-<blockquote>
-<p><strong><em>npm i hexo-cli -g</em></strong> </p>
-</blockquote>
 <p>安装完成后输入</p>
-<blockquote>
-<p><strong><em>hexo -v</em></strong></p>
-</blockquote>
-<p> 检测是否安装完成初始化hexo 文件<br>输入</p>
-<blockquote>
-<p><strong><em>hexo init</em></strong> </p>
-</blockquote>
-<p>初始化文件夹 ，然后安装 </p>
-<blockquote>
-<p><strong><em>npm install</em></strong> </p>
-</blockquote>
-<p>安装必备的组件,完成检测<br>输入</p>
-<blockquote>
-<p><strong><em>hexo g</em></strong> </p>
-</blockquote>
-<p>生成静态文件<br>输入</p>
-<blockquote>
-<p><strong><em>hexo s</em></strong></p>
-</blockquote>
-<p>  打开本地服务器，出现 <strong><em><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></em></strong> 则完成安装<br>关闭本地服务器 </p>
+<pre><code>hexo -v</code></pre><p> 检测是否安装完成初始化hexo 文件<br>输入</p>
+<pre><code>hexo init</code></pre><p>初始化文件夹 ，然后安装 </p>
+<pre><code>npm install</code></pre><p>安装必备的组件,完成检测<br>输入</p>
+<pre><code>hexo g</code></pre><p>生成静态文件<br>输入</p>
+<pre><code>hexo s</code></pre><p>  打开本地服务器，出现 <strong><em><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></em></strong> 则完成安装<br>关闭本地服务器 </p>
 <blockquote>
 <p><strong><em>ctrl +c </em></strong> </p>
 </blockquote>
 <hr>
 <h1 id="2-连接Github与本地"><a href="#2-连接Github与本地" class="headerlink" title="2.连接Github与本地"></a>2.连接Github与本地</h1><p>对着目标文件夹右键 <strong><em>git bash</em></strong>,然后输入下面命令</p>
-<blockquote>
-<ul>
-<li><strong>git config –global user.name “你的GitHub用户名”</strong></li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li><strong>git config –global user.email “你的GitHub注册邮箱”</strong></li>
-</ul>
-</blockquote>
-<p>  生成密匙SSH key</p>
-<blockquote>
-<ul>
-<li><strong>ssh-keygen -t rsa -C “注册邮箱”</strong></li>
-</ul>
-</blockquote>
-<p>  一直默认回车 在git bash</p>
-<blockquote>
-<ul>
-<li><strong>cat ~/.ssh/id_rsa.pub</strong> </li>
-</ul>
-</blockquote>
-<p>  将输出内容处置到Github 账号设置里面的SSH key</p>
-<blockquote>
-<ul>
-<li><strong>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></strong></li>
-</ul>
-</blockquote>
-<p>  在git bash 输入出现你的用户名等信息就是成功了<br>  在博客根目录的 <strong>_config.yml</strong> 文件配置信息  </p>
+<pre><code>git config --global user.name &quot;你的GitHub用户名&quot;
+
+git config --global user.email &quot;你的GitHub注册邮箱&quot;</code></pre><p>  生成密匙SSH key</p>
+<pre><code>ssh-keygen -t rsa -C &quot;注册邮箱&quot;</code></pre><p>  一直默认回车 在git bash</p>
+<pre><code>cat ~/.ssh/id_rsa.pub </code></pre><p>  将输出内容处置到Github 账号设置里面的SSH key</p>
+<pre><code>ssh -T git@github.com</code></pre><p>  在git bash 输入出现你的用户名等信息就是成功了<br>  在博客根目录的 <strong>_config.yml</strong> 文件配置信息  </p>
 <hr>
 <h1 id="3-本地上传文章，发布文章"><a href="#3-本地上传文章，发布文章" class="headerlink" title="3.本地上传文章，发布文章"></a>3.本地上传文章，发布文章</h1><p>首先在博客根目录右键打开 <strong><em>git bash</em></strong> ,<br>安装一个拓展 </p>
-<blockquote>
-<p><strong><em>npm i hexo-deployer-git</em></strong></p>
-</blockquote>
-<p><strong><em>然后输入</em></strong> </p>
-<blockquote>
-<p><strong><em>hexo new post “名称”</em></strong>，</p>
-</blockquote>
-<p>新建一篇文章 <strong><em>\blog\source_posts</em></strong>的目录，可以发现下面多了一个文件夹和一个 <strong><em>.md</em></strong>文件，一个用来存放你的图片等数据，另一个就是你的文章文件啦,编写完文件后，根目录下</p>
+<pre><code>***npm i hexo-deployer-git***</code></pre><p><strong><em>然后输入</em></strong> </p>
+<pre><code>hexo new post &quot;名称&quot;</code></pre><p>新建一篇文章 <strong><em>\blog\source_posts</em></strong>的目录，可以发现下面多了一个文件夹和一个 <strong><em>.md</em></strong>文件，一个用来存放你的图片等数据，另一个就是你的文章文件啦,编写完文件后，根目录下</p>
 <p><strong><em>输入</em></strong> </p>
-<blockquote>
-<p><strong><em>hexo g</em></strong></p>
-</blockquote>
-<p>生成静态网页，然后<br><strong><em>输入</em></strong> </p>
-<blockquote>
-<p><strong><em>hexo s</em></strong></p>
-</blockquote>
-<p> 可以本地预览效果，最后<br> <strong><em>输入</em></strong></p>
-<blockquote>
-<p><strong><em>hexo d</em></strong></p>
-</blockquote>
-<p> 上传到github上。这时打开你的github.io主页就能看到发布的文章啦</p>
+<pre><code>hexo g</code></pre><p>生成静态网页，然后<br><strong><em>输入</em></strong> </p>
+<pre><code>hexo s</code></pre><p> 可以本地预览效果，最后<br> <strong><em>输入</em></strong></p>
+<pre><code>hexo d</code></pre><p> 上传到github上。这时打开你的github.io主页就能看到发布的文章啦</p>
 <hr>
 <h1 id="4-域名绑定"><a href="#4-域名绑定" class="headerlink" title="4.域名绑定"></a>4.域名绑定</h1><p>//</p>
 <blockquote>
