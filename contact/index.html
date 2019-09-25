@@ -411,6 +411,11 @@
                 
 
                 
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
             </div>
         </div>
         <hr class="clearfix">
@@ -564,6 +569,28 @@
         </div>
     </div>
 
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'a2fe0066079fb61004dd',
+        clientSecret: 'f15ff057b9513c8a177f04a7509b670a67681149',
+        repo: 'mayanming696.github.io',
+        owner: 'mayanming696',
+        admin: "mayanming696",
+        id: 'contact/index.html',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
     
@@ -801,11 +828,15 @@ title: contactdate: 2019-07-26 17:17:02type: “contact”layout: “contact”
           
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">3.5k</span>
+                <span class="white-color">5.9k</span>
             
             <!-- 
             //我这里把主题自带的不蒜子关了。
-			 -->
+			
+                <br>
+                
+                
+             -->
             <br>
             <span >
                     <i class="fa fa-heart-o"></i>
@@ -816,7 +847,7 @@ title: contactdate: 2019-07-26 17:17:02type: “contact”layout: “contact”
                 本站访客数<span id="busuanzi_value_site_uv" class="white-color"></span>人次
             </span>
         </div>
-        <div class="col s12 m4 l4 social-link ">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/mayanming696" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
@@ -973,6 +1004,8 @@ $(function () {
     <script src="/libs/others/clicklove.js"></script>
 
 
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
+<script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 </body>
 </html>

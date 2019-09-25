@@ -104,7 +104,7 @@
     <link href="https://mayanming696.github.io/2019/09/06/2019-conclusion/"/>
     <id>https://mayanming696.github.io/2019/09/06/2019-conclusion/</id>
     <published>2019-09-06T09:42:36.895Z</published>
-    <updated>2019-09-19T10:00:13.766Z</updated>
+    <updated>2019-09-25T09:28:34.643Z</updated>
     
     <summary type="html">
     
@@ -122,6 +122,32 @@
     
     
       <category term="Hexo" scheme="https://mayanming696.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax入门和发送http请求</title>
+    <link href="https://mayanming696.github.io/2018/08/24/ajax-ru-men-he-fa-song-http-qing-qiu/"/>
+    <id>https://mayanming696.github.io/2018/08/24/ajax-ru-men-he-fa-song-http-qing-qiu/</id>
+    <published>2018-08-24T08:36:22.000Z</published>
+    <updated>2019-09-25T09:51:15.993Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;什么是Ajax&quot;&gt;&lt;a href=&quot;#什么是Ajax&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Javascript学习" scheme="https://mayanming696.github.io/categories/Javascript%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Javascript" scheme="https://mayanming696.github.io/tags/Javascript/"/>
     
   </entry>
   
