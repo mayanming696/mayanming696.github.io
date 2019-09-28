@@ -104,6 +104,31 @@
     
     
     <entry>
+      <title>Html5详解</title>
+      <link href="/2018/09/28/html5-xiang-jie/"/>
+      <url>/2018/09/28/html5-xiang-jie/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="Html5介绍"><a href="#Html5介绍" class="headerlink" title="Html5介绍"></a>Html5介绍</h1><h2 id="Html5新增的内容"><a href="#Html5新增的内容" class="headerlink" title="Html5新增的内容"></a>Html5新增的内容</h2><ul><li>H5在语义化的改进</li></ul><p>在此基础上，HTML5 增加了大量有意义的语义标签，更有利于搜索引擎或辅助设备理解 HTML 页面内容。HTML5会让HTML代码的内容更结构化、标签更语义化。</p><p>我们常见的 css+div 布局是：</p><p><img src="//mayanming696.github.io/2018/09/28/html5-xiang-jie/1.png" alt></p><p>以后我们可以这样写：</p><p><img src="//mayanming696.github.io/2018/09/28/html5-xiang-jie/2.png" alt></p><p>使用时除了在HTML结构上需要注意外，其它和普通标签的使用无任何差别，可以理解成 <strong><em><div class="nav"></div></em></strong> 相当于 <strong><em><nav></nav></em></strong>。<br>单标签不用写关闭符号。</p><blockquote><p><strong>H5中常用的新语义标签</strong></p></blockquote><nav> 表示导航<header> 表示页眉<footer> 表示页脚<section> 表示区块<article> 表示文章。如文章、评论、帖子、博客<aside> 表示侧边栏 如文章的侧栏<figure> 表示媒介内容分组。<mark> 表示标记 (用得少)<progress> 表示进度 (用得少)<time> 表示日期</time></progress></mark></figure></aside></article></section></footer></header></nav>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTML5学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTML5 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Ajax入门</title>
       <link href="/2018/09/27/ajax-ru-men/"/>
       <url>/2018/09/27/ajax-ru-men/</url>
