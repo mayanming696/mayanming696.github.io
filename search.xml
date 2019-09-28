@@ -104,31 +104,6 @@
     
     
     <entry>
-      <title>Html5详解</title>
-      <link href="/2018/09/28/html5-xiang-jie/"/>
-      <url>/2018/09/28/html5-xiang-jie/</url>
-      
-        <content type="html"><![CDATA[<hr><h1 id="Html5介绍"><a href="#Html5介绍" class="headerlink" title="Html5介绍"></a>Html5介绍</h1><h2 id="Html5新增的内容"><a href="#Html5新增的内容" class="headerlink" title="Html5新增的内容"></a>Html5新增的内容</h2><ul><li>H5在语义化的改进</li></ul><p>在此基础上，HTML5 增加了大量有意义的语义标签，更有利于搜索引擎或辅助设备理解 HTML 页面内容。HTML5会让HTML代码的内容更结构化、标签更语义化。</p><p>我们常见的 css+div 布局是：</p><p><img src="//mayanming696.github.io/2018/09/28/html5-xiang-jie/1.png" alt></p><p>以后我们可以这样写：</p><p><img src="//mayanming696.github.io/2018/09/28/html5-xiang-jie/2.png" alt></p><p>使用时除了在HTML结构上需要注意外，其它和普通标签的使用无任何差别，可以理解成 <strong><em><div class="nav"></div></em></strong> 相当于 <strong><em><nav></nav></em></strong>。<br>单标签不用写关闭符号。</p><blockquote><p><strong>H5中常用的新语义标签</strong></p></blockquote><nav> 表示导航<header> 表示页眉<footer> 表示页脚<section> 表示区块<article> 表示文章。如文章、评论、帖子、博客<aside> 表示侧边栏 如文章的侧栏<figure> 表示媒介内容分组。<mark> 表示标记 (用得少)<progress> 表示进度 (用得少)<time> 表示日期<hr><h2 id="H5中的表单"><a href="#H5中的表单" class="headerlink" title="H5中的表单"></a>H5中的表单</h2><blockquote><p>H5中新增的表单类型<br>email 只能输入email格式。自动带有验证功能。<br>tel 手机号码。<br>url 只能输入url格式。<br>number 只能输入数字。<br>search 搜索框<br>range 滑动条<br>color 拾色器<br>time 时间<br>date 日期。<br>–datetime 时间日期<br>month 月份<br>week 星期<br>上面的部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用。</p></blockquote></time></progress></mark></figure></aside></article></section></footer></header></nav>]]></content>
-      
-      
-      <categories>
-          
-          <category> HTML5学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> HTML5 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Ajax入门</title>
       <link href="/2018/09/27/ajax-ru-men/"/>
       <url>/2018/09/27/ajax-ru-men/</url>
