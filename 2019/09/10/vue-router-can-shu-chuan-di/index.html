@@ -440,7 +440,7 @@
 <p><strong>1，路由列表的参数设置</strong></p>
 </blockquote>
 <p>（1）路由列表的 path 是可以带参数的，我们在路由配置文件（router/index.js）里以冒号的形式设置参数。<br>（2）下面样例代码中，我在跳转到欢迎页面（/hello）时，带有两个参数 : <strong>id</strong> 和 <strong>userName</strong>。</p>
-<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/1.png" alt></p>
+<p><img src="//mayanming696.com/2019/09/10/vue-router-can-shu-chuan-di/1.png" alt></p>
 <blockquote>
 <p><strong>2，参数的传递</strong></p>
 </blockquote>
@@ -464,7 +464,7 @@
 <p><strong>1，路由列表</strong></p>
 </blockquote>
 <p>query 方式类似 get 传参，即通过 URL 传递参数。而路由列表的 path 不需要配置参数：</p>
-<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/2.png" alt></p>
+<p><img src="//mayanming696.com/2019/09/10/vue-router-can-shu-chuan-di/2.png" alt></p>
 <blockquote>
 <p><strong>2，参数的传递</strong></p>
 </blockquote>
@@ -493,7 +493,7 @@
 <p><strong>1，路由列表</strong></p>
 </blockquote>
 <p>params 方式类似于 post 传参，即传递的参数不会显示在 URL 上。同上面的 query 方式一样，路由列表的 path 不需要配置参数：</p>
-<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/3.png" alt></p>
+<p><img src="//mayanming696.com/2019/09/10/vue-router-can-shu-chuan-di/3.png" alt></p>
 <blockquote>
 <p><strong>2，参数的传递</strong></p>
 </blockquote>
@@ -523,25 +523,25 @@
 <p><strong>1，布尔模式</strong></p>
 </blockquote>
 <p>（1）直接将路由配置中的 props 属性被设置为 true，那么参数将会被设置为组件属性。</p>
-<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/4.png" alt></p>
+<p><img src="//mayanming696.com/2019/09/10/vue-router-can-shu-chuan-di/4.png" alt></p>
 <p>（2）然后我们页面组件这边不再需要通过 $route.params.xxx 或 $route.query.xxx 来获取传递过来的数据。</p>
-<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/5.png" alt></p>
+<p><img src="//mayanming696.com/2019/09/10/vue-router-can-shu-chuan-di/5.png" alt></p>
 <blockquote>
 <p><strong>2，对象模式</strong></p>
 </blockquote>
 <p>（1）我们可以将 props 设置为一个对象，对象内容会被设置为组件属性。这种方式常用来配置静态参数。</p>
-<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/6.png" alt></p>
+<p><img src="//mayanming696.com/2019/09/10/vue-router-can-shu-chuan-di/6.png" alt></p>
 <p>（2）然后页面组件这边获取数据方式和前面一样。</p>
-<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/7.png" alt></p>
+<p><img src="//mayanming696.com/2019/09/10/vue-router-can-shu-chuan-di/7.png" alt></p>
 <blockquote>
 <p><strong>3，函数模式</strong></p>
 </blockquote>
 <p>（1）我们还可以创建一个函数返回 props，在函数中对参数值进行处理，或者将静态值与基于路由的值结合。</p>
-<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/8.png" alt></p>
+<p><img src="//mayanming696.com/2019/09/10/vue-router-can-shu-chuan-di/8.png" alt></p>
 <p>（2）这里假设我们使用 JS 进行跳转，代码如下：</p>
-<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/9.png" alt></p>
+<p><img src="//mayanming696.com/2019/09/10/vue-router-can-shu-chuan-di/9.png" alt></p>
 <p>（3）目标页面组件代码，以及运行结果如下：</p>
-<p><img src="//mayanming696.github.io/2019/09/10/vue-router-can-shu-chuan-di/10.png" alt></p>
+<p><img src="//mayanming696.com/2019/09/10/vue-router-can-shu-chuan-di/10.png" alt></p>
 
             </div>
             <hr />

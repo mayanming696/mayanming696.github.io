@@ -491,12 +491,12 @@ document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&q
 </li>
 </ul>
 <h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>强缓存原理：当浏览器对某个资源的请求命中了强缓存时，返回的http状态为200，在chrome的开发者工具的network里面size会显示为from cache，比如京东的首页里就有很多静态资源配置了强缓存，用chrome打开几次，再用f12查看network，可以看到有不少请求就是从缓存中加载的：</p>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/1.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/1.png" alt></p>
 <p>强缓存是利用 http 响应头中的<strong>Expires(较老的强缓存管理)或Cache-Control(管理更有效，安全)</strong>实现的。它们都用来表示资源在客户端缓存的有效期。</p>
 <ul>
 <li>1）浏览器第一次跟服务器请求一个资源，服务器在返回这个资源的同时，在respone的header加上Expires的header，如：</li>
 </ul>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/2.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/2.png" alt></p>
 <ul>
 <li><p>2）浏览器在接收到这个资源后，会把这个资源连同所有response header一起缓存下来（所以缓存命中的请求返回的header并不是来自服务器，而是来自之前缓存的header）</p>
 </li>
@@ -508,7 +508,7 @@ document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&q
 <blockquote>
 <p><strong>注意：这两个response header属性可以只启用一个，也可以同时启用。当response header中，Expires和Cache-Control同时存在时，Cache-Control的优先级高于Expires。</strong></p>
 </blockquote>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/3.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/3.png" alt></p>
 <p>下面讲一下二者的区别。</p>
 <ul>
 <li>1、Expires：服务器返回的绝对时间。</li>
@@ -528,9 +528,9 @@ document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&q
 </ul>
 <h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p>协商缓存：浏览器发现本地有资源的副本，但是不太确定要不要使用，于是去问问服务器。</p>
 <p>当浏览器对某个资源的请求没有命中强缓存，就会发一个请求到服务器，验证协商缓存是否命中，如果协商缓存命中，请求响应返回的http状态为304并且会显示一个Not Modified的字符串，比如你打开京东的首页，按f12打开开发者工具，再按f5刷新页面，查看network，可以看到有不少请求就是命中了协商缓存的：</p>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/4.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/4.png" alt></p>
 <p>查看单个请求的Response Header，也能看到304的状态码和Not Modified的字符串，只要看到这个就可说明这个资源是命中了协商缓存，然后从客户端缓存中加载的，而不是服务器最新的资源：</p>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/5.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/5.png" alt></p>
 <p><strong>协商缓存是利用的是两对Header</strong></p>
 <ul>
 <li><p>第一对：Last-Modified、If-Modified-Since</p>
@@ -541,15 +541,15 @@ document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&q
 <h3 id="【Last-Modified，If-Modified-Since】的控制缓存的原理是："><a href="#【Last-Modified，If-Modified-Since】的控制缓存的原理是：" class="headerlink" title="【Last-Modified，If-Modified-Since】的控制缓存的原理是："></a>【Last-Modified，If-Modified-Since】的控制缓存的原理是：</h3><ul>
 <li>1）浏览器第一次跟服务器请求一个资源，服务器在返回这个资源的同时，在respone的header加上Last-Modified的header，这个header表示这个资源在服务器上的最后修改时间：</li>
 </ul>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/5.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/5.png" alt></p>
 <ul>
 <li>2）浏览器再次跟服务器请求这个资源时，在request的header上加上If-Modified-Since的header，这个header的值就是上一次请求时返回的Last-Modified的值：</li>
 </ul>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/6.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/6.png" alt></p>
 <ul>
 <li>3）服务器再次收到资源请求时，根据浏览器传过来If-Modified-Since和资源在服务器上的最后修改时间判断资源是否有变化，如果没有变化则返回304 Not Modified，但是不会返回资源内容；如果有变化，就正常返回资源内容。当服务器返回304 Not Modified的响应时，response header中不会再添加Last-Modified的header，因为既然资源没有变化，那么Last-Modified也就不会改变，这是服务器返回304时的response header：</li>
 </ul>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/7.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/7.png" alt></p>
 <ul>
 <li><p>4）浏览器收到304的响应后，就会从缓存中加载资源。</p>
 </li>
@@ -567,22 +567,22 @@ document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&q
 <h3 id="【ETag、If-None-Match。过程如下】的控制缓存的原理是："><a href="#【ETag、If-None-Match。过程如下】的控制缓存的原理是：" class="headerlink" title="【ETag、If-None-Match。过程如下】的控制缓存的原理是："></a>【ETag、If-None-Match。过程如下】的控制缓存的原理是：</h3><ul>
 <li>1）浏览器第一次跟服务器请求一个资源，服务器在返回这个资源的同时，在respone的header加上ETag的header，这个header是服务器根据当前请求的资源生成的一个唯一标识，这个唯一标识是一个字符串，只要资源有变化这个串就不同，跟最后修改时间没有关系，所以能很好的补充Last-Modified的问题：</li>
 </ul>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/8.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/8.png" alt></p>
 <ul>
 <li>2）浏览器再次跟服务器请求这个资源时，在request的header上加上If-None-Match的header，这个header的值就是上一次请求时返回的ETag的值：</li>
 </ul>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/9.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/9.png" alt></p>
 <ul>
 <li>3）服务器再次收到资源请求时，根据浏览器传过来If-None-Match和然后再根据资源生成一个新的ETag，如果这两个值相同就说明资源没有变化，否则就是有变化；如果没有变化则返回304 Not Modified，但是不会返回资源内容；如果有变化，就正常返回资源内容。与Last-Modified不一样的是，当服务器返回304 Not Modified的响应时，由于ETag重新生成过，response header中还会把这个ETag返回，即使这个ETag跟之前的没有变化：</li>
 </ul>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/10.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/10.png" alt></p>
 <ul>
 <li>4）浏览器收到304的响应后，就会从缓存中加载资源。</li>
 </ul>
 <h2 id="协商缓存管理"><a href="#协商缓存管理" class="headerlink" title="协商缓存管理"></a>协商缓存管理</h2><p>协商缓存跟强缓存不一样，强缓存不发请求到服务器，所以有时候资源更新了浏览器还不知道，但是协商缓存会发请求到服务器，所以资源是否更新，服务器肯定知道。大部分web服务器都默认开启协商缓存，而且是同时启用【Last-Modified，If-Modified-Since】和【ETag、If-None-Match】，比如apache:</p>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/11.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/11.png" alt></p>
 <p>如果没有协商缓存，每个到服务器的请求，就都得返回资源内容，这样服务器的性能会极差。<br>分布式系统里多台机器间文件的Last-Modified必须保持一致，以免负载均衡到不同机器导致比对失败；<br>分布式系统尽量关闭掉ETag(每台机器生成的ETag都会不一样）；<br>京东页面的资源请求，返回的repsones header就只有Last-Modified，没有ETag：</p>
-<p><img src="//mayanming696.github.io/2018/09/26/ye-mian-xing-neng-you-hua/12.png" alt></p>
+<p><img src="//mayanming696.com/2018/09/26/ye-mian-xing-neng-you-hua/12.png" alt></p>
 <p><strong>协商缓存需要配合强缓存使用，你看前面这个截图中，除了Last-Modified这个header，还有强缓存的相关header，因为如果不启用强缓存的话，协商缓存根本没有意义。</strong></p>
 <h2 id="浏览器行为对缓存的影响"><a href="#浏览器行为对缓存的影响" class="headerlink" title="浏览器行为对缓存的影响"></a>浏览器行为对缓存的影响</h2><p>如果资源已经被浏览器缓存下来，在缓存失效之前，再次请求时，默认会先检查是否命中强缓存，如果强缓存命中则直接读取缓存，如果强缓存没有命中则发请求到服务器检查是否命中协商缓存，如果协商缓存命中，则告诉浏览器还是可以从缓存读取，否则才从服务器返回最新的资源。这是默认的处理方式，这个方式可能被浏览器的行为改变：</p>
 <ul>
