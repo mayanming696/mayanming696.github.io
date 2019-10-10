@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mayanming696.com/"/>
-  <updated>2019-09-18T09:26:18.600Z</updated>
+  <updated>2019-10-10T08:37:02.625Z</updated>
   <id>https://mayanming696.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue-内部指令</title>
+    <link href="https://mayanming696.com/2019/10/10/vue-nei-bu-zhi-ling/"/>
+    <id>https://mayanming696.com/2019/10/10/vue-nei-bu-zhi-ling/</id>
+    <published>2019-10-10T02:09:12.000Z</published>
+    <updated>2019-10-10T08:37:02.625Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一、v-if的使用：&quot;&gt;&lt;a href=&quot;#一、v-if的使用：&quot; class=&quot;headerlink&quot; title=&quot;一、v-if的使用：&quot;&gt;&lt;/a&gt;一、v-if的使用：&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;v-if:是vue
+        
+      
+    
+    </summary>
+    
+      <category term="Vue学习" scheme="https://mayanming696.com/categories/Vue%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Vue" scheme="https://mayanming696.com/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue-router参数传递</title>
@@ -47,7 +74,7 @@
     <link href="https://mayanming696.com/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/"/>
     <id>https://mayanming696.com/2019/09/07/vue-js-vue-router-lu-you-xiang-jie/</id>
     <published>2019-09-07T08:50:15.642Z</published>
-    <updated>2019-09-18T07:50:46.195Z</updated>
+    <updated>2019-10-07T06:26:10.072Z</updated>
     
     <summary type="html">
     

@@ -4,18 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Ajax入门, Web前端">
+    <meta name="keywords" content="Vue-内部指令, Web前端">
     <meta name="baidu-site-verification" content="hCChf0eXj7">
     <meta name="google-site-verification" content="MKdtKMmLl-CoKisLdJb04atLWIsxJ2pPq7dnqo7vp8g">
-    <meta name="description" content="什么是Ajax
-客户端与服务器，可以在【不必刷新整个浏览器】的情况下，与服务器进行异步通讯的技术(Ajax 的核心是 js 对象：XMLHttpRequest。)
+    <meta name="description" content="一、v-if的使用：
+v-if:是vue 的一个内部指令，指令用在我们的html中。
 
-
-无刷新数据读取
-
-用户注册/在线聊天室
-
-理解同步和异步(基本都用异步请">
+v-if用来判断是否加载html的DOM，比如我们模拟一个用户登录状态，在用户登录后现实用户名称。
+  &amp;lt;div v-if=&amp;quot;isLog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Ajax入门 | Mayanming</title>
+    <title>Vue-内部指令 | Mayanming</title>
     <link rel="icon" type="image/jpeg" href="/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,13 +260,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Ajax入门
+                        Vue-内部指令
                     </div>
                 </div>
             </div>
@@ -381,8 +377,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Javascript/" target="_blank">
-                            <span class="chip bg-color">Javascript</span>
+                        <a href="/tags/Vue/" target="_blank">
+                            <span class="chip bg-color">Vue</span>
                         </a>
                         
                     </div>
@@ -393,8 +389,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Javascript学习/" class="post-category" target="_blank">
-                            Javascript学习
+                        <a href="/categories/Vue学习/" class="post-category" target="_blank">
+                            Vue学习
                         </a>
                         
                     </div>
@@ -405,7 +401,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-27
+                    2019-10-10
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -419,14 +415,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    13 分
                 </div>
                 
                 
@@ -442,237 +438,278 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="什么是Ajax"><a href="#什么是Ajax" class="headerlink" title="什么是Ajax"></a><strong>什么是Ajax</strong></h1><blockquote>
-<p>客户端与服务器，可以在【不必刷新整个浏览器】的情况下，与服务器进行异步通讯的技术(Ajax 的核心是 js 对象：XMLHttpRequest。)</p>
-</blockquote>
-<ul>
-<li><p>无刷新数据读取</p>
-<ul>
-<li><p>用户注册/在线聊天室</p>
+                <h1 id="一、v-if的使用："><a href="#一、v-if的使用：" class="headerlink" title="一、v-if的使用："></a>一、v-if的使用：</h1><ul>
+<li><p>v-if:是vue 的一个内部指令，指令用在我们的html中。</p>
 </li>
-<li><p>理解同步和异步(基本都用异步请求).</p>
-<p>  <strong>同步: 客户端发起请求–等待–&gt;服务器端处理—等待–&gt;响应–&gt;页面载入 (请求错误时全部重新载入).</strong><br>  同步例子（在银行排队时，只有等到你了，才能够去处理业务。）</p>
-<p>  <strong>异步: 客户端发起请求—&gt;服务器端处理—&gt;响应—&gt;页面载入(填写时,即时更新,部分返回).</strong><br>  异步例子 （在排队的时候，可以玩手机。）</p>
-</li>
+<li><p>v-if用来判断是否加载html的DOM，比如我们模拟一个用户登录状态，在用户登录后现实用户名称。</p>
+<pre><code>  &lt;div v-if=&quot;isLogin&quot;&gt;你好，Marco！&lt;/div&gt;</code></pre><p><strong>完整html代码:</strong></p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+  &lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+      &lt;meta charset=&quot;UTF-8&quot;&gt;
+      &lt;script type=&quot;text/javascript&quot; src=&quot;../assets/js/vue.js&quot;&gt;&lt;/script&gt;
+      &lt;title&gt;v-if &amp; v-show &amp; v-else&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;h1&gt;v-if 判断是否加载&lt;/h1&gt;
+      &lt;hr&gt;
+      &lt;div id=&quot;app&quot;&gt;
+          &lt;div v-if=&quot;isLogin&quot;&gt;你好：Marco&lt;/div&gt;
+          &lt;div v-else&gt;请登录后操作&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;script type=&quot;text/javascript&quot;&gt;
+          var app=new Vue({
+              el:&#39;#app&#39;,
+              data:{
+              isLogin:false
+              }
+          })
+      &lt;/script&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre></li>
 </ul>
-</li>
-</ul>
-<h2 id="发送-Ajax-请求的五个步骤"><a href="#发送-Ajax-请求的五个步骤" class="headerlink" title="发送 Ajax 请求的五个步骤"></a>发送 Ajax 请求的五个步骤</h2><blockquote>
-<p>1.创建异步对象。即 XMLHttpRequest 对象。<br>2.使用open方法设置请求的参数。open(method, url, async)。参数解释：请求的方法、请求的url、是否异步。<br>3.发送请求。<br>4.注册事件。 注册onreadystatechange事件，状态改变时就会调用。<br>如果要在数据完整请求回来的时候才调用，我们需要手动写一些判断的逻辑。<br>5.获取返回的数据。</p>
-</blockquote>
+<p>这里我们在vue的data里定义了isLogin的值，当它为true时，网页就会显示：你好：Marco，如果为false时，就显示请登录后操作。</p>
 <hr>
-<h1 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a><strong>XMLHttpRequest</strong></h1><blockquote>
-<p>XMLHttpRequest对象是Ajax中最重要的一个对象。使用Ajax更多的是编写客户端代码，而不是服务端的代码。</p>
-</blockquote>
-<h2 id="1-创建XMLHttpRequest对象"><a href="#1-创建XMLHttpRequest对象" class="headerlink" title="1.创建XMLHttpRequest对象"></a>1.创建XMLHttpRequest对象</h2><p>要创建XMLHttpRequest对象是要分两种情况考虑的：</p>
+<h1 id="二、v-show的使用："><a href="#二、v-show的使用：" class="headerlink" title="二、v-show的使用："></a>二、v-show的使用：</h1><p>调整css中display属性，DOM已经加载，只是CSS控制没有显示出来。</p>
+<pre><code>&lt;div v-show=&quot;isLogin&quot;&gt;你好：JSPang&lt;/div&gt;</code></pre><p><strong>v-if 和v-show的区别:</strong></p>
 <ul>
-<li>在IE6以下的版本</li>
-<li>在IE6以上的版本以及其他内核的浏览器(Mozilla)等</li>
+<li>v-if： 判断是否加载，可以减轻服务器的压力，在需要时加载。</li>
+<li>v-show：调整css dispaly属性，可以使客户端操作更加流畅。</li>
 </ul>
-<pre><code>    &lt;script type=&quot;text/javascript&quot;&gt;
-
-        var httpRequest;
-
-        if(window.XMLHttpRequest) {
-
-            //在IE6以上的版本以及其他内核的浏览器(Mozilla)等
-            httpRequest = new XMLHttpRequest();
-        }else if(window.ActiveXObject) {
-
-            //在IE6以下的版本
-            httpRequest = new ActiveXObject();
-        }
-
-
-    &lt;/script&gt;</code></pre><h2 id="2-了解XMLHttpRequest对象的属性和方法"><a href="#2-了解XMLHttpRequest对象的属性和方法" class="headerlink" title="2.了解XMLHttpRequest对象的属性和方法"></a>2.了解XMLHttpRequest对象的属性和方法</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a><strong>方法</strong></h3><p>1.<strong>open()(String method,String url,boolean asynch,</strong>String username,String password)<br>2.<strong>send(content)</strong><br>3.<strong>setRequestHeader(String header,String value)</strong><br>4.getAllResponseHeaders()<br>5.getResponseHeader(String header)<br>6.abort()</p>
-<p><strong>常用的方法就是黑色粗体的前三个</strong></p>
-<ul>
-<li><p><strong>open()：该方法创建http请求</strong></p>
-<ul>
-<li><strong>第一个参数是指定提交方式(post、get)</strong></li>
-<li><strong>第二个参数是指定要提交的地址是哪</strong></li>
-<li><strong>第三个参数是指定是异步还是同步(true表示异步，false表示同步)</strong></li>
-<li>第四(获取所有的响应报头,http认证的时候会用到,是可选的)</li>
-<li>第五(查询响应中的某个字段的值参数在http认证的时候会用到,是可选的)</li>
-</ul>
-</li>
-<li><p><strong>setRequestHeader(String header,String value)：设置消息头（使用post方式才会使用到，get方法并不需要调用该方法）</strong></p>
-<ul>
-<li><strong>xmlhttp.setRequestHeader(“Content-type”,”application/x-www-form-urlencoded”);</strong></li>
-</ul>
-</li>
-<li><p><strong>send(content)：发送请求给服务器</strong></p>
-<ul>
-<li><strong>如果是get方式，并不需要填写参数，或填写null</strong></li>
-<li><strong>如果是post方式，把要提交的参数写上去</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
-<li><p><strong>onreadystatechange：请求状态改变的事件触发器（readyState变化时会调用此方法）,一般用于指定回调函数</strong></p>
-<blockquote>
-<p>通过监听onreadystatechange事件,来判断请求的状态.</p>
-</blockquote>
-</li>
-<li><p><strong>readyState：请求状态readyState一改变，回调函数被调用，它有5个状态</strong></p>
-<blockquote>
-<p>readyState属性:响应返回所处状态</p>
-</blockquote>
-<ul>
-<li>0：未初始化(还没有调用open()方法)</li>
-<li>1：open方法成功调用以后(已调用send()方法,正在发送请求)</li>
-<li>2：载入完成,服务器已经应答客户端的请求(send()方法完成,已经收到全部响应 内容)</li>
-<li>3：交互中(解析)。Http头信息已经接收，响应数据尚未接收。(正在解析响应内容)</li>
-<li><strong>4：完成。数据接收完成</strong>(响应内容解析完成,可以在客户端调用了)</li>
-</ul>
-</li>
-</ul>
-<pre><code>//基本完整的一个Ajax请求
-var request = new XMLHttpRequest();
-request.open(&quot;GET&quot;,&quot;get.json&quot;,true);
-request.onreadystatechange = function () {
-    if (request.readyState === 4) {
-        if (request.status === 200) {
-            //响应成功,做一些事情
-        } else {
-        //响应失败,做一些事情
-        }
+<h1 id="三、v-for指令-：解决模板循环问题"><a href="#三、v-for指令-：解决模板循环问题" class="headerlink" title="三、v-for指令 ：解决模板循环问题"></a>三、v-for指令 ：解决模板循环问题</h1><p>v-for指令是循环渲染一组data中的数组，v-for 指令需要以 item in items 形式的特殊语法，items 是源数据数组并且item是数组元素迭代的别名。</p>
+<h2 id="1、基本用法："><a href="#1、基本用法：" class="headerlink" title="1、基本用法："></a>1、基本用法：</h2><p> 模板写法</p>
+<pre><code>&lt;li v-for=&quot;item in items&quot;&gt;
+        {{item}}
+&lt;/li&gt;</code></pre><p> js写法</p>
+<pre><code>var app=new Vue({
+    el:&#39;#app&#39;,
+    data:{
+        items:[20,23,18,65,32,19,54,56,41]
     }
-};</code></pre><p><img src="//mayanming696.com/2018/09/27/ajax-ru-men/1.png" alt></p>
-<ul>
-<li><strong>responseText：服务器返回的文本内容</strong></li>
-<li><strong>responseXML：服务器返回的兼容DOM的XML内容</strong></li>
-<li><strong>status：服务器返回的状态码</strong></li>
-<li>statusText：服务器返回状态码的文本信息</li>
-</ul>
-<p>回调函数就是<strong>接收服务器返回的内容！</strong></p>
-<p><img src="//mayanming696.com/2018/09/27/ajax-ru-men/2.png" alt></p>
+})</code></pre><p> 完整代码：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;../assets/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;title&gt;V-for 案例&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;v-for指令用法&lt;/h1&gt;
+    &lt;hr&gt;
+    &lt;div id=&quot;app&quot;&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&quot;item in items&quot;&gt;
+                {{item}}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var app=new Vue({
+            el:&#39;#app&#39;,
+            data:{
+                items:[20,23,18,65,32,19,54,56,41]
+            }
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p> 这是一个最基础的循环，先在js里定义了items数组，然后在模板中用v-for循环出来，需要注意的是，你需要那个html标签循环，v-for就写在那个上边。</p>
+<h2 id="2、排序"><a href="#2、排序" class="headerlink" title="2、排序"></a>2、排序</h2><p> 我们已经顺利的输出了我们定义的数组，但是我需要在输出之前给数组排个序，那我们就用到了Vue的computed:属性。</p>
+<pre><code>    computed:{
+        sortItems:function(){
+            return this.items.sort();
+        }
+    }</code></pre><p>我们在computed里新声明了一个对象sortItems，如果不重新声明会污染原来的数据源，这是Vue不允许的，所以你要重新声明一个对象。</p>
+<p>如果一切顺利的话，你已经看到了结果，但是这个小程序还是有个小Bug的，现在我把数组修改成这样。</p>
+<pre><code>    items:[20,23,18,65,32,19,5,56,41]</code></pre><p>我们把其中的54修改成了5，我们再看一下结果，发现排序结果并不是我们想要的。</p>
+<p>我们可以自己编写一个方法sortNumber，然后传给我们的sort函数解决这个Bug。</p>
+<pre><code>    function sortNumber(a,b){
+                return a-b
+    }</code></pre><p>用法</p>
+<pre><code>    computed:{
+        sortItems:function(){
+        return this.items.sort(sortNumber);
+        }
+    }</code></pre><p>经过一番折腾，我们终于实现了真正的数字排序，这是在工作中非常常用的，一定要学好，记住。</p>
+<h2 id="三、对象循环输出"><a href="#三、对象循环输出" class="headerlink" title="三、对象循环输出"></a>三、对象循环输出</h2><p>我们上边循环的都是数组，那我们来看一个对象类型的循环是如何输出的。</p>
+<p>我们先定义个数组，数组里边是对象数据</p>
+<pre><code>students:[
+{name:&#39;jspang&#39;,age:32},
+{name:&#39;Panda&#39;,age:30},
+{name:&#39;PanPaN&#39;,age:21},
+{name:&#39;King&#39;,age:45}
+]</code></pre><p>在模板中输出</p>
+<pre><code>&lt;ul&gt;
+&lt;li v-for=&quot;student in students&quot;&gt;
+    {{student.name}} - {{student.age}}
+&lt;/li&gt;
+&lt;/ul&gt;</code></pre><p>加入索引序号：</p>
+<pre><code>//数组对象方法排序:
+function sortByKey(array,key){
+    return array.sort(function(a,b){
+    var x=a[key];
+    var y=b[key];
+    return ((x&lt;y)?-1:((x&gt;y)?1:0));
+});
+}</code></pre><p>有了数组的排序方法，在computed中进行调用排序</p>
+<pre><code>sortStudent:function(){
+    return sortByKey(this.students,&#39;age&#39;);
+}</code></pre><p>注意：vue低版本中 data里面的items和computed里面可以一样，但是高版本，是不允许相同名称。有很多小伙伴踩到了这个坑，这里提醒学习的小伙伴，根据自己版本的不同，请修改代码。</p>
 <hr>
-<h1 id="编写第一个Ajax程序"><a href="#编写第一个Ajax程序" class="headerlink" title="编写第一个Ajax程序"></a>编写第一个Ajax程序</h1><h2 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h2><ul>
-<li>创建的div只要用于显示服务器返回的数据</li>
-<li>当用户点击按钮的时候，就触发事件。</li>
-</ul>
-<pre><code>    &lt;input type=&quot;text&quot; id=&quot;username&quot;&gt;
-    &lt;input type=&quot;button&quot; onclick=&quot;checkUsername()&quot; value=&quot;检测用户名是否合法&quot;&gt;
-    &lt;div id=&quot;result&quot;&gt;
+<h1 id="四、v-text-amp-v-html"><a href="#四、v-text-amp-v-html" class="headerlink" title="四、v-text &amp; v-html"></a>四、v-text &amp; v-html</h1><p>我们已经会在html中输出data中的值了，我们已经用的是,这种情况是有弊端的，就是当我们网速很慢或者javascript出错时，会暴露我们的。Vue给我们提供的v-text,就是解决这个问题的。我们来看代码： </p>
+<pre><code>&lt;span&gt;{{ message }}&lt;/span&gt;=&lt;span v-text=&quot;message&quot;&gt;&lt;/span&gt;&lt;br/&gt;</code></pre><p>如果在javascript中写有html标签，用v-text是输出不出来的，这时候我们就需要用v-html标签了。</p>
+<pre><code>&lt;span v-html=&quot;msgHtml&quot;&gt;&lt;/span&gt;</code></pre><p>双大括号会将数据解释为纯文本，而非HTML。为了输出真正的HTML，你就需要使用v-html 指令。 需要注意的是：在生产环境中动态渲染HTML是非常危险的，因为容易导致XSS攻击。所以只能在可信的内容上使用v-html，永远不要在用户提交和可操作的网页上使用。 完整代码：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;../assets/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;title&gt;v-text &amp; v-html 案例&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;v-text &amp; v-html 案例&lt;/h1&gt;
+    &lt;hr&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;span&gt;{{ message }}&lt;/span&gt;=&lt;span v-text=&quot;message&quot;&gt;&lt;/span&gt;&lt;br/&gt;
+        &lt;span v-html=&quot;msgHtml&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
 
-    &lt;/div&gt;</code></pre><h2 id="JavaScript代码"><a href="#JavaScript代码" class="headerlink" title="JavaScript代码"></a>JavaScript代码</h2><ul>
-<li>创建XMLHttpRequest对象</li>
-<li>创建http请求</li>
-<li>把文本框的数据发送给http请求的目标</li>
-<li>指定回调函数</li>
-<li>编写回调函数</li>
-<li>发送http请求</li>
-<li>回调函数得到http返回的内容，把内容写在div上</li>
-</ul>
-<pre><code>    &lt;script type=&quot;text/javascript&quot;&gt;
-
-        var httpRequest;
-        function checkUsername() {
-
-            if(window.XMLHttpRequest) {
-
-                //在IE6以上的版本以及其他内核的浏览器(Mozilla)等
-                httpRequest = new XMLHttpRequest();
-            }else if(window.ActiveXObject) {
-
-                //在IE6以下的版本
-                httpRequest = new ActiveXObject();
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var app=new Vue({
+            el:&#39;#app&#39;,
+            data:{
+                message:&#39;hello Vue!&#39;,
+                msgHtml:&#39;&lt;h2&gt;hello Vue!&lt;/h2&gt;&#39;
             }
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><hr>
+<h1 id="五、v-on：绑定事件监听器"><a href="#五、v-on：绑定事件监听器" class="headerlink" title="五、v-on：绑定事件监听器"></a>五、v-on：绑定事件监听器</h1><p>v-on 就是监听事件，可以用v-on指令监听DOM事件来触发一些javascript代码。</p>
+<p>一、使用绑定事件监听器，编写一个加分减分的程序。</p>
+<p>程序代码</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;../assets/js/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;title&gt;v-on事件监听器&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;v-on 事件监听器&lt;/h1&gt;
+    &lt;hr&gt;
+    &lt;div id=&quot;app&quot;&gt;
+    本场比赛得分： {{count}}&lt;br/&gt;
+    &lt;button v-on:click=&quot;jiafen&quot;&gt;加分&lt;/button&gt;
+    &lt;button v-on:click=&quot;jianfen&quot;&gt;减分&lt;/button&gt;
 
+    &lt;/div&gt;
 
-            //创建http请求
-            httpRequest.open(&quot;POST&quot;, &quot;Servlet1&quot;, true);
-
-            //因为我使用的是post方式，所以需要设置消息头
-            httpRequest.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);
-
-            //指定回调函数
-            httpRequest.onreadystatechange = response22;
-
-            //得到文本框的数据
-            var name = document.getElementById(&quot;username&quot;).value;
-
-            //发送http请求，把要检测的用户名传递进去
-            httpRequest.send(&quot;username=&quot; + name);
-
-        }
-
-        function response22() {
-
-            //判断请求状态码是否是4【数据接收完成】
-            if(httpRequest.readyState==4) {
-
-                //再判断状态码是否为200【200是成功的】
-                if(httpRequest.status==200) {
-
-                    //得到服务端返回的文本数据
-                    var text = httpRequest.responseText;
-
-                    //把服务端返回的数据写在div上
-                    var div = document.getElementById(&quot;result&quot;);
-                    div.innerText = text;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var app=new Vue({
+            el:&#39;#app&#39;,
+            data:{
+                count:1
+            },
+            methods:{
+                jiafen:function(){
+                    this.count++;
+                },
+                jianfen:function(){
+                    this.count--;
                 }
-
             }
-        }
-    &lt;/script&gt;</code></pre><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><h1 id="XMLHttpRequest解决缓存问题"><a href="#XMLHttpRequest解决缓存问题" class="headerlink" title="XMLHttpRequest解决缓存问题"></a><strong>XMLHttpRequest解决缓存问题</strong></h1><p>在传统的Web中我们也解决过缓存的问题，通过设置response的头信息，返回给浏览器就可以实现不缓存页面了。</p>
-<p>但是呢，现在我们使用XMLHttpRequest，拿到的不是全新的页面，仅仅是服务器端发送过来的数据！！</p>
-<p>那我们要怎么解决缓存的问题呢？？产生缓存的原因就是：我们请求了同一个地址，做了相同的操作。服务端认为我的操作并没有什么变化，就直接把缓存的信息给我了。这样的话，我就不能更换验证码图片了(等等应用)。</p>
-<p>我们可以这样做：</p>
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p>我们的v-on 还有一种简单的写法，就是用@代替。</p>
+<pre><code>&lt;button @click=&quot;jianfen&quot;&gt;减分&lt;/button&gt;</code></pre><p>我们除了绑定click之外，我们还可以绑定其它事件，比如键盘回车事件v-on:keyup.enter,现在我们增加一个输入框，然后绑定回车事件，回车后把文本框里的值加到我们的count上。 绑定事件写法：</p>
+<pre><code>&lt;input type=&quot;text&quot; v-on:keyup.enter=&quot;onEnter&quot; v-model=&quot;secondCount&quot;&gt;</code></pre><p>javascript代码：</p>
+<pre><code>onEnter:function(){
+    this.count=this.count+parseInt(this.secondCount);
+}</code></pre><p>因为文本框的数字会默认转变成字符串，所以我们需要用parseInt()函数进行整数转换。</p>
+<p>你也可以根据键值表来定义键盘事件： </p>
+<hr>
+<h1 id="六、v-model指令"><a href="#六、v-model指令" class="headerlink" title="六、v-model指令"></a>六、v-model指令</h1><p>v-model指令，我理解为绑定数据源。就是把数据绑定在特定的表单元素上，可以很容易的实现双向数据绑定。</p>
+<h2 id="1、最简单的双向数据绑定代码："><a href="#1、最简单的双向数据绑定代码：" class="headerlink" title="1、最简单的双向数据绑定代码："></a>1、最简单的双向数据绑定代码：</h2><p>html文件</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;p&gt;原始文本信息：{{message}}&lt;/p&gt;
+    &lt;h3&gt;文本框&lt;/h3&gt;
+    &lt;p&gt;v-model:&lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre><p>javascript代码：</p>
+<pre><code>var app=new Vue({
+el:&#39;#app&#39;,
+data:{
+    message:&#39;hello Vue!&#39;
+}
+})</code></pre><h2 id="2、修饰符"><a href="#2、修饰符" class="headerlink" title="2、修饰符"></a>2、修饰符</h2><ul>
+<li>.lazy：取代 imput 监听 change 事件。</li>
+<li>.number：输入字符串转为数字。</li>
+<li>.trim：输入去掉首尾空格。</li>
+</ul>
+<h2 id="3、文本区域加入数据绑定"><a href="#3、文本区域加入数据绑定" class="headerlink" title="3、文本区域加入数据绑定"></a>3、文本区域加入数据绑定</h2><pre><code>&lt;textarea  &lt; cols=&quot;30&quot; rows=&quot;10&quot; v-model=&quot;message&quot;&gt;&lt;/textarea&gt;</code></pre><h2 id="4、多选按钮绑定一个值"><a href="#4、多选按钮绑定一个值" class="headerlink" title="4、多选按钮绑定一个值"></a>4、多选按钮绑定一个值</h2><pre><code>&lt;h3&gt;多选按钮绑定一个值&lt;/h3&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;isTrue&quot; v-model=&quot;isTrue&quot;&gt;
+&lt;label for=&#39;isTrue&#39;&gt;{{isTrue}}&lt;/label&gt;</code></pre><h2 id="5、多选绑定一个数组"><a href="#5、多选绑定一个数组" class="headerlink" title="5、多选绑定一个数组"></a>5、多选绑定一个数组</h2><pre><code>&lt;h3&gt;多选绑定一个数组&lt;/h3&gt;
+    &lt;p&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;JSPang&quot; value=&quot;JSPang&quot; v-model=&quot;web_Names&quot;&gt;
+            &lt;label for=&quot;JSPang&quot;&gt;JSPang&lt;/label&gt;&lt;br/&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;Panda&quot; value=&quot;Panda&quot; v-model=&quot;web_Names&quot;&gt;
+            &lt;label for=&quot;JSPang&quot;&gt;Panda&lt;/label&gt;&lt;br/&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;PanPan&quot; value=&quot;PanPan&quot; v-model=&quot;web_Names&quot;&gt;
+            &lt;label for=&quot;JSPang&quot;&gt;PanPan&lt;/label&gt;
+            &lt;p&gt;{{web_Names}}&lt;/p&gt;
+&lt;/p&gt;</code></pre><h2 id="6、单选按钮绑定数据"><a href="#6、单选按钮绑定数据" class="headerlink" title="6、单选按钮绑定数据"></a>6、单选按钮绑定数据</h2><pre><code>&lt;h3&gt;单选按钮绑定&lt;/h3&gt;
+&lt;input type=&quot;radio&quot; id=&quot;one&quot; value=&quot;男&quot; v-model=&quot;sex&quot;&gt;
+&lt;label for=&quot;one&quot;&gt;男&lt;/label&gt;
+&lt;input type=&quot;radio&quot; id=&quot;two&quot; value=&quot;女&quot; v-model=&quot;sex&quot;&gt;
+&lt;label for=&quot;one&quot;&gt;女&lt;/label&gt;
+&lt;p&gt;{{sex}}&lt;/p&gt;</code></pre><hr>
+<h1 id="七、v-bind-指令"><a href="#七、v-bind-指令" class="headerlink" title="七、v-bind 指令"></a>七、v-bind 指令</h1><p>v-bind是处理HTML中的标签属性的</p>
+<p>html文件：</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+    &lt;img v-bind:src=&quot;imgSrc&quot;  width=&quot;200px&quot;&gt;
+&lt;/div&gt;</code></pre><p>在html中我们用v-bind:src=”imgSrc”的动态绑定了src的值，这个值是在vue构造器里的data属性中找到的。</p>
+<p>js文件：</p>
+<pre><code>var app=new Vue({
+    el:&#39;#app&#39;,
+    data:{
+        imgSrc:&#39;http://baidu.com/wp-content/uploads/2017/02/vue01-2.jpg&#39;
+    }
+})</code></pre><p>我们在data对象在中增加了imgSrc属性来供html调用</p>
+<p><strong>v-bind 缩写</strong></p>
+<pre><code>&lt;!-- 完整语法 --&gt;
+&lt;a v-bind:href=&quot;url&quot;&gt;&lt;/a&gt;
+&lt;!-- 缩写 --&gt;
+&lt;a :href=&quot;url&quot;&gt;&lt;/a&gt;</code></pre><p><strong>绑定CSS样式</strong></p>
 <ul>
-<li><strong>在每次请求url中加入一个时间戳参数【每次url就不一样了】</strong></li>
-<li>加入时间戳参数到url时，也分两种情况<ul>
-<li><strong>url本身就带有参数了，也就是说有”?”号了，那么添加时间戳的时候就需要用”&amp;”号</strong></li>
-<li><input checked disabled type="checkbox"> url没有参数，直接使用”?”号来添加时间戳</li>
+<li>1.在工作中我们经常使用v-bind来绑定css样式：</li>
 </ul>
-</li>
+<p>在绑定CSS样式是，绑定的值必须在vue中的data属性中进行声明。 1、直接绑定class样式</p>
+<pre><code>    &lt;div :class=&quot;className&quot;&gt;1、绑定classA&lt;/div&gt;</code></pre><ul>
+<li><p>2.绑定classA并进行判断，在isOK为true时显示样式，在isOk为false时不显示样式。</p>
+<pre><code>  &lt;div :class=&quot;{classA:isOk}&quot;&gt;2、绑定class中的判断&lt;/div&gt;</code></pre></li>
+<li><p>3.绑定class中的数组</p>
+<pre><code>  &lt;div :class=&quot;[classA,classB]&quot;&gt;3、绑定class中的数组&lt;/div&gt;</code></pre></li>
+<li><p>4.绑定class中使用三元表达式判断</p>
+<pre><code>  &lt;div :class=&quot;isOk?classA:classB&quot;&gt;4、绑定class中的三元表达式判断&lt;/div&gt;</code></pre></li>
+<li><p>5.绑定style</p>
+<pre><code>  &lt;div :style=&quot;{color:red,fontSize:font}&quot;&gt;5、绑定style&lt;/div&gt;   </code></pre></li>
+<li><p>6.用对象绑定style样式</p>
+<pre><code>  &lt;div :style=&quot;styleObject&quot;&gt;6、用对象绑定style样式&lt;/div&gt;
+
+  var app=new Vue({
+  el:&#39;#app&#39;,
+  data:{
+      styleObject:{
+          fontSize:&#39;24px&#39;,
+          color:&#39;green&#39;
+              }
+          }
+  })        </code></pre></li>
 </ul>
-<pre><code>    if(url.indexOf(&quot;?&quot;) &gt;= 0){
-    url = url + &quot;&amp;t=&quot; + (new Date()).valueOf();
-    } else{
-    url = url + &quot;?t=&quot; + (new Date()).valueOf();
-    }</code></pre><h1 id="XMLHttpRequest跨域访问"><a href="#XMLHttpRequest跨域访问" class="headerlink" title="XMLHttpRequest跨域访问"></a>XMLHttpRequest跨域访问</h1><p><strong>使用XMLHttpRequest去跨域访问是会出现错误的。</strong><br>我们要怎么解决呢？？这时候就要用代理思想了</p>
-<ul>
-<li><strong>XMLHttpRequest先把请求提交给同域的Servlet处理</strong></li>
-<li><strong>同域Servlet再将XMLHttpRequest的请求提交给跨域的服务器</strong></li>
-<li><strong>同域Servlet得到跨域服务器的返回值，再返回给XMLHttpRequest</strong></li>
-</ul>
-<p>这个时候，<strong>XMLHttpRequest跨域访问就分两种(GET和POST)情况了，因为这两种提交数据的方式是不一样的！</strong></p>
-<h2 id="浏览器代码"><a href="#浏览器代码" class="headerlink" title="浏览器代码"></a>浏览器代码</h2><ul>
-<li>我们需要在调用open方法之前判断一下要连接的地址是不是以http开头的，如果是则认为要访问的是跨域的资源</li>
-<li>首先将当前url中的”?”变成”&amp;”，这是因为将要连接的地址改为”Proxy?url=” + url以后，如果原来url地址中有参数的话，新的url地址中就会有两个“?”这会导致服务器端解析参数错误，”url=”之后的内容表示本来要访问的跨域资源的地址。</li>
-</ul>
-<h2 id="GET方式"><a href="#GET方式" class="headerlink" title="GET方式"></a>GET方式</h2><p>GET方式是直接把参数的信息都放在url地址上，所以处理起来会相对简单。</p>
-<p>步骤：</p>
-<ul>
-<li>使用StringBuilder装载着getParameter(“url”)【获取得到地址，呆会要做拼接，所以用StringBuilder】</li>
-<li><em><em>得到其他参数的时候，做URLEncode.encode()，因为我们进入Servlet的时候已经被decode了一次【我们要尽可能保留原始请求】(参照解决中文乱码) </em></em></li>
-<li>遍历所有的请求参数，只要名字不是”url”，就添加到StringBuilder中【第一个参数为”?”,其他的参数为”&amp;”】(<a href="http://localhost:8080/url?aa=bb&amp;cc=dd" target="_blank" rel="noopener">http://localhost:8080/url?aa=bb&amp;cc=dd</a>)</li>
-<li>创建URL对象，把拼接成的StringBuilder传递进去</li>
-<li>使用BufferReader读取远程服务器返回的数据，要指定输入流编码格式，否则会乱码</li>
-</ul>
-<pre><code>        BufferedReader reader = new BufferedReader(new InputStreamReader(URL对象.openSteam(),&quot;UTF-8&quot;));</code></pre><ul>
-<li>最后，把远程服务器读取到的数据再返回给XMLHttpRequest</li>
-</ul>
-<h2 id="POST方式"><a href="#POST方式" class="headerlink" title="POST方式"></a>POST方式</h2><p>POST方式把参数的信息都封装到HTTP请求中，在URL进行连接的时候，需要把数据写给远程服务器</p>
-<p>步骤：</p>
-<ul>
-<li>得到url参数，创建StringBuilder</li>
-<li><em><em>得到其他参数的时候，做URLEncode.encode()，因为我们进入Servlet的时候已经被decode了一次【我们要尽可能保留原始请求】(参照解决中文乱码) </em></em></li>
-<li>遍历所有的请求参数，只要名字不是”url”，就添加到StringBuilder中【第一个参数直接给出,其他的参数为”&amp;”】(aa=bb&amp;cc=dd&amp;ee=ff)</li>
-<li>创建URL对象，创建URL连接器，允许写数据到远程服务器上</li>
-</ul>
-<pre><code>    URL url = new URL(url);
-    URLConnection connection = url.openConnection;
-    connection.setDoOutPut(true);</code></pre><ul>
-<li>得到写数据流</li>
-</ul>
-<pre><code>OutputSteamWriter writer = new OutputSteamWriter(conncetion.getOutputSteam)</code></pre><ul>
-<li>把StringBuilder的数据写到远程服务器上，并flush</li>
-<li>使用BufferReader读取远程服务器返回的数据</li>
-</ul>
-<pre><code>BufferedReader reader =  new BufferedReader(new InputSteamReader(conncetion.inputSteamReader,&quot;UTF-8&quot;));</code></pre>
+<hr>
+
             </div>
             <hr />
 
@@ -834,7 +871,7 @@ request.onreadystatechange = function () {
         repo: 'mayanming696.github.io',
         owner: 'mayanming696',
         admin: "mayanming696",
-        id: '2018/09/27/ajax-ru-men/',
+        id: '2019/10/10/vue-nei-bu-zhi-ling/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -855,46 +892,48 @@ request.onreadystatechange = function () {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/09/06/2019-conclusion/">
+                <a href="/2019/10/10/vue-nei-bu-zhi-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hexo博客 +GitHub 搭建与关联">
+                        <img src="/medias/featureimages/25.png" class="responsive-img" alt="Vue-内部指令">
                         
-                        <span class="card-title">Hexo博客 +GitHub 搭建与关联</span>
+                        <span class="card-title">Vue-内部指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Hexo搭建
+                            Vue-内部指令的解析
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo学习/" class="post-category" target="_blank">
-                                    Hexo学习
+                            <a href="/categories/Vue学习/" class="post-category" target="_blank">
+                                    Vue学习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/" target="_blank">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Vue/" target="_blank">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
@@ -908,31 +947,31 @@ request.onreadystatechange = function () {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/26/ye-mian-xing-neng-you-hua/">
+                <a href="/2019/09/10/vue-router-can-shu-chuan-di/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="页面性能优化">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Vue-router参数传递">
                         
-                        <span class="card-title">页面性能优化</span>
+                        <span class="card-title">Vue-router参数传递</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Web学习
+                            Vue-router参数传递
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web学习/" class="post-category" target="_blank">
-                                    Web学习
+                            <a href="/categories/Vue学习/" class="post-category" target="_blank">
+                                    Vue学习
                                 </a>
                             
                             
@@ -942,8 +981,8 @@ request.onreadystatechange = function () {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Web学习/" target="_blank">
-                        <span class="chip bg-color">Web学习</span>
+                    <a href="/tags/Vue/" target="_blank">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
@@ -1090,13 +1129,6 @@ request.onreadystatechange = function () {
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 <footer class="page-footer bg-color">
 
