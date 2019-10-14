@@ -136,7 +136,88 @@ categories:
   
 ---
 # 4.域名绑定
-//
+
+![](5.jpg)
+
+然后我进行了国内外分流的，Coding 跟 github 一样的操作
+
+---
+# 5.源码备份 
+
+## 备份操作
+
+使用Hexo在github搭建的博客，博客作为一个单独的GitHub仓库存在，但是这个仓库只有生成的静态网页文件，并没有Hexo的源文件，如果要换电脑或者重装系统后，就比较麻烦了，这里推荐一种方法。
+
+1. 创建两个分支：master和hexo
+
+2. 设置hexo为默认分支；
+
+3. 将刚刚创建的新仓库clone至本地，将之前的hexo文件夹中的_config.yml，themes/，source/，scaffolds/，package.json，.Username.github.io文件夹
+
+4. 将themes/matery/(我用的是matery主题)中的.git/删除，否则无法将主题文件夹push；
+
+5. 在Username.github.io文件夹执行npm install和npm install hexo-deployer-git（这里可以看一看分支是不是显示为hexo）；
+
+6. 执行git add .、git commit -m ""、git push origin hexo来提交hexo网站 **源文件**；
+
+7. 执行hexo g -d生成静态网页部署至Github上。
+
+这样做法，Username.github.io仓库就有master 和 hexo 分支，分别保存静态网页跟源文件
+
+## 修改操作
+
+再本地对博客修改（修改主题样式，发布新文章等操作）后：
+
+1. 依次执行
+
+        git add .
+        git commit -m ""
+        git push origin hexo
+
+    来提交源文件；
+
+
+2. 执行 
+
+        hexo g
+        hexo d
+
+生成静态网页并且部署到Github上
+
+重复6-7的步骤
+
+## 恢复
+
+重装电脑，或者再其他电脑上修改博客的时候
+1. 安装git
+2. 安装Nodejs 和npm
+3. 使用 git clone git@github.com:mayanming696/mayanming696.github.io.git 将仓库拷至本地；
+4. 再文件夹内执行下面命令
+
+        npm install hexo-cli -g
+        npm install
+        npm install hexo-deployer-git
+
+最后重新添加SSH
+
+最后附注HEXO的源文件 备份操作的步骤4，只需拷贝6个，而不需要全部：
+
+    1 ._config.yml站点的配置文件，需要拷贝
+    2 .themes/主题文件夹，需要拷贝；
+    3 .source博客文章的.md文件，需要拷贝；
+    4 .scaffolds/文章的模板，需要拷贝；
+    5 .package.json安装包的名称，需要拷贝；
+    6 .gitignore限定在push时哪些文件可以忽略，需要拷贝；
+    7 .git/主题和站点都有，标志这是一个git项目，不需要拷贝；
+    8 node_modules/是安装包的目录，在执行npm install的时候会重新生成，不需要拷贝；
+    9 public是hexo g生成的静态网页，不需要拷贝；
+    10 .deploy_git同上，hexo g也会生成，不需要拷贝；
+    11 db.json文件，不需要拷贝。
+其实不需要拷贝的文件正是.gitignore中所忽略的。 
+
+
+
+
 
 > 我遇见谁，会有怎样的对白。
 我等的人，她在多远的未来。
