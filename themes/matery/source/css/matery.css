@@ -4,6 +4,9 @@
     .container {
         width: 95%;
     }
+    header .brand-logo{
+        width:200px
+    }
 }
     .brand-logo{
         width: 200px;
