@@ -19,7 +19,7 @@ JavaScript 中，万物皆对象！但对象也是有区别的。分为 **普通
 
 ![](1.jpg)
 
-在上面例子中 o1 o2 o3 为普通对象，f1 f2 f3为函数对象。区分的很简单，凡是通过 **new Function()创建的对象都是函数对象，其余都是普通对象，Function Object也都是通过New Function()创建的** f1 f2,归根结底都是通过new Function()方式进行创建。
+在上面例子中 o1 o2 o3 为普通对象，f1 f2 f3为函数对象。区分的很简单，凡是通过 **new Function()创建的对象都是函数对象，其余都是普通对象，Function Object也都是通过New Function()创建的** ，f1 f2,归根结底都是通过new Function()方式进行创建。
 
 ---
 
@@ -34,7 +34,7 @@ JavaScript 中，万物皆对象！但对象也是有区别的。分为 **普通
 得出两个概念(构造函数，实例)：
 **person1 和 person2 都是 构造函数Person 的实例**
 公式：
-**实例的构造函数属性(constructpr)指向构造函数**
+**实例的构造函数属性(constructor)指向构造函数**
 
 ---
 
@@ -46,7 +46,7 @@ JavaScript 中，万物皆对象！但对象也是有区别的。分为 **普通
 
 我们得到文本定律：
 
-             每个对象都有 **_proto_** 属性，但只有函数对象才有**prototype** 属性
+             每个对象都有 _proto_ 属性，但只有函数对象才有 prototype 属性
 
 >原型对象，其实就是个普通对象，在上面我给Person.prototype 添加了4个属性： name , age ,job ,sayName,其实还有一个默认的属性：constructor
 在默认情况下，所有的原型对象都会自动获得一个 constructor (构造函数)属性，这个属性(是一个指针)指向 prototype 属性所在的函数(Person)
@@ -100,9 +100,12 @@ JS 在创建对象（不论是普通对象还是函数对象）的时候，都�
 
 **不过，要明确的真正重要的一点就是，这个连接存在于实例（person1）与构造函数（Person）的原型对象（Person.prototype）之间，而不是存在于实例（person1）与构造函数（Person）之间。**
 
-# 总结
+---
 
->* 原型和原型链是JS实现继承的一种模型。
+# 五.总结
+
+>
+ * 原型和原型链是JS实现继承的一种模型。
  * 原型链的形成是真正是靠__proto__ 而非prototype
  * 对象通过__proto__属性访问原型，构造函数通过prototype属性访问原型
  * Object 是所有对象的爸爸，所有对象都可以通过 proto 找到它
