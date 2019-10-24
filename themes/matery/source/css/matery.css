@@ -4,10 +4,10 @@
     .container {
         width: 95%;
     }
-}
-    .brand-logo{
-        width: 200px;
+    header .brand-logo{
+        width:200px
     }
+}
 /*中等屏幕下(平板类)的样式*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .container {
@@ -216,7 +216,7 @@ header nav .brand-span {
 }
 
 header .brand-logo .logo-img {
-    height: 45px;
+    height: 42px;
     vertical-align: middle;
     padding-bottom: 6px;
 }
