@@ -4,7 +4,7 @@ top: false
 cover: false
 toc: true
 mathjax: true
-date: 2018-09-27 16:31:40
+date: 2019-09-27 16:31:40
 password:
 summary: Javascript-(Ajax)
 tags:

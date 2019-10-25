@@ -1,13 +1,13 @@
 ---
 title: Hexo博客 +GitHub+Coding 国内外分流搭建
-date: {{ date }}
+date: 2019-9-01 14:39:05
 comments: false
 top: true
 cover: false
 password:
 toc: 
 mathjax: true
-summary: Hexo搭建
+summary: Hexo博客搭建
 tags:
 - Hexo
 categories:
