@@ -18,12 +18,12 @@ permalink: :year/:month/:day/:title/
 permalink_defaults:
 # gitalk
 gitalk:
-enable: false
+enable: true
 owner: mayanming696
 repo: mayanming696.github.io
 oauth:
-    clientId: 
-    clientSecret: 
+    clientId: a2fe0066079fb61004dd
+    clientSecret: f15ff057b9513c8a177f04a7509b670a67681149
 admin: mayanming696
 # Directory
 source_dir: source
