@@ -231,12 +231,12 @@ gitalk:
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
 gitment:
-  enable: false
-  owner:
-  repo:
+  enable: true
+  owner: mayanming696
+  repo: mayanming696.github.io
   oauth:
-    clientId:
-    clientSecret:
+    clientId: a2fe0066079fb61004dd
+    clientSecret: f15ff057b9513c8a177f04a7509b670a67681149
 
 # disqus config, default disabled
 # Disqus评论模块的配置，默认为不激活
