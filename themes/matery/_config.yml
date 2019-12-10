@@ -231,12 +231,12 @@ gitalk:
 # the Gitment config，default disabled
 # Gitment 评论模块的配置，默认为不激活
 gitment:
-  enable: true
+  enable: false
   owner: mayanming696
   repo: mayanming696.github.io
   oauth:
-    clientId: a2fe0066079fb61004dd
-    clientSecret: f15ff057b9513c8a177f04a7509b670a67681149
+    clientId: 
+    clientSecret: 
 
 # disqus config, default disabled
 # Disqus评论模块的配置，默认为不激活
@@ -255,8 +255,8 @@ livere:
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 valine:
   enable: false
-  appId: 5414562961e0f17fd548
-  appKey: 0ca311655c9a3be00be80199ea1797272fa2c3bc
+  appId: 
+  appKey: 
   notify: false
   verify: false
   visitor: false
