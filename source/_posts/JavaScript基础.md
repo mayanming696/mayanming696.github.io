@@ -1474,7 +1474,7 @@ arguments里边有一个属性叫做callee，这个属性对应一个函数对�
 
 **根据函数的调用方式的不同，this会指向不同的对象：**
 
-* 1.**最终**以**函数**的形式调用时，this永远都是window。比如fun();相当于window.fun();
+* 1.**最终**以**函数**的形式调用时，this永远都是window。比如fun ();相当于window.fun();
 
 * 2.**最终**以**方法**的形式调用时，this是调用方法的那个对象
 
@@ -1522,7 +1522,7 @@ arguments里边有一个属性叫做callee，这个属性对应一个函数对�
             name: "smyh",
             sayName: fun
         };
-
+        
         var obj2 = {
             name: "vae",
             sayName: fun
@@ -1581,13 +1581,13 @@ arguments里边有一个属性叫做callee，这个属性对应一个函数对�
 
 ---
 
-function fn()  
-{  
+    function fn()  
+    {  
     this.user = 'Marco';  
     return undefined;
-}
-var a = new fn;  
-console.log(a.user); //Marco
+    }
+    var a = new fn;  
+    console.log(a.user); //Marco
 
 
 **如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例。**
@@ -1615,10 +1615,10 @@ console.log(a.user); //Marco
 
     var arr = [1,2,3];
 
-* **方法二** ：对象定义(数组的构造函数)
+* **方法二** ：对象定义 (数组的构造函数)
 语法：
 
-    var arr = new Array(参数);
+    var arr = new Array (参数);
 
 如果**参数为空**，则表示创建一个空数组；参数位置是**一个数值**时，表示数组长度；参数位置是**多个数值**时，表示数组中的元素。
 
