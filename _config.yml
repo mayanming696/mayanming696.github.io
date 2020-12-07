@@ -121,7 +121,7 @@ deploy:
 - type: git
   repo:
     github: git@github.com:mayanming696/mayanming696.github.io.git,master
-    coding: git@git.dev.tencent.com:mayanming696/mayanming696.coding.me.git,master
+    coding: https://e.coding.net/yanmingma696/mayanming696.coding.me/mayanming696.git,master
 - type: baidu_url_submitter
 
 
