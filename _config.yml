@@ -120,11 +120,9 @@ theme: matery
 deploy:
 - type: git
   repo:
-    github: https://github.com/mayanming696/mayanming696.github.io.git
-    brach: master
-    # coding: git@git.dev.tencent.com:mayanming696/mayanming696.coding.me.git,master
-    # coding: https://e.coding.net/yanmingma696/mayanming696.coding.me.git
-    coding: https://e.coding.net/mayanming696/mayanming696/mayanming696.git,master
+    github: git@github.com:mayanming696/mayanming696.github.io.git,master
+    coding: https://e.coding.net/yanmingma696/mayanming696.coding.me/mayanming696.git,master
+- type: baidu_url_submitter
 
 
 baidu_url_submit:
@@ -160,4 +158,4 @@ backup:
   theme: matery
   message: 备份博客
   repository: 
-      github: git@github.com:mayanming696/mayanming696.github.io.git,hexo
+      coding: git@git.coding.net:mayanming696/mayanming696.coding.me.git,hexo
