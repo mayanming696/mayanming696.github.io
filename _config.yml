@@ -1,30 +1,28 @@
-﻿# Hexo Configuration
-## Docs: https://mayanming696.github.io
-## Source: https://mayanming696.github.io
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
 # Site
-title: Mayanming
-subtitle: Mayanming
-description: 个人博客
-keywords: "Web前端"
-author: Marco
-language: zh-CN
-timezone:
+title: Mayanming Blog
+subtitle: ''
+description: ''
+keywords:
+author: Mayanming(Marco)
+language:
+  - zh-CN
+  - en
+timezone: 'Asia/Shanghai'
 
 # URL
-## If your site is put in a subdirectory, set url as 'https://mayanming696.com' and root as '/child/'
-url: https://mayanming696.com
+## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
+url: https://mayanming696
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
-# gitalk
-gitalk:
-enable: true
-owner: mayanming696
-repo: mayanming696.github.io
-oauth:
-    clientId: a2fe0066079fb61004dd
-    clientSecret: f15ff057b9513c8a177f04a7509b670a67681149
-admin: mayanming696
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
 # Directory
 source_dir: source
 public_dir: public
@@ -39,122 +37,87 @@ skip_render:
 new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: false
-  line_number: false
-  auto_detect: false
-  tab_replace:
-
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: false    # default false
-  custom_css:
-
-search:
-  path: search.xml
-  field: post
-
-permalink_pinyin:
   enable: true
-  separator: '-' # default: '-'
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
 
-feed:
-  type: atom
-  path: atom.xml
-  limit: 20
-  hub:
-  content:
-  content_limit: 140
-  content_limit_delim: ' '
-  order_by: -date
-
-Plugins:
-- hexo-generator-baidu-sitemap
-- hexo-generator-sitemap
-
-baidusitemap:
-    path: baidusitemap.xml
-sitemap:
-    path: sitemap.xml
-  
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 12
+  per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
 tag_map:
 
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
-## https://momentjs.com/docs/#/displaying/format/
+## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 12
+per_page: 10
 pagination_dir: page
 
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
 # Extensions
-## Plugins: https://mayanming696.github.io
-## Themes: https://mayanming696.github.io
-theme: matery
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: volantis
 
 # Deployment
-## Docs: https://mayanming696.github.io
+# 上传github 
+## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-- type: git
-  repo:
-    github: git@github.com:mayanming696/mayanming696.github.io.git,master
-
-
-
-baidu_url_submit:
-  count: 100 # 提交最新的一个链接
-  host: mayanming696.com # 在百度站长平台中注册的域名
-  token: GNngradAteMKeHp7 # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
-  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里
-  type: baidu_url_submitter
-
-
-live2d:
-  enable: false
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  tagMode: false
-  log: false
-  model:
-    use: live2d-widget-model-shizuku
-  display:
-    position: left
-    width: 200
-    height: 400
-  mobile:
-    show: false
-  react:
-    opacity: 0.7
-
-
-backup:
   type: git
-  theme: matery
-  message: 备份博客
-  repository: 
-      github: git@github.com:mayanming696/mayanming696.github.io.git,hexo
+  repo: git@github.com:mayanming696/mayanming696.github.io.git,master
+
+# 网站图标，更多尺寸等图标请使用import方式批量导入
+favicon: https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/002.png'
+
+# 首页文章设置图片
+popularPosts:
+  eyeCatchImageAttributeName: headimg
+
+# 引入外部资源
+import:
+  script:
+    - <script src="https://cdn.jsdelivr.net/gh/gaohaotian93/myblog@master/typed.min.js"></script>
+    - <script>window.onload=function(){var typed=new Typed(".subtitle",{strings:['One day mayanming will be somebody','maybe the best of things,','and no good thing ever dies.'],startDelay:100,typeSpeed:100,loop:!0,backSpeed:50,showCursor:!0})}</script>
