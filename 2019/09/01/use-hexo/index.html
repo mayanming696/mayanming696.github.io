@@ -355,7 +355,7 @@
             
 <div class='new-meta-item author'>
   <a class='author' target="_blank" href="https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/headerLogo.jpg" rel="nofollow noopener">
-    <img no-lazy src="">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/headerLogo.jpg">
     <p>Mayanming</p>
   </a>
 </div>
@@ -497,7 +497,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming696/2019/09/01/use-hexo/&title=Hexo博客搭建 - Mayanming Blog&summary=从零开始开始搭建属于自己的Hexo个人博客"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2019/09/01/use-hexo/&title=Hexo博客搭建 - Mayanming Blog&summary=从零开始开始搭建属于自己的Hexo个人博客"
           
           >
           
@@ -509,7 +509,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming696/2019/09/01/use-hexo/&title=Hexo博客搭建 - Mayanming Blog&summary=从零开始开始搭建属于自己的Hexo个人博客"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2019/09/01/use-hexo/&title=Hexo博客搭建 - Mayanming Blog&summary=从零开始开始搭建属于自己的Hexo个人博客"
           
           >
           
@@ -521,7 +521,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming696/2019/09/01/use-hexo/&title=Hexo博客搭建 - Mayanming Blog&summary=从零开始开始搭建属于自己的Hexo个人博客"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2019/09/01/use-hexo/&title=Hexo博客搭建 - Mayanming Blog&summary=从零开始开始搭建属于自己的Hexo个人博客"
           
           >
           
@@ -714,7 +714,7 @@
         <div class="social-wrapper">
           
             
-              <a href="https://mayanming696.com"
+              <a href="https://mayanming.com"
                 class="social fas fa-rss flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -1396,8 +1396,8 @@ var loadCSS = function( href, before, media, attributes ){
       meta: meta,
       placeholder: pagePlaceholder,
       path: path,
-      appId: "TPMmMsYGl6pDmX0g6BrFpc3q-gzGzoHsz",
-      appKey: "j0Y34JVdwpvXbDsKEuEH9pID",
+      appId: "s8dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va",
+      appKey: "d3pLxNmIzKVLi1XGfmHcdOcp",
       pageSize: '6',
       avatar: 'robohash',
       lang: 'zh-cn',
@@ -1464,8 +1464,8 @@ function setSearchService() {
   <script defer>
 
   const LCCounter = {
-    app_id: 'TPMmMsYGl6pDmX0g6BrFpc3q-gzGzoHsz',
-    app_key: 'j0Y34JVdwpvXbDsKEuEH9pID',
+    app_id: 's8dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va',
+    app_key: 'd3pLxNmIzKVLi1XGfmHcdOcp',
     custom_api_server: '',
 
     // 查询存储的记录
@@ -1554,7 +1554,7 @@ function setSearchService() {
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://mayanming696' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://mayanming.com' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -1572,7 +1572,7 @@ function setSearchService() {
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://mayanming696' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://mayanming.com' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -1594,7 +1594,7 @@ function setSearchService() {
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'https://mayanming696' + pv.getAttribute('data-path');
+          var url = 'https://mayanming.com' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增
