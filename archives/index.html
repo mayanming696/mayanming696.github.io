@@ -568,7 +568,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Dec 18 2020 16:39:29 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Fri Dec 18 2020 17:18:31 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2020-12-18 日</div>
           
         </div>
@@ -1373,6 +1373,46 @@ var loadCSS = function( href, before, media, attributes ){
   $(function () {
     pjax_valine();
   });
+</script>
+<script>
+  var pushLink ="https://push.xuthus.cc/send/67eb07bd92c31cdc8fc2cb9922aac939";
+  var siteName = "W4J1e's blog";
+  var valineButton=document.getElementsByClassName("vsubmit vbtn")[0];
+  var title = siteName + "上又有新评论啦~!\n";
+
+  function send_valine() {
+    //获取元素信息
+    var pagename = document.title;
+    var pageurl = document.URL;
+    var pushtime = new Date();
+    var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+    var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+    var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+    var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+    content =
+      title +
+      "昵称：" + vnick +
+      "\n邮箱：" + vmail +
+      "\n网站地址：" + vlink +
+      "\n文章标题：" + pagename +
+      "\n评论内容：" + veditor +
+      "\n文章链接：" + pageurl +
+      "\n评论时间" + pushtime.toLocaleString() + "\n";
+    var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+    httpRequest.open("POST", pushLink, true); //第二步：打开连接
+    httpRequest.setRequestHeader(
+      "Content-type",
+      "application/json"
+    ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(content); //发送请求 
+  }
+
+  document.body.addEventListener('click', function(e) {
+  if(e.target.className.indexOf('vsubmit') === -1) {
+    return;
+  }
+  send_valine();
+})
 </script>
 
 
