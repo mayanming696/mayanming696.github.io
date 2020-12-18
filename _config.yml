@@ -15,7 +15,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: https://mayanming696
+url: https://mayanming.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -108,6 +108,7 @@ theme: volantis
 deploy:
   type: git
   repo: git@github.com:mayanming696/mayanming696.github.io.git,master
+  coding: https://e.coding.net/mayanming696/mayanming696/mayanming696.com.git,master
 
 # 网站图标，更多尺寸等图标请使用import方式批量导入
 favicon: https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/002.png'
