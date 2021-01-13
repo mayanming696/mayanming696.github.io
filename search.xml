@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Vue 父子组件之间传值</title>
+      <link href="2021/01/13/Vue-component-parameter/"/>
+      <url>2021/01/13/Vue-component-parameter/</url>
+      
+        <content type="html"><![CDATA[<p>Vue 父组件与子组件之间的参数传递解析</p><a id="more"></a><h2 id="Vue-父组件-gt-子组件（动态传值"><a href="#Vue-父组件-gt-子组件（动态传值" class="headerlink" title="Vue 父组件=&gt;子组件（动态传值)"></a>Vue 父组件=&gt;子组件（动态传值)</h2><p>遇到问题前提uni-app框架，项目需要父组件接口获取数据后(动态)传值并调用子组件，一直都是空值，甚至打印长度为0，数据却显示长度不为0。</p><h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><p>props传值，传过来的值需要用watch监听并更新，否则为<span class='p red'>空值</span><br>原因数据还没有被赋值的时候，子组件就已经显示在页面上了</p><pre><code class="bash">父组件（template） &lt;shmily-drag-image :list=&quot;dataImgList&quot;&gt;&lt;/shmily-drag-image&gt;父组件 （script）this.dataImgList=res.data.imgList; //参数赋值</code></pre><p>这里把接口返回的数组赋值给<br>this.dataImgList，然后把该数组传给子组件定义的props属性list</p><pre><code class="bash">子组件（props）   props: &#123;    list: &#123;      type: Array,      default: function() &#123;        return []      &#125;    &#125;   &#125;子组件 (watch：监听数据变化)watch:&#123;    list(newVal,oldVal)&#123;     if(newVal)&#123;       this.sonImgList=curVal;      &#125;   &#125;,&#125;</code></pre><p>此方法数据 this.list 数据进行父组件子组件绑定</p><h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><p>通过ref属性，父组件调用子组件的方法，把要传的数组作为参数传给子组件，子组件获取该参数，并使用</p><pre><code class="bash">父组件（template）&lt;shmily-drag-image ref=&quot;fatherImgList&quot;  :list=&quot;dataImgList&quot; &gt;&lt;/shmily-drag-image&gt;父组件 （script）this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre><pre><code class="bash">子组件（script）    getSrcList(val)&#123;        this.sonImgList=val;    &#125;,</code></pre><p>子组件向父组件传值，如果是动态改变的，也要记得加<span class='p red'>watch</span>函数，动态改变之后执行的操作写在watch里，比如 <span class='p red'>this.$emit</span>的函数！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用jsDelivr 开源公共 CDN</title>
       <link href="2020/12/12/use-cdn/"/>
       <url>2020/12/12/use-cdn/</url>
@@ -27,7 +46,7 @@
       <link href="2019/10/03/postpage-optimization/"/>
       <url>2019/10/03/postpage-optimization/</url>
       
-        <content type="html"><![CDATA[<p>页面优化以及方向</p><a id="more"></a><h2 id="1-资源压缩合并，减少Http请求"><a href="#1-资源压缩合并，减少Http请求" class="headerlink" title="1.资源压缩合并，减少Http请求"></a>1.资源压缩合并，减少Http请求</h2><ul><li>合并图片，css,js文件合并，css,js压缩</li><li>图片较多可以使用lazyLoad(懒加载)等技术优化</li><li>使用精灵图，SVG图片，或iconfont等</li></ul><h2 id="2-非核心代码异步加载"><a href="#2-非核心代码异步加载" class="headerlink" title="2.非核心代码异步加载"></a>2.非核心代码异步加载</h2><details cyan blue><summary> 异步加载的方式(不含框架，只是原理) </summary>              <div class='content'>              <p>1.动态脚本加载<br>2.defer<br>3.async</p>              </div>            </details><p>1动态脚本加载：<br>使用document.createElement创建一个script标签，即document.createElement‘script′，在需要的时候调用。</p><pre><code class="bash">&lt;script&gt;document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&quot;);&lt;/script&gt;</code></pre><p>2.defer<br>通过异步的方式加载defer1.js文件：</p><pre><code class="bash">&lt;script&gt;&lt;script src=&quot;./defer1.js&quot; defer&gt;&lt;/script&gt;&lt;/script&gt;</code></pre><p>3async：</p><pre><code class="bash">&lt;script&gt;&lt;script src=&quot;./async1.js&quot; async&gt;&lt;/script&gt;&lt;/script&gt;</code></pre><span class='p red'>defer和async的区别：</span><ul><li>defer：在HTML解析完之后才会执行。如果是多个，则按照加载的顺序依次执行。</li><li>async：在加载完之后立即执行。如果是多个，执行顺序和加载顺序无关。</li></ul><h2 id="3-利用浏览器缓存"><a href="#3-利用浏览器缓存" class="headerlink" title="3.利用浏览器缓存"></a>3.利用浏览器缓存</h2>]]></content>
+        <content type="html"><![CDATA[<p>页面优化以及方向</p><a id="more"></a><h2 id="1-资源压缩合并，减少Http请求"><a href="#1-资源压缩合并，减少Http请求" class="headerlink" title="1.资源压缩合并，减少Http请求"></a>1.资源压缩合并，减少Http请求</h2><ul><li>合并图片，css,js文件合并，css,js压缩</li><li>图片较多可以使用lazyLoad(懒加载)等技术优化</li><li>使用精灵图，SVG图片，或iconfont等</li></ul><h2 id="2-非核心代码异步加载"><a href="#2-非核心代码异步加载" class="headerlink" title="2.非核心代码异步加载"></a>2.非核心代码异步加载</h2><details cyan blue><summary> 异步加载的方式(不含框架，只是原理) </summary>              <div class='content'>              <p>1.动态脚本加载<br>2.defer<br>3.async</p>              </div>            </details><p>1动态脚本加载：<br>使用document.createElement创建一个script标签，即document.createElement‘script′，在需要的时候调用。</p><pre><code class="bash">&lt;script&gt;document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&quot;);&lt;/script&gt;</code></pre><p>2.defer<br>通过异步的方式加载defer1.js文件：</p><pre><code class="bash">&lt;script&gt;&lt;script src=&quot;./defer1.js&quot; defer&gt;&lt;/script&gt;&lt;/script&gt;</code></pre><p>3async：</p><pre><code class="bash">&lt;script&gt;&lt;script src=&quot;./async1.js&quot; async&gt;&lt;/script&gt;&lt;/script&gt;</code></pre><span class='p red'>defer和async的区别：</span><ul><li>defer：在HTML解析完之后才会执行。如果是多个，则按照加载的顺序依次执行。</li><li>async：在加载完之后立即执行。如果是多个，执行顺序和加载顺序无关。</li></ul><h2 id="3-利用浏览器缓存"><a href="#3-利用浏览器缓存" class="headerlink" title="3.利用浏览器缓存"></a>3.利用浏览器缓存</h2><p>浏览器在加载资源时，先根据这个资源的一些http header判断它是否命中强缓存，强缓存如果命中，浏览器直接从自己的缓存中读取资源，不会发请求到服务器。<br>比如某个css文件，如果浏览器在加载它所在的网页时，这个css文件的缓存配置命中了强缓存，浏览器就直接从缓存中加载这个css，连请求都不会发送到网页所在服务器；<br>缓存分为：</p><ul><li>强缓存</li><li>协商缓存</li></ul><p>当强缓存没有命中的时候，浏览器一定会发送一个请求到服务器，通过服务器端依据资源的另外一些http header验证这个资源是否命中协商缓存，如果协商缓存命中，服务器会将这个请求返回，但是不会返回这个资源的数据，而是告诉客户端可以直接从缓存中加载这个资源，于是浏览器就又会从自己的缓存中去加载这个资源。</p><p>强缓存与协商缓存的共同点是：如果命中，都是从客户端缓存中加载资源，而不是从服务器加载资源数据；区别是：强缓存不发请求到服务器，协商缓存会发请求到服务器。</p><p>当协商缓存也没有命中的时候，浏览器直接从服务器加载资源数据。</p>]]></content>
       
       
       

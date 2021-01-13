@@ -430,7 +430,15 @@ document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&q
 <li>defer：在HTML解析完之后才会执行。如果是多个，则按照加载的顺序依次执行。</li>
 <li>async：在加载完之后立即执行。如果是多个，执行顺序和加载顺序无关。</li>
 </ul>
-<h2 id="3-利用浏览器缓存"><a href="#3-利用浏览器缓存" class="headerlink" title="3.利用浏览器缓存"></a>3.利用浏览器缓存</h2>
+<h2 id="3-利用浏览器缓存"><a href="#3-利用浏览器缓存" class="headerlink" title="3.利用浏览器缓存"></a>3.利用浏览器缓存</h2><p>浏览器在加载资源时，先根据这个资源的一些http header判断它是否命中强缓存，强缓存如果命中，浏览器直接从自己的缓存中读取资源，不会发请求到服务器。<br>比如某个css文件，如果浏览器在加载它所在的网页时，这个css文件的缓存配置命中了强缓存，浏览器就直接从缓存中加载这个css，连请求都不会发送到网页所在服务器；<br>缓存分为：</p>
+<ul>
+<li>强缓存</li>
+<li>协商缓存</li>
+</ul>
+<p>当强缓存没有命中的时候，浏览器一定会发送一个请求到服务器，通过服务器端依据资源的另外一些http header验证这个资源是否命中协商缓存，如果协商缓存命中，服务器会将这个请求返回，但是不会返回这个资源的数据，而是告诉客户端可以直接从缓存中加载这个资源，于是浏览器就又会从自己的缓存中去加载这个资源。</p>
+<p>强缓存与协商缓存的共同点是：如果命中，都是从客户端缓存中加载资源，而不是从服务器加载资源数据；区别是：强缓存不发请求到服务器，协商缓存会发请求到服务器。</p>
+<p>当协商缓存也没有命中的时候，浏览器直接从服务器加载资源数据。</p>
+
   
   
     
@@ -449,10 +457,10 @@ document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&q
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-13T18:32:25+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-07T10:47:21+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月13日</p>
+    <p>更新于：2021年1月7日</p>
   </a>
 </div>
 
@@ -645,13 +653,13 @@ git c...</p>
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <a href='/archives/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
     
   </header>
 
 
     <div class='content'>
-      <a href="/tags/Ajax/" style="font-size: 14px; color: #999">Ajax</a> <a href="/tags/CDN/" style="font-size: 14px; color: #999">CDN</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">优化</a>
+      <a href="/tags/Ajax/" style="font-size: 14px; color: #999">Ajax</a> <a href="/tags/CDN/" style="font-size: 14px; color: #999">CDN</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Vue/" style="font-size: 14px; color: #999">Vue</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">优化</a>
     </div>
   </section>
 
@@ -1482,6 +1490,10 @@ function setSearchService() {
 
 
 
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
 
 
 
