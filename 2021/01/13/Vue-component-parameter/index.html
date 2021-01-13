@@ -25,7 +25,7 @@
   
 
   
-    <meta name="description" content="Vue 父组件与子组件之间的参数传递解析">
+    <meta name="description" content="Vue 父子组件之间的参数传递解析">
   
 
   <!-- feed -->
@@ -399,7 +399,7 @@
 
 
   
-  <p>Vue 父组件与子组件之间的参数传递解析</p>
+  <p>Vue 父子组件之间的参数传递解析</p>
 <a id="more"></a>
 
 <h2 id="Vue-父组件-gt-子组件（动态传值"><a href="#Vue-父组件-gt-子组件（动态传值" class="headerlink" title="Vue 父组件=&gt;子组件（动态传值)"></a>Vue 父组件=&gt;子组件（动态传值)</h2><p>遇到问题前提uni-app框架，项目需要父组件接口获取数据后(动态)传值并调用子组件，一直都是空值，甚至打印长度为0，数据却显示长度不为0。</p>
@@ -457,7 +457,7 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-13T11:31:24+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-13T14:10:59+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月13日</p>
@@ -482,7 +482,7 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/01/13/Vue-component-parameter/&title=Vue 父子组件之间传值 - Mayanming Blog&summary=Vue 父组件与子组件之间的参数传递解析"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/01/13/Vue-component-parameter/&title=Vue 父子组件之间传值 - Mayanming Blog&summary=Vue 父子组件之间的参数传递解析"
           
           >
           
@@ -494,7 +494,7 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/01/13/Vue-component-parameter/&title=Vue 父子组件之间传值 - Mayanming Blog&summary=Vue 父组件与子组件之间的参数传递解析"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/01/13/Vue-component-parameter/&title=Vue 父子组件之间传值 - Mayanming Blog&summary=Vue 父子组件之间的参数传递解析"
           
           >
           
@@ -506,7 +506,7 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/01/13/Vue-component-parameter/&title=Vue 父子组件之间传值 - Mayanming Blog&summary=Vue 父组件与子组件之间的参数传递解析"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/01/13/Vue-component-parameter/&title=Vue 父子组件之间传值 - Mayanming Blog&summary=Vue 父子组件之间的参数传递解析"
           
           >
           
@@ -1401,46 +1401,34 @@ var loadCSS = function( href, before, media, attributes ){
     pjax_valine();
   });
 </script>
+<!-- Qmsg -->
 <script>
-  var pushLink ="https://push.xuthus.cc/send/67eb07bd92c31cdc8fc2cb9922aac939";
-  var siteName = "W4J1e's blog";
-  var valineButton=document.getElementsByClassName("vsubmit vbtn")[0];
-  var title = siteName + "上又有新评论啦~!\n";
-
-  function send_valine() {
-    //获取元素信息
-    var pagename = document.title;
-    var pageurl = document.URL;
-    var pushtime = new Date();
-    var vnick = document.getElementsByClassName("vnick vinput")[0].value;
-    var vmail = document.getElementsByClassName("vmail vinput")[0].value;
-    var vlink = document.getElementsByClassName("vlink vinput")[0].value;
-    var veditor = document.getElementsByClassName("veditor vinput")[0].value;
-    content =
-      title +
-      "昵称：" + vnick +
-      "\n邮箱：" + vmail +
-      "\n网站地址：" + vlink +
-      "\n文章标题：" + pagename +
-      "\n评论内容：" + veditor +
-      "\n文章链接：" + pageurl +
-      "\n评论时间" + pushtime.toLocaleString() + "\n";
-    var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
-    httpRequest.open("POST", pushLink, true); //第二步：打开连接
-    httpRequest.setRequestHeader(
-      "Content-type",
-      "application/json"
-    ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
-    httpRequest.send(content); //发送请求 
-  }
-
-  document.body.addEventListener('click', function(e) {
-  if(e.target.className.indexOf('vsubmit') === -1) {
-    return;
-  }
-  send_valine();
-})
-</script>
+  var title2="msg=W4J1e's blog又有新评论啦~！\n"
+  var SCKEY_Qmsg="https://qmsg.zendee.cn/send/1fcff5ee2a60fc8b75fedf5390da4c0f"
+  var ValineButton=document.getElementsByClassName("vsubmit vbtn")[0];
+  function send_valine_Qmsg(){
+    var pagename=document.title;
+    var wz=pagename.indexOf('|');
+    var res=pagename.substring(0,wz);
+    var pageurl=document.URL;
+    var ptime=new Date();
+    var vnick=document.getElementsByClassName("vnick vinput")[0].value;
+    var vmail=document.getElementsByClassName("vmail vinput")[0].value;
+    var vlink=document.getElementsByClassName("vlink vinput")[0].value;
+    var veditor=document.getElementsByClassName("veditor vinput")[0].value;
+    var data="昵称："+vnick+"\n邮箱："+vmail+"\n网站地址："+vlink+"\n当前页面："+pagename+"\n评论内容："+veditor+"\n跳转链接："+pageurl+"\n评论时间"+ptime.toLocaleString();
+    var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象
+    httpRequest.open('POST',SCKEY_Qmsg, true); //第二步：打开连接
+    httpRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+    httpRequest.send(title2+data);//发送请求 
+  };
+  
+     document.body.addEventListener('click', function(e) {
+     if(e.target.className.indexOf('vsubmit') === -1) {
+       return;
+     }
+     send_valine_Qmsg();
+  })
 
 
 
