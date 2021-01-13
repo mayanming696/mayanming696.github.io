@@ -1,7 +1,7 @@
 ---
 title: Vue 父子组件之间传值
 date: 2021-01-13 10:46:14
-# headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/logo-horizontal.svg'
+headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/component.png'
 summary: Vue提升
 cover: true
 tags:

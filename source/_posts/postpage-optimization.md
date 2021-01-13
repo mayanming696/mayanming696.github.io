@@ -1,6 +1,6 @@
 ---
 title: 前端页面性能优化
-headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/logo-horizontal.svg'
+headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/optimization.png'
 date: 2019-10-03 11:34:59
 summary: 前端页面性能优化
 cover: true
