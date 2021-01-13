@@ -339,7 +339,8 @@ sidebar:
       header:
         icon: fas fa-tags
         title: 热门标签
-        url: /blog/tags/
+        # url: /blog/tags/
+        url: /archives/
       min_font: 14
       max_font: 24
       color: true
@@ -509,7 +510,7 @@ plugins:
 
   # Typing Effects
   comment_typing:
-    enable: #true
+    enable: true
     js: https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js
 
   # Slide Background
