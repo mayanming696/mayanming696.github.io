@@ -1,6 +1,6 @@
 ---
 title: Ajax基础详解
-headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/heandimgbb.png'
+headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/ajax.png'
 date: 2019-9-27 14:39:05
 summary: Ajax详解
 cover: true

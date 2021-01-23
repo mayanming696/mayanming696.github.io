@@ -106,16 +106,34 @@ theme: volantis
 # 上传github 
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
+  # type: git
   repo: git@github.com:mayanming696/mayanming696.github.io.git,master
   coding: https://e.coding.net/mayanming696/mayanming696/mayanming696.com.git,master
+  type: baidu_url_submitter #新加的主动推送 ```
 
 # 网站图标，更多尺寸等图标请使用import方式批量导入
-favicon: https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/002.png'
+favicon: https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/002.png
 
 # 首页文章设置图片
 popularPosts:
   eyeCatchImageAttributeName: headimg
+
+# 百度搜录
+baidu_url_submit:
+  count: 100                 # 提交最新的多少个链接
+  host: mayanming.com       # 在百度站长平台中添加的域名
+  token: GNngradAteMKeHp7   # 秘钥
+  path: baidu_urls.txt
+
+# 谷歌、百度站点地图生成
+Plugins:
+- hexo-generator-baidu-sitemap
+- hexo-generator-sitemap
+
+baidusitemap:
+    path: baidusitemap.xml
+sitemap:
+    path: sitemap.xml
 
 # 引入外部资源
 import:

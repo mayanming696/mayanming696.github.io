@@ -304,13 +304,13 @@ sidebar:
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
         - icon: fas fa-rss
-          url: /atom.xml
+          url: / #/atom.xml
         - icon: fas fa-envelope
           url: mailto:543229218@qq.com
         - icon: fab fa-github
           url: https://github.com/volantis-x/
         - icon: fas fa-headphones-alt
-          url: /
+          url: https://music.163.com/#/user?id=313725884
     # ---------------------------------------
     # toc widget (valid only in articles)
     toc:

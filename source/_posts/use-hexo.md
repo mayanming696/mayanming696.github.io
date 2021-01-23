@@ -1,7 +1,7 @@
 ---
 title: Hexo博客搭建
 date: 2019-9-01 14:39:05
-headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/hexo-logo.svg'
+headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/hexo.png'
 summary: Hexo博客搭建
 cover: true
 tags:
