@@ -215,7 +215,7 @@ comments:
   # Valine
   # https://valine.js.org/
   valine:
-    appId: s8dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va
+    appId: s88dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va
     appKey: d3pLxNmIzKVLi1XGfmHcdOcp
     # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # 全局评论地址
@@ -578,8 +578,9 @@ plugins:
   # 使用过旧版本的请修改Leancloud shuoshuo class部分列名：https://artitalk.js.org/release.html
   # 除appID和appKEY外均为选填项
   artitalk:
+    #浏览人数记录ID
     # Set `layout: artitalk` to enable in page
-    appId: s8dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va # your appID
+    appId: s88dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va # your appID
     appKey: d3pLxNmIzKVLi1XGfmHcdOcp # your appKEY
     serverURL:  https://mayanming.com
     # lang: # 语言设置，zh为汉语，en为英语，es为西班牙语。默认为汉语
@@ -844,10 +845,11 @@ custom_css:
 
 
 ############################### Analytics ############################### > start
+# 统计测试关闭
 analytics:
   busuanzi: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
   leancloud: # 请使用自己的 id & key 以防止数据丢失
-    app_id: s8dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va
+    app_id: s88dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va
     app_key: d3pLxNmIzKVLi1XGfmHcdOcp
     custom_api_server: # 国际版一般不需要写，除非自定义了 API Server
 ############################### Analytics ############################### > end
