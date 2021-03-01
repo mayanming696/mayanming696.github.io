@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Vue 父子组件之间传值 - Mayanming Blog</title>
+  <title>CSS-transition - Mayanming Blog</title>
   
-    <meta name="keywords" content="Vue">
+    <meta name="keywords" content="CSS3">
   
 
   
-    <meta name="description" content="Vue 父子组件之间的参数传递解析">
+    <meta name="description" content="真是项目需要引用一些效果，手写完后感觉还可以就去想去多了解遇到以为大神的博客详解，我想跟自己说我想做一个切图仔。">
   
 
   <!-- feed -->
@@ -336,18 +336,12 @@
 
 
   
-    <div class='headimg-div'>
-      <a class='headimg-a'>
-        <img class='headimg' src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/component.png'/>
-      </a>
-    </div>
-  
   <div class="article-meta" id="top">
     
     
     
       <h1 class="title">
-        Vue 父子组件之间传值
+        CSS-transition
       </h1>
       <div class='new-meta-box'>
         
@@ -371,7 +365,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年1月13日</p>
+    <p>发布于：2021年1月27日</p>
   </a>
 </div>
 
@@ -382,7 +376,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="Vue 父子组件之间传值" data-path="/2021/01/13/Vue-component-parameter/">
+      <div id="lc-pv" data-title="CSS-transition" data-path="/2021/01/27/Css-transition/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -399,46 +393,18 @@
 
 
   
-  <p>Vue 父子组件之间的参数传递解析</p>
+  <div class="note quote"><p>真是项目需要引用一些效果，手写完后感觉还可以就去想去多了解遇到以为大神的博客详解，我想跟自己说我想做一个切图仔。</p></div>
+
 <a id="more"></a>
 
-<h2 id="Vue-父组件-gt-子组件（动态传值"><a href="#Vue-父组件-gt-子组件（动态传值" class="headerlink" title="Vue 父组件=&gt;子组件（动态传值)"></a>Vue 父组件=&gt;子组件（动态传值)</h2><p>遇到问题前提uni-app框架，项目需要父组件接口获取数据后(动态)传值并调用子组件，一直都是空值，甚至打印长度为0，数据却显示长度不为0。</p>
-<h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><p>props传值，传过来的值需要用watch监听并更新，否则为<span class='p red'>空值</span><br>原因数据还没有被赋值的时候，子组件就已经显示在页面上了</p>
-<pre><code class="bash">父组件（template）
- &lt;shmily-drag-image :list=&quot;dataImgList&quot;&gt;&lt;/shmily-drag-image&gt;
+<p>先上大神的信息</p>
+<div class="tag link"><a class="link-card" title="ChokCoco" target="_blank" rel="noopener" href="https://www.cnblogs.com/coco1s"><div class="left"><img src="https://pic.cnblogs.com/avatar/608782/20160411131806.png" class="lazyload" data-srcset="https://pic.cnblogs.com/avatar/608782/20160411131806.png" srcset="data:image/png;base64,666"/></div><div class="right"><p class="text">ChokCoco</p><p class="url">https://www.cnblogs.com/coco1s</p></div></a></div>
+<div class="tag link"><a class="link-card" title="ChokCoco(Github)" target="_blank" rel="noopener" href="https://github.com/chokcoco"><div class="left"><img src="https://pic.cnblogs.com/avatar/608782/20160411131806.png" class="lazyload" data-srcset="https://pic.cnblogs.com/avatar/608782/20160411131806.png" srcset="data:image/png;base64,666"/></div><div class="right"><p class="text">ChokCoco(Github)</p><p class="url">https://github.com/chokcoco</p></div></a></div>
 
-父组件 （script）
-this.dataImgList=res.data.imgList; //参数赋值</code></pre>
-<p>这里把接口返回的数组赋值给<br>this.dataImgList，然后把该数组传给子组件定义的props属性list</p>
-<pre><code class="bash">子组件（props）
-   props: &#123;
-    list: &#123;
-      type: Array,
-      default: function() &#123;
-        return []
-      &#125;
-    &#125;
-   &#125;
-子组件 (watch：监听数据变化)
-watch:&#123;
-    list(newVal,oldVal)&#123;
-     if(newVal)&#123;
-       this.sonImgList=curVal;
-      &#125;
-   &#125;,
-&#125;</code></pre>
-<p>此方法数据 this.list 数据进行父组件子组件绑定</p>
-<h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><p>通过ref属性，父组件调用子组件的方法，把要传的数组作为参数传给子组件，子组件获取该参数，并使用</p>
-<pre><code class="bash">父组件（template）
-&lt;shmily-drag-image ref=&quot;fatherImgList&quot;  :list=&quot;dataImgList&quot; &gt;&lt;/shmily-drag-image&gt;
-父组件 （script）
-this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
-<pre><code class="bash">子组件（script）
-    getSrcList(val)&#123;
-        this.sonImgList=val;
-    &#125;,</code></pre>
-<p>子组件向父组件传值，如果是动态改变的，也要记得加<span class='p red'>watch</span>函数，动态改变之后执行的操作写在watch里，比如 <span class='p red'>this.$emit</span>的函数！</p>
+<h2 id="自己手写的动画效果"><a href="#自己手写的动画效果" class="headerlink" title="自己手写的动画效果"></a>自己手写的动画效果</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/* // 点击效果 */</span><br><span class="line">.waves &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">	-webkit-tap-highlight-color:transparent;</span><br><span class="line">&#125;</span><br><span class="line">.waves:after &#123;</span><br><span class="line">	content: <span class="string">&quot;&quot;</span>;</span><br><span class="line">	display: block;</span><br><span class="line">	position: absolute;</span><br><span class="line">	width: 100%;</span><br><span class="line">	height: 100%;</span><br><span class="line">	top: 0;</span><br><span class="line">	left: 0;</span><br><span class="line">	pointer-events: none;</span><br><span class="line">	background-image: radial-gradient(circle, <span class="comment">#fff 10%, transparent 10.01%);</span></span><br><span class="line">	background-repeat: no-repeat;</span><br><span class="line">	background-position: 50%;</span><br><span class="line">	transform: scale(10, 10);</span><br><span class="line">	opacity: 0;</span><br><span class="line">	transition: transform .3s, opacity .5s ease-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.waves.dark-waves:after&#123;</span><br><span class="line">	background-image: radial-gradient(circle, <span class="comment">#333 10%, transparent 10.01%);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.waves:active:after &#123;</span><br><span class="line">	transform: scale(0, 0);</span><br><span class="line">	opacity: .3;</span><br><span class="line">	transition: 0s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p><img src="wavesButton.gif" class="lazyload" data-srcset="wavesButton.gif" srcset="data:image/png;base64,666" alt="真实项目点击效果"></p>
+<iframe id="cp_embed_NWbKjjg" src="//codepen.io/mayanming696/embed/NWbKjjg?height=300]&theme-id=dark&slug-hash=NWbKjjg&default-tab=[" scrolling="no" frameborder="no" height="300]" allowTransparency="true" allowfullscreen="true" class="cp_embed_iframe" style="width: 100%; overflow: hidden;"></iframe>
   
   
     
@@ -457,10 +423,10 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-13T14:10:59+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-28T10:15:28+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月13日</p>
+    <p>更新于：2021年1月28日</p>
   </a>
 </div>
 
@@ -469,7 +435,7 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Vue/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Vue</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CSS3/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CSS3</p></a></div>
 
 
         
@@ -482,7 +448,7 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/01/13/Vue-component-parameter/&title=Vue 父子组件之间传值 - Mayanming Blog&summary=Vue 父子组件之间的参数传递解析"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/01/27/Css-transition/&title=CSS-transition - Mayanming Blog&summary=真是项目需要引用一些效果，手写完后感觉还可以就去想去多了解遇到以为大神的博客详解，我想跟自己说我想做一个切图仔。"
           
           >
           
@@ -494,7 +460,7 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/01/13/Vue-component-parameter/&title=Vue 父子组件之间传值 - Mayanming Blog&summary=Vue 父子组件之间的参数传递解析"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/01/27/Css-transition/&title=CSS-transition - Mayanming Blog&summary=真是项目需要引用一些效果，手写完后感觉还可以就去想去多了解遇到以为大神的博客详解，我想跟自己说我想做一个切图仔。"
           
           >
           
@@ -506,7 +472,7 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/01/13/Vue-component-parameter/&title=Vue 父子组件之间传值 - Mayanming Blog&summary=Vue 父子组件之间的参数传递解析"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/01/27/Css-transition/&title=CSS-transition - Mayanming Blog&summary=真是项目需要引用一些效果，手写完后感觉还可以就去想去多了解遇到以为大神的博客详解，我想跟自己说我想做一个切图仔。"
           
           >
           
@@ -531,7 +497,7 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="Vue 父子组件之间传值" data-path="/2021/01/13/Vue-component-parameter/">
+      <div id="lc-pv" data-title="CSS-transition" data-path="/2021/01/27/Css-transition/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -551,9 +517,9 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
           
 <div class="new-meta-item comments-count">
   
-  <a href="/2021/01/13/Vue-component-parameter/#comments">
+  <a href="/2021/01/27/Css-transition/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/01/13/Vue-component-parameter/">0</span>
+    <span class="valine-comment-count" data-xid="/2021/01/27/Css-transition/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -576,25 +542,13 @@ this.$refs.fatherImgList.getSrcList(this.dataImgList); </code></pre>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/01/27/Css-transition/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>CSS-transition</p>
-          <p class='content'>真是项目需要引用一些效果，手写完后感觉还可以就去想去多了解遇到以为大神的博客详解，我想跟自己说我想做一个切图仔。
-
-
-
-先上大神的信息
-ChokCocohttps://www.cnblogs.c...</p>
-        </a>
       
-      
-        <a class='next' href='/2020/12/12/use-cdn/'>
-          <p class='title'>使用jsDelivr 开源公共 CDN<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速
+        <a class='next' href='/2021/01/13/Vue-component-parameter/'>
+          <p class='title'>Vue 父子组件之间传值<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Vue 父子组件之间的参数传递解析
 
 
-新建Github仓库
-连接Github仓库在本地目录右键 Git Bash Here，执行以下命令：
-git c...</p>
+Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项目需要父组件接口获取数据后(动态)传值并调用子组件，一直都是空值，甚至打印长度...</p>
         </a>
       
     </div>
@@ -637,7 +591,7 @@ git c...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-%E7%88%B6%E7%BB%84%E4%BB%B6-gt-%E5%AD%90%E7%BB%84%E4%BB%B6%EF%BC%88%E5%8A%A8%E6%80%81%E4%BC%A0%E5%80%BC"><span class="toc-text">Vue 父组件&#x3D;&gt;子组件（动态传值)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A"><span class="toc-text">方法一：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A"><span class="toc-text">方法二：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E6%89%8B%E5%86%99%E7%9A%84%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C"><span class="toc-text">自己手写的动画效果</span></a></li></ol>
     </div>
   </section>
 
@@ -679,7 +633,7 @@ git c...</p>
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Vue 父子组件之间传值";
+  pdata.postTitle="CSS-transition";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

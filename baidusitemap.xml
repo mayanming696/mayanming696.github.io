@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://mayanming.com/2019/10/03/postpage-optimization/</loc>
+    <lastmod>2021-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://mayanming.com/2021/01/27/Css-transition/</loc>
+    <lastmod>2021-01-28</lastmod>
+  </url>
+  <url>
     <loc>https://mayanming.com/2019/09/01/use-hexo/</loc>
     <lastmod>2021-01-23</lastmod>
   </url>
@@ -10,10 +18,6 @@
   </url>
   <url>
     <loc>https://mayanming.com/2021/01/13/Vue-component-parameter/</loc>
-    <lastmod>2021-01-13</lastmod>
-  </url>
-  <url>
-    <loc>https://mayanming.com/2019/10/03/postpage-optimization/</loc>
     <lastmod>2021-01-13</lastmod>
   </url>
   <url>

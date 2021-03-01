@@ -438,6 +438,14 @@ document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&q
 <p>当强缓存没有命中的时候，浏览器一定会发送一个请求到服务器，通过服务器端依据资源的另外一些http header验证这个资源是否命中协商缓存，如果协商缓存命中，服务器会将这个请求返回，但是不会返回这个资源的数据，而是告诉客户端可以直接从缓存中加载这个资源，于是浏览器就又会从自己的缓存中去加载这个资源。</p>
 <p>强缓存与协商缓存的共同点是：如果命中，都是从客户端缓存中加载资源，而不是从服务器加载资源数据；区别是：强缓存不发请求到服务器，协商缓存会发请求到服务器。</p>
 <p>当协商缓存也没有命中的时候，浏览器直接从服务器加载资源数据。</p>
+<h2 id="4-使用CDN"><a href="#4-使用CDN" class="headerlink" title="4.使用CDN"></a>4.使用CDN</h2><p>怎么最快地让用户请求资源。一方面是让资源在传输的过程中变小，另外就是CDN。<br>要注意，浏览器第一次打开页面的时候，浏览器缓存是起不了作任何用的，使用CDN，效果就很明显。</p>
+<h2 id="5-DNS预解析（dns-prefetch）"><a href="#5-DNS预解析（dns-prefetch）" class="headerlink" title="5.DNS预解析（dns-prefetch）"></a>5.DNS预解析（dns-prefetch）</h2><p>通过 DNS 预解析来告诉浏览器未来我们可能从某个特定的 URL 获取资源，当浏览器真正使用到该域中的某个资源时就可以尽快地完成 DNS 解析。</p>
+<p>1.打开或关闭DNS预解析<br>你可以通过在服务器端发送 X-DNS-Prefetch-Control 报头。或是在文档中使用值为 http-equiv 的meta标签：</p>
+<pre><code class="bash">    &lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot;&gt;</code></pre>
+<p>需要说明的是，在一些高级浏览器中，页面中所有的超链接 <span class='p red'>a</span> 标签，默认打开了DNS预解析。但是，如果页面中采用的https协议，很多浏览器是默认关闭了超链接的DNS预解析。如果加了上面这行代码，则表明强制打开浏览器的预解析。（如果你能在面试中把这句话说出来，则一定是你出彩的地方）</p>
+<p>2.对指定的域名进行DNS预解析<br>如果我们将来可能从  <span class='p red'>https://github.com</span> 获取图片或音频资源，那么可以在文档顶部的 标签中加入以下内容：</p>
+<pre><code class="bash">    &lt;link rel=&quot;dns-prefetch&quot; href=&quot;https://github.com&quot;&gt;</code></pre>
+<p>当我们从该 URL 请求一个资源时，就不再需要等待 DNS 解析的过程。该技术对使用第三方资源特别有用。    </p>
 
   
   
@@ -457,10 +465,10 @@ document.createElement(&quot;&lt;script src=&#39;a.js&#39;&gt;&lt;\/script&gt;&q
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-13T11:37:05+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-01T16:09:45+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月13日</p>
+    <p>更新于：2021年3月1日</p>
   </a>
 </div>
 
@@ -637,7 +645,7 @@ git c...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%B5%84%E6%BA%90%E5%8E%8B%E7%BC%A9%E5%90%88%E5%B9%B6%EF%BC%8C%E5%87%8F%E5%B0%91Http%E8%AF%B7%E6%B1%82"><span class="toc-text">1.资源压缩合并，减少Http请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%9D%9E%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD"><span class="toc-text">2.非核心代码异步加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%A9%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="toc-text">3.利用浏览器缓存</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%B5%84%E6%BA%90%E5%8E%8B%E7%BC%A9%E5%90%88%E5%B9%B6%EF%BC%8C%E5%87%8F%E5%B0%91Http%E8%AF%B7%E6%B1%82"><span class="toc-text">1.资源压缩合并，减少Http请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%9D%9E%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD"><span class="toc-text">2.非核心代码异步加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%A9%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="toc-text">3.利用浏览器缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BD%BF%E7%94%A8CDN"><span class="toc-text">4.使用CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-DNS%E9%A2%84%E8%A7%A3%E6%9E%90%EF%BC%88dns-prefetch%EF%BC%89"><span class="toc-text">5.DNS预解析（dns-prefetch）</span></a></li></ol>
     </div>
   </section>
 
@@ -659,7 +667,7 @@ git c...</p>
 
 
     <div class='content'>
-      <a href="/tags/Ajax/" style="font-size: 14px; color: #999">Ajax</a> <a href="/tags/CDN/" style="font-size: 14px; color: #999">CDN</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Vue/" style="font-size: 14px; color: #999">Vue</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">优化</a>
+      <a href="/tags/Ajax/" style="font-size: 14px; color: #999">Ajax</a> <a href="/tags/CDN/" style="font-size: 14px; color: #999">CDN</a> <a href="/tags/CSS3/" style="font-size: 14px; color: #999">CSS3</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Vue/" style="font-size: 14px; color: #999">Vue</a> <a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">优化</a>
     </div>
   </section>
 
