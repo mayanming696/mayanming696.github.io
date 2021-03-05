@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -19,13 +21,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>使用jsDelivr 开源公共 CDN - Mayanming Blog</title>
-  
-    <meta name="keywords" content="CDN">
+  <title>归档：2021/3 - Mayanming Blog</title>
   
 
-  
-    <meta name="description" content="记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速">
   
 
   <!-- feed -->
@@ -267,7 +265,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper post dock' style="display: ;">
+        <div id="half" class='cover-wrapper  dock' style="display: ;">
           
             <div id='cover-backstretch'></div>
           
@@ -331,274 +329,76 @@
         
 
 <div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+	
+		
+  <section class="post-list">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
   
-
-
+  
   
     <div class='headimg-div'>
-      <a class='headimg-a'>
-        <img class='headimg' src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/logo-horizontal.svg'/>
+      <a class='headimg-a' href="/2021/03/05/JSNumber/">
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/jsnumber.png'/>
       </a>
     </div>
   
-  <div class="article-meta" id="top">
+  
     
+    <h2 class="article-title" >
+      <a href="/2021/03/05/JSNumber/">
+        JSNumber
+      </a>
+    </h2>
+  
+  <div class='md'>
     
-    
-      <h1 class="title">
-        使用jsDelivr 开源公共 CDN
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author'>
-  <a class='author' target="_blank" href="https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/headerLogo.jpg" rel="nofollow noopener">
-    <img no-lazy src="https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/headerLogo.jpg">
-    <p>Mayanming</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月12日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
-      
-      <div id="lc-pv" data-title="使用jsDelivr 开源公共 CDN" data-path="/2020/12/12/use-cdn/">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
-  </div>
-
-
-          
-        
-      </div>
+      <p>记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。</p>
     
   </div>
-
-
   
-  <p>记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速</p>
-<a id="more"></a>
-
-<h2 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h2><p><img src="new-Github.jpg" class="lazyload" data-srcset="new-Github.jpg" srcset="data:image/png;base64,666" alt="新建githun仓库"></p>
-<h2 id="连接Github仓库"><a href="#连接Github仓库" class="headerlink" title="连接Github仓库"></a>连接Github仓库</h2><p>在本地目录右键 Git Bash Here，执行以下命令：</p>
-<pre><code class="bash">git clone 你的CDN仓库地址</code></pre>
-<h2 id="上传你所需要加速资源"><a href="#上传你所需要加速资源" class="headerlink" title="上传你所需要加速资源"></a>上传你所需要加速资源</h2><p>复制需要上传的资源到本地git仓库 <span class='p blue'>（注：jsDelivr不支持加载超过20M的资源）</span>，<br>在本地存放需加速资源git仓库目录下右键 Git Bash Here，执行以下命令：</p>
-<pre><code class="bash">git status //查看状态
-git add .  //添加所有文件到暂存区
-git commit -m &#39;提交的描述&#39;   //把文件提交到仓库
-git push   //推送至远程仓库</code></pre>
-<h2 id="发布仓库"><a href="#发布仓库" class="headerlink" title="发布仓库"></a>发布仓库</h2><p>在github 你的CDN加速仓库里面的项目里面点击 <span class='p red'>Releases</span> 发布</p>
-<ul>
-<li>进入可设置版本号</li>
-</ul>
-<h2 id="使用jsDelivr引用资源"><a href="#使用jsDelivr引用资源" class="headerlink" title="使用jsDelivr引用资源"></a>使用jsDelivr引用资源</h2><p>使用方法 <span class='p red'>https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</span> </p>
-<p>注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源，除此之外还可以使用某个范围内的版本，查看所有资源等，具体使用方法如下：</p>
-<pre><code class="bash">https://cdn.jsdelivr.net/gh/user/repo@version/file // 加载任何Github发布、提交或分支
-https://cdn.jsdelivr.net/gh/jquery/jquery@3.2/dist/jquery.min.js // 使用版本范围而不是特定版本
-https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js  // 使用版本范围而不是特定版本
-https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该版本以获取最新版本</code></pre>
-
-  
-  
-    
-    <div class='footer'>
+    <div class='meta-v3' line_style='dotted'>
+      <div>
+        
+          
+          <a class='avatar' target="_blank" rel="noopener" href='https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/headerLogo.jpg'><img src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/headerLogo.jpg'></a>
+        
+        <time>2021-03-05</time>
+        
+      </div>
       
-      
-      
+        <div>
+          <a class='readmore' href='/2021/03/05/JSNumber/'>
+            阅读全文
+          </a>
+        </div>
       
     </div>
   
-  
-    
 
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-12T12:20:06+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月12日</p>
-  </a>
 </div>
 
+          </div>
         
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CDN/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CDN</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2020/12/12/use-cdn/&title=使用jsDelivr 开源公共 CDN - Mayanming Blog&summary=记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
       
     
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2020/12/12/use-cdn/&title=使用jsDelivr 开源公共 CDN - Mayanming Blog&summary=记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
+  </section>
+  
     
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2020/12/12/use-cdn/&title=使用jsDelivr 开源公共 CDN - Mayanming Blog&summary=记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-        
-          
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
-      
-      <div id="lc-pv" data-title="使用jsDelivr 开源公共 CDN" data-path="/2020/12/12/use-cdn/">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
-  </div>
-
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/12/12/use-cdn/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/12/12/use-cdn/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-        
-      
-        
-          
-
-        
-      
-    </div>
-  </div>
-
-
-  
   
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2021/01/13/Vue-component-parameter/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Vue 父子组件之间传值</p>
-          <p class='content'>Vue 父子组件之间的参数传递解析
 
-
-Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项目需要父组件接口获取数据后(动态)传值并调用子组件，一直都是空值，甚至打印长度...</p>
-        </a>
-      
-      
-        <a class='next' href='/2019/10/03/postpage-optimization/'>
-          <p class='title'>前端页面性能优化<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>页面优化以及方向
-
-
-1.资源压缩合并，减少Http请求
-合并图片，css,js文件合并，css,js压缩
-图片较多可以使用lazyLoad(懒加载)等技术优化
-使用精灵图，SVG图片，或ico...</p>
-        </a>
-      
-    </div>
-  
-</article>
-
-
-  
-
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
-    
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-  </article>
-
-
-
-
-
-
+	
 </div>
 <aside class='l_side'>
   
@@ -606,22 +406,74 @@ Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项
     
     
 
-
-
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
     
-  <header>
+      
+        <a class='avatar flat-box rectangle' target="_blank" rel="noopener" href='https://about.mayanming696.com/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/headerLogo.jpg'/>
+        </a>
+      
     
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
-  </header>
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">Mayanming Blog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:543229218@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/volantis-x/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user?id=313725884"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
 
+  
 
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAGithub%E4%BB%93%E5%BA%93"><span class="toc-text">新建Github仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5Github%E4%BB%93%E5%BA%93"><span class="toc-text">连接Github仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E4%BD%A0%E6%89%80%E9%9C%80%E8%A6%81%E5%8A%A0%E9%80%9F%E8%B5%84%E6%BA%90"><span class="toc-text">上传你所需要加速资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E4%BB%93%E5%BA%93"><span class="toc-text">发布仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8jsDelivr%E5%BC%95%E7%94%A8%E8%B5%84%E6%BA%90"><span class="toc-text">使用jsDelivr引用资源</span></a></li></ol>
-    </div>
-  </section>
-
+  
+    
+    
 
   
 
@@ -647,9 +499,133 @@ Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项
 
   
 
+  
+
+  
+    
+    
+
+<section class="widget shadow desktop">
+  
+  <header>
+    
+      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>7 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
+        </div>
+        <script>
+          var BirthDay = new Date(new Date('2019/12/25'));
+          var today = new Date();
+          var timeold = (today.getTime() - BirthDay.getTime());
+          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
+          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
+        </script>
+      
+
+
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站访客数：</div>
+          
+          <div><span id="lc-uv"><span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 人</div>
+          
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站总访问量：</div>
+          
+          <div><span id="lc-sv"><span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 次</div>
+          
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>最后活动时间：</div>
+          
+            <div id="last-update" style="display: none;">Fri Mar 05 2021 10:29:29 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-03-05 日</div>
+          
+        </div>
+        
+        <script>
+          function timeago(dateTimeStamp) {
+              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
+              var hour = minute * 60;
+              var day = hour * 24;
+              var week = day * 7;
+              var month = day * 30;
+              var now = new Date().getTime(); //获取当前时间毫秒
+              var diffValue = now - dateTimeStamp; //时间差
+              if (diffValue < 0) {
+                  return;
+              }
+              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
+              var hourC = diffValue / hour;
+              var dayC = diffValue / day;
+              var weekC = diffValue / week;
+              var monthC = diffValue / month;
+              if (monthC >= 1 && monthC <= 3) {
+                  result = " " + parseInt(monthC) + " 月前"
+              } else if (weekC >= 1 && weekC <= 3) {
+                  result = " " + parseInt(weekC) + " 周前"
+              } else if (dayC >= 1 && dayC <= 6) {
+                  result = " " + parseInt(dayC) + " 天前"
+              } else if (hourC >= 1 && hourC <= 23) {
+                  result = " " + parseInt(hourC) + " 小时前"
+              } else if (minC >= 1 && minC <= 59) {
+                  result = " " + parseInt(minC) + " 分钟前"
+              } else if (diffValue >= 0 && diffValue <= minute) {
+                  result = "刚刚"
+              } else {
+                  var datetime = new Date();
+                  datetime.setTime(dateTimeStamp);
+                  var Nyear = datetime.getFullYear();
+                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
+                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+                  result = Nyear + "-" + Nmonth + "-" + Ndate
+              }
+              return result;
+          }
+          var lastUpDate = document.getElementById('last-update').innerHTML;
+          try {
+            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
+          } catch (error) {
+            document.getElementById('last-update-show').innerHTML = '2021-03-05 日';
+          }
+        </script>
+        
+      
+    </div>
+  </div>
+</section>
+
+  
+
 
 </aside>
-
 
 
         
@@ -659,8 +635,8 @@ Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项
 
 <script>
   window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="使用jsDelivr 开源公共 CDN";
+  pdata.ispage=false;
+  pdata.postTitle="";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

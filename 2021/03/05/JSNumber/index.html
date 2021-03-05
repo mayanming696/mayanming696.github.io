@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>使用jsDelivr 开源公共 CDN - Mayanming Blog</title>
+  <title>JSNumber - Mayanming Blog</title>
   
-    <meta name="keywords" content="CDN">
+    <meta name="keywords" content="JavaScript">
   
 
   
-    <meta name="description" content="记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速">
+    <meta name="description" content="记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。">
   
 
   <!-- feed -->
@@ -338,7 +338,7 @@
   
     <div class='headimg-div'>
       <a class='headimg-a'>
-        <img class='headimg' src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/logo-horizontal.svg'/>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/jsnumber.png'/>
       </a>
     </div>
   
@@ -347,7 +347,7 @@
     
     
       <h1 class="title">
-        使用jsDelivr 开源公共 CDN
+        JSNumber
       </h1>
       <div class='new-meta-box'>
         
@@ -371,7 +371,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月12日</p>
+    <p>发布于：2021年3月5日</p>
   </a>
 </div>
 
@@ -382,7 +382,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="使用jsDelivr 开源公共 CDN" data-path="/2020/12/12/use-cdn/">
+      <div id="lc-pv" data-title="JSNumber" data-path="/2021/03/05/JSNumber/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -399,27 +399,69 @@
 
 
   
-  <p>记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速</p>
+  <p>记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。</p>
 <a id="more"></a>
 
-<h2 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h2><p><img src="new-Github.jpg" class="lazyload" data-srcset="new-Github.jpg" srcset="data:image/png;base64,666" alt="新建githun仓库"></p>
-<h2 id="连接Github仓库"><a href="#连接Github仓库" class="headerlink" title="连接Github仓库"></a>连接Github仓库</h2><p>在本地目录右键 Git Bash Here，执行以下命令：</p>
-<pre><code class="bash">git clone 你的CDN仓库地址</code></pre>
-<h2 id="上传你所需要加速资源"><a href="#上传你所需要加速资源" class="headerlink" title="上传你所需要加速资源"></a>上传你所需要加速资源</h2><p>复制需要上传的资源到本地git仓库 <span class='p blue'>（注：jsDelivr不支持加载超过20M的资源）</span>，<br>在本地存放需加速资源git仓库目录下右键 Git Bash Here，执行以下命令：</p>
-<pre><code class="bash">git status //查看状态
-git add .  //添加所有文件到暂存区
-git commit -m &#39;提交的描述&#39;   //把文件提交到仓库
-git push   //推送至远程仓库</code></pre>
-<h2 id="发布仓库"><a href="#发布仓库" class="headerlink" title="发布仓库"></a>发布仓库</h2><p>在github 你的CDN加速仓库里面的项目里面点击 <span class='p red'>Releases</span> 发布</p>
-<ul>
-<li>进入可设置版本号</li>
-</ul>
-<h2 id="使用jsDelivr引用资源"><a href="#使用jsDelivr引用资源" class="headerlink" title="使用jsDelivr引用资源"></a>使用jsDelivr引用资源</h2><p>使用方法 <span class='p red'>https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</span> </p>
-<p>注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源，除此之外还可以使用某个范围内的版本，查看所有资源等，具体使用方法如下：</p>
-<pre><code class="bash">https://cdn.jsdelivr.net/gh/user/repo@version/file // 加载任何Github发布、提交或分支
-https://cdn.jsdelivr.net/gh/jquery/jquery@3.2/dist/jquery.min.js // 使用版本范围而不是特定版本
-https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js  // 使用版本范围而不是特定版本
-https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该版本以获取最新版本</code></pre>
+<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>在JS中，整数的运算<span class='p red'>基本简单</span>可以保证精确；但是<span class='p red'>小数的运算，可能会得到一个不精确的结果</span>。所以，千万不要使用JS进行对精确度要求比较高的运算。</p>
+<p>例如最简单的测试例子：</p>
+<pre><code class="bash">    var textNumber = 0.1 + 0.2;
+    console.log(textNumber);  //打印结果：0.30000000000000004</code></pre>
+<p>具体根本原因：计算机在做运算时，所有的运算都要转换成二进制去计算。然而，有些数字转换成二进制之后，无法精确表示，因此存在浮点数的计算不精确的问题。</p>
+<h2 id="JS处理精度数字运算方法"><a href="#JS处理精度数字运算方法" class="headerlink" title="JS处理精度数字运算方法"></a>JS处理精度数字运算方法</h2><details cyan open><summary> 1.JS处理精度浮点数运算方法 </summary>
+              <div class='content'>
+              <p>如果需要的计算结果不需要特别高精度可以 <span class='p red'>toFix()</span> 对浮点数进行截取。在进行计算。</p>
+              </div>
+            </details>
+
+<details cyan open><summary> 2.JS处理精度浮点数运算方法 </summary>
+              <div class='content'>
+              <p>在实际中，浮点数计算精确度复杂，因此对数学运算精确度使用开源库，例如：<a target="_blank" rel="noopener" href="https://github.com/MikeMcl/decimal.js/">decimal.js</a> ,<a target="_blank" rel="noopener" href="https://github.com/josdejong/mathjs">math.js</a>。这些都是开源并且比较成熟，直接使用。</p><ul><li>Math.js：属于很全面的运算库，文件很大，压缩后的文件就有500kb。如果你的项目涉及到大型的复杂运算，可以使用 Math.js。</li><li>decimal.js：属于轻量的运算库，压缩后的文件只有32kb。大多数项目的数学运算，使用 decimal.js 足够了。</li></ul>
+              </div>
+            </details>
+<p>在使用这两个个开源库时，既可以用 cdn 的方式引入，也可以用 npm 包的方式引入。</p>
+<h3 id="decimal-js语法例子"><a href="#decimal-js语法例子" class="headerlink" title="decimal.js语法例子"></a>decimal.js语法例子</h3><pre><code class="bash">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script src=&quot;https://cdn.bootcdn.net/ajax/libs/decimal.js/10.2.0/decimal.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+            console.log(&#39;加法：&#39;);
+            var a = 0.1;
+            var b = 0.2;
+            console.log(a + b);
+            console.log(new Decimal(a).add(new Decimal(b)).toNumber());
+
+            console.log(&#39;减法：&#39;);
+            var a = 1.0;
+            var b = 0.7;
+            console.log(a - b);
+            console.log(new Decimal(a).sub(new Decimal(b)).toNumber());
+
+            console.log(&#39;乘法：&#39;);
+            var a = 1.01;
+            var b = 1.003;
+            console.log(a * b);
+            console.log(new Decimal(a).mul(new Decimal(b)).toNumber());
+
+            console.log(&#39;除法：&#39;);
+            var a = 0.029;
+            var b = 10;
+            console.log(a / b);
+            console.log(new Decimal(a).div(new Decimal(b)).toNumber());
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3 id="math-js语法例子"><a href="#math-js语法例子" class="headerlink" title="math.js语法例子"></a>math.js语法例子</h3><pre><code class="bash">math.add( ) 加
+
+math.subtract( )减
+math.divide( ) 除
+
+math.multiply( )乘
+</code></pre>
 
   
   
@@ -439,10 +481,10 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-12T12:20:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-05T10:28:03+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月12日</p>
+    <p>更新于：2021年3月5日</p>
   </a>
 </div>
 
@@ -451,7 +493,7 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CDN/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CDN</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>JavaScript</p></a></div>
 
 
         
@@ -464,7 +506,7 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2020/12/12/use-cdn/&title=使用jsDelivr 开源公共 CDN - Mayanming Blog&summary=记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/03/05/JSNumber/&title=JSNumber - Mayanming Blog&summary=记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。"
           
           >
           
@@ -476,7 +518,7 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2020/12/12/use-cdn/&title=使用jsDelivr 开源公共 CDN - Mayanming Blog&summary=记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/03/05/JSNumber/&title=JSNumber - Mayanming Blog&summary=记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。"
           
           >
           
@@ -488,7 +530,7 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2020/12/12/use-cdn/&title=使用jsDelivr 开源公共 CDN - Mayanming Blog&summary=记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/03/05/JSNumber/&title=JSNumber - Mayanming Blog&summary=记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。"
           
           >
           
@@ -513,7 +555,7 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="使用jsDelivr 开源公共 CDN" data-path="/2020/12/12/use-cdn/">
+      <div id="lc-pv" data-title="JSNumber" data-path="/2021/03/05/JSNumber/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -533,9 +575,9 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
           
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/12/12/use-cdn/#comments">
+  <a href="/2021/03/05/JSNumber/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/12/12/use-cdn/">0</span>
+    <span class="valine-comment-count" data-xid="/2021/03/05/JSNumber/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -558,24 +600,15 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/01/13/Vue-component-parameter/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Vue 父子组件之间传值</p>
-          <p class='content'>Vue 父子组件之间的参数传递解析
-
-
-Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项目需要父组件接口获取数据后(动态)传值并调用子组件，一直都是空值，甚至打印长度...</p>
-        </a>
       
-      
-        <a class='next' href='/2019/10/03/postpage-optimization/'>
-          <p class='title'>前端页面性能优化<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>页面优化以及方向
+        <a class='next' href='/2021/01/27/Css-transition/'>
+          <p class='title'>CSS-transition<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>真是项目需要引用一些效果，手写完后感觉还可以就去想去多了解遇到以为大神的博客详解，我想跟自己说我想做一个切图仔。
 
 
-1.资源压缩合并，减少Http请求
-合并图片，css,js文件合并，css,js压缩
-图片较多可以使用lazyLoad(懒加载)等技术优化
-使用精灵图，SVG图片，或ico...</p>
+
+先上大神的信息
+ChokCocohttps://www.cnblogs.c...</p>
         </a>
       
     </div>
@@ -618,7 +651,7 @@ Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAGithub%E4%BB%93%E5%BA%93"><span class="toc-text">新建Github仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5Github%E4%BB%93%E5%BA%93"><span class="toc-text">连接Github仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E4%BD%A0%E6%89%80%E9%9C%80%E8%A6%81%E5%8A%A0%E9%80%9F%E8%B5%84%E6%BA%90"><span class="toc-text">上传你所需要加速资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E4%BB%93%E5%BA%93"><span class="toc-text">发布仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8jsDelivr%E5%BC%95%E7%94%A8%E8%B5%84%E6%BA%90"><span class="toc-text">使用jsDelivr引用资源</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="toc-text">项目背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS%E5%A4%84%E7%90%86%E7%B2%BE%E5%BA%A6%E6%95%B0%E5%AD%97%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-text">JS处理精度数字运算方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#decimal-js%E8%AF%AD%E6%B3%95%E4%BE%8B%E5%AD%90"><span class="toc-text">decimal.js语法例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#math-js%E8%AF%AD%E6%B3%95%E4%BE%8B%E5%AD%90"><span class="toc-text">math.js语法例子</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -660,7 +693,7 @@ Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="使用jsDelivr 开源公共 CDN";
+  pdata.postTitle="JSNumber";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

@@ -1,3 +1,4 @@
+https://mayanming.com/2021/03/05/JSNumber/
 https://mayanming.com/2021/01/27/Css-transition/
 https://mayanming.com/2021/01/13/Vue-component-parameter/
 https://mayanming.com/2020/12/12/use-cdn/

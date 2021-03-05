@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>JSNumber</title>
+      <link href="2021/03/05/JSNumber/"/>
+      <url>2021/03/05/JSNumber/</url>
+      
+        <content type="html"><![CDATA[<p>记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。</p><a id="more"></a><h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>在JS中，整数的运算<span class='p red'>基本简单</span>可以保证精确；但是<span class='p red'>小数的运算，可能会得到一个不精确的结果</span>。所以，千万不要使用JS进行对精确度要求比较高的运算。</p><p>例如最简单的测试例子：</p><pre><code class="bash">    var textNumber = 0.1 + 0.2;    console.log(textNumber);  //打印结果：0.30000000000000004</code></pre><p>具体根本原因：计算机在做运算时，所有的运算都要转换成二进制去计算。然而，有些数字转换成二进制之后，无法精确表示，因此存在浮点数的计算不精确的问题。</p><h2 id="JS处理精度数字运算方法"><a href="#JS处理精度数字运算方法" class="headerlink" title="JS处理精度数字运算方法"></a>JS处理精度数字运算方法</h2><details cyan open><summary> 1.JS处理精度浮点数运算方法 </summary>              <div class='content'>              <p>如果需要的计算结果不需要特别高精度可以 <span class='p red'>toFix()</span> 对浮点数进行截取。在进行计算。</p>              </div>            </details><details cyan open><summary> 2.JS处理精度浮点数运算方法 </summary>              <div class='content'>              <p>在实际中，浮点数计算精确度复杂，因此对数学运算精确度使用开源库，例如：<a href="https://github.com/MikeMcl/decimal.js/">decimal.js</a> ,<a href="https://github.com/josdejong/mathjs">math.js</a>。这些都是开源并且比较成熟，直接使用。</p><ul><li>Math.js：属于很全面的运算库，文件很大，压缩后的文件就有500kb。如果你的项目涉及到大型的复杂运算，可以使用 Math.js。</li><li>decimal.js：属于轻量的运算库，压缩后的文件只有32kb。大多数项目的数学运算，使用 decimal.js 足够了。</li></ul>              </div>            </details><p>在使用这两个个开源库时，既可以用 cdn 的方式引入，也可以用 npm 包的方式引入。</p><h3 id="decimal-js语法例子"><a href="#decimal-js语法例子" class="headerlink" title="decimal.js语法例子"></a>decimal.js语法例子</h3><pre><code class="bash">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;    &lt;head&gt;        &lt;meta charset=&quot;UTF-8&quot; /&gt;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;        &lt;title&gt;Document&lt;/title&gt;    &lt;/head&gt;    &lt;body&gt;        &lt;script src=&quot;https://cdn.bootcdn.net/ajax/libs/decimal.js/10.2.0/decimal.min.js&quot;&gt;&lt;/script&gt;        &lt;script&gt;            console.log(&#39;加法：&#39;);            var a = 0.1;            var b = 0.2;            console.log(a + b);            console.log(new Decimal(a).add(new Decimal(b)).toNumber());            console.log(&#39;减法：&#39;);            var a = 1.0;            var b = 0.7;            console.log(a - b);            console.log(new Decimal(a).sub(new Decimal(b)).toNumber());            console.log(&#39;乘法：&#39;);            var a = 1.01;            var b = 1.003;            console.log(a * b);            console.log(new Decimal(a).mul(new Decimal(b)).toNumber());            console.log(&#39;除法：&#39;);            var a = 0.029;            var b = 10;            console.log(a / b);            console.log(new Decimal(a).div(new Decimal(b)).toNumber());        &lt;/script&gt;    &lt;/body&gt;&lt;/html&gt;</code></pre><h3 id="math-js语法例子"><a href="#math-js语法例子" class="headerlink" title="math.js语法例子"></a>math.js语法例子</h3><pre><code class="bash">math.add( ) 加math.subtract( )减math.divide( ) 除math.multiply( )乘</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CSS-transition</title>
       <link href="2021/01/27/Css-transition/"/>
       <url>2021/01/27/Css-transition/</url>
