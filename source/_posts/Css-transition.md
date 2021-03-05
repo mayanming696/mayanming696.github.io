@@ -1,5 +1,6 @@
 ---
 title: CSS-transition
+headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/css.png'
 date: 2021-01-27 15:06:23
 summary: CSS动画效果
 cover: true
