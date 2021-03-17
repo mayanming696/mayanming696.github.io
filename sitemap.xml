@@ -67,13 +67,6 @@
   </url>
   
   <url>
-    <loc>https://mayanming.com/tags/Vue/</loc>
-    <lastmod>2021-03-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mayanming.com/tags/JavaScript/</loc>
     <lastmod>2021-03-17</lastmod>
     <changefreq>daily</changefreq>
@@ -81,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://mayanming.com/tags/Ajax/</loc>
+    <loc>https://mayanming.com/tags/Vue/</loc>
     <lastmod>2021-03-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -95,7 +88,7 @@
   </url>
   
   <url>
-    <loc>https://mayanming.com/tags/Hexo/</loc>
+    <loc>https://mayanming.com/tags/Ajax/</loc>
     <lastmod>2021-03-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -103,6 +96,13 @@
   
   <url>
     <loc>https://mayanming.com/tags/CDN/</loc>
+    <lastmod>2021-03-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mayanming.com/tags/Hexo/</loc>
     <lastmod>2021-03-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
