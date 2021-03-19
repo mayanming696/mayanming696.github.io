@@ -1,5 +1,5 @@
 ---
-title: CSS-transition
+title: CSS动画效果
 headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/css.png'
 date: 2021-01-27 15:06:23
 summary: CSS动画效果
@@ -8,7 +8,7 @@ tags:
 - CSS3
 ---
 
-{% note quote, 真是项目需要引用一些效果，手写完后感觉还可以就去想去多了解遇到以为大神的博客详解，我想跟自己说我想做一个切图仔。%}
+{% note quote, 真实项目需要引用一些效果(前端交互)，手写完后感觉还可以就想多了解下遇到大神的博客详解，我想跟自己说我想做一个切图仔。%}
 
 <!-- more -->
 

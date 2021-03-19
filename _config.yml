@@ -106,10 +106,10 @@ theme: volantis
 # 上传github 
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
+- type: git
   repo: git@github.com:mayanming696/mayanming696.github.io.git,master
   coding: https://e.coding.net/mayanming696/mayanming696/mayanming696.com.git,master
-  message: baidu_url_submitter #新加的主动推送 ```
+- type: baidu_url_submitter #新加的主动推送 ```
 
 # 网站图标，更多尺寸等图标请使用import方式批量导入
 favicon: https://cdn.jsdelivr.net/gh/mayanming696/CDN/about/img/002.png

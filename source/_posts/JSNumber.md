@@ -1,5 +1,5 @@
 ---
-title: JSNumber
+title: JS浮点数计算问题
 headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/jsnumber.png'
 date: 2021-03-05 09:40:35
 summary: JavaScript详解
