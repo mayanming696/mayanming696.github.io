@@ -609,7 +609,7 @@ plugins:
   # 除appID和appKEY外均为选填项
   artitalk:
     #浏览人数记录ID
-    Set `layout: artitalk` to enable in page
+    # Set `layout: artitalk` to enable in page
     appId: s8dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va # your appID
     appKey: d3pLxNmIzKVLi1XGfmHcdOcp # your appKEY
     serverURL:  https://mayanming.com
