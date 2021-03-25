@@ -11,6 +11,18 @@ seo:
     tag: noindex,follow
     # robots can be written in front-matter
 
+# 设置404页面
+  skip_render:
+    - "404.html"
+    - "c/*.html"
+    - "ISSUE_TEMPLATE.md"
+    - "README.md"
+    - "c/css/**"
+    - "c/fonts/**"
+    - "c/js/**"
+    - "c/img/**"
+    - "c/data/**"
+
 custom_css:
   font_smoothing: true # font-smoothing for webkit 抗锯齿
   # 自定义光标
