@@ -155,7 +155,7 @@
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fas fa-moon fa-fw fa-fw'></i>睡眠
+                  <i class='fas fa-moon fa-fw fa-fw'></i>晚安
                 </a>
               <li>
             
@@ -183,7 +183,7 @@
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
           <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <input type="text" class="input u-search-input" placeholder="快速搜索..." />
         </form>
       </div>
 
@@ -263,7 +263,7 @@
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fas fa-moon fa-fw fa-fw'></i>睡眠
+                  <i class='fas fa-moon fa-fw fa-fw'></i>晚安
                 </a>
               <li>
             
@@ -644,6 +644,11 @@
 
 
       
+        <div class="webinfo-item">
+          <div>本站总字数：</div>
+          <div>6.6k 字</div>
+        </div>
+      
 
       
         <div class="webinfo-item">
@@ -667,8 +672,8 @@
         <div class="webinfo-item">
           <div>最后修改源码时间：</div>
           
-            <div id="last-update" style="display: none;">Thu Mar 25 2021 20:51:55 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-03-25 日</div>
+            <div id="last-update" style="display: none;">Fri Mar 26 2021 15:44:31 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-03-26 日</div>
           
         </div>
         
@@ -718,7 +723,7 @@
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-03-25 日';
+            document.getElementById('last-update-show').innerHTML = '2021-03-26 日';
           }
         </script>
         
@@ -923,6 +928,10 @@ var loadCSS = function( href, before, media, attributes ){
   loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
   
   
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
   
   
 </script>
@@ -1462,7 +1471,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   
   
-<script src="/js/valine.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
 
 
 <script>
@@ -1471,7 +1480,7 @@ var loadCSS = function( href, before, media, attributes ){
     return GUEST_INFO.indexOf(item) > -1
   });
   var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = ''.split(',').filter(function (item) {
+  var requiredFields = 'nick,link'.split(',').filter(function (item) {
     return REQUIRED_FIELDS.indexOf(item) > -1
   });
 
@@ -1516,7 +1525,7 @@ var loadCSS = function( href, before, media, attributes ){
       appId: "s8dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va",
       appKey: "d3pLxNmIzKVLi1XGfmHcdOcp",
       pageSize: '6',
-      avatar: 'robohash',
+      avatar: 'monsterid',
       lang: 'zh-cn',
       visitor: 'true',
       highlight: 'true',
@@ -1602,6 +1611,21 @@ function setSearchService() {
 
 
 
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
 
 
 

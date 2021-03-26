@@ -157,7 +157,7 @@
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fas fa-moon fa-fw fa-fw'></i>睡眠
+                  <i class='fas fa-moon fa-fw fa-fw'></i>晚安
                 </a>
               <li>
             
@@ -185,7 +185,7 @@
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
           <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <input type="text" class="input u-search-input" placeholder="快速搜索..." />
         </form>
       </div>
 
@@ -265,7 +265,7 @@
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fas fa-moon fa-fw fa-fw'></i>睡眠
+                  <i class='fas fa-moon fa-fw fa-fw'></i>晚安
                 </a>
               <li>
             
@@ -409,6 +409,38 @@
 
           
         
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：398字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/12/12/use-cdn/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/12/12/use-cdn/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+          
+        
       </div>
     
   </div>
@@ -547,20 +579,19 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
       
         
           
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/12/12/use-cdn/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/12/12/use-cdn/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：398字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
 
-
-        
-      
-        
-          
 
         
       
@@ -858,6 +889,10 @@ var loadCSS = function( href, before, media, attributes ){
   loadCSS("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css", window.volantis.loadcss);
   
   
+  loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
+  
+  
+  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
   
   
 </script>
@@ -1397,7 +1432,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   
   
-<script src="/js/valine.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
 
 
 <script>
@@ -1406,7 +1441,7 @@ var loadCSS = function( href, before, media, attributes ){
     return GUEST_INFO.indexOf(item) > -1
   });
   var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = ''.split(',').filter(function (item) {
+  var requiredFields = 'nick,link'.split(',').filter(function (item) {
     return REQUIRED_FIELDS.indexOf(item) > -1
   });
 
@@ -1451,7 +1486,7 @@ var loadCSS = function( href, before, media, attributes ){
       appId: "s8dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va",
       appKey: "d3pLxNmIzKVLi1XGfmHcdOcp",
       pageSize: '6',
-      avatar: 'robohash',
+      avatar: 'monsterid',
       lang: 'zh-cn',
       visitor: 'true',
       highlight: 'true',
@@ -1537,6 +1572,21 @@ function setSearchService() {
 
 
 
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
 
 
 
