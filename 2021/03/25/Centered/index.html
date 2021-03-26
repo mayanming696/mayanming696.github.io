@@ -481,13 +481,13 @@
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        * &#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .father&#123;</span><br><span class="line">            display: flex; //flex布局</span><br><span class="line">            justify-content: center; //水平居中</span><br><span class="line">            align-items: center; //垂直居中</span><br><span class="line">            min-height: 100vh;</span><br><span class="line">            background: pink;</span><br><span class="line">        &#125;</span><br><span class="line">        .son &#123;</span><br><span class="line">            background: red;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=<span class="string">&quot;father&quot;</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;son&quot;</span>&gt;子元素的内容&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
-<span class='p red'>缺点</span>代码虽然简单，不过父元素里面的所有子元素都是居中的
+<span class='p red'>缺点:</span>代码虽然简单，不过父元素里面的所有子元素都是居中的
 
 <h3 id="flex-margin-auto-推荐"><a href="#flex-margin-auto-推荐" class="headerlink" title="flex + margin:auto(推荐)"></a>flex + margin:auto(推荐)</h3><span class='p blue'>推荐，可以指定子元素居中</span>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        * &#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        .father&#123;</span><br><span class="line">            display: flex;</span><br><span class="line">            min-height: 100vh;</span><br><span class="line">            background: pink;</span><br><span class="line">        &#125;</span><br><span class="line">        .son &#123;</span><br><span class="line">            margin: auto;</span><br><span class="line">            background: red;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=<span class="string">&quot;father&quot;</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;son&quot;</span>&gt;子元素的内容，想水平垂直居中&lt;/div&gt;</span><br><span class="line">        &lt;div class=<span class="string">&quot;son2&quot;</span>&gt;这个元素不想水平垂直居中&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
-<span class='p red'>推荐</span>CSS3 基本都能支持现在的项目使用此方法居中简单
+<span class='p red'>推荐:</span>CSS3 基本都能支持现在的项目使用此方法居中简单
 
   
   
@@ -507,10 +507,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-25T16:29:58+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-26T18:08:28+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月25日</p>
+    <p>更新于：2021年3月26日</p>
   </a>
 </div>
 
@@ -900,8 +900,6 @@ var loadCSS = function( href, before, media, attributes ){
   
   loadCSS("https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css", window.volantis.loadcss);
   
-  
-  loadCSS("https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css", window.volantis.loadcss);
   
   
 </script>
@@ -1581,21 +1579,6 @@ function setSearchService() {
 
 
 
-
-  
-<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
-
-  <script type="text/javascript">
-    $(function () {
-      Waves.attach('.flat-btn', ['waves-button']);
-      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
-      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
-      Waves.attach('.flat-box', ['waves-block']);
-      Waves.attach('.float-box', ['waves-block', 'waves-float']);
-      Waves.attach('.waves-image');
-      Waves.init();
-    });
-  </script>
 
 
 
