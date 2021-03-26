@@ -27,7 +27,8 @@
     "hexo-renderer-marked": "^3.0.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
-    "hexo-theme-volantis": "^4.2.0"
+    "hexo-theme-volantis": "^4.2.0",
+    "hexo-wordcount": "^6.0.1"
   },
   "devDependencies": {
     "hexo-generator-baidu-sitemap": "^0.1.9"

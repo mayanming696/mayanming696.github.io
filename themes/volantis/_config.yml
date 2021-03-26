@@ -41,10 +41,10 @@ navbar:
     - name: 关于
       icon: fas fa-info-circle
       url: https://about.mayanming.com/
-    - name: 睡眠
+    - name: 晚安
       icon: fas fa-moon fa-fw
       toggle: darkmode
-  search: Search...   # Search bar placeholder
+  search: 快速搜索...   # Search bar placeholder
 ############################### Navigation Bar ############################### > end
 
 
@@ -115,7 +115,7 @@ article:
   body:
     # 文章顶部信息
     # 从 meta_library 中取
-    top_meta: [author, category, date, counter]
+    top_meta: [author, category, date, counter, wordcount, valinecount]
     # ----------------
     # 文章页脚组件
     footer_widget:
@@ -156,7 +156,7 @@ article:
           - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
     # 文章底部信息
     # 从 meta_library 中取
-    bottom_meta: [updated, tags, share,counter,category,valinecount,wordcount]
+    bottom_meta: [updated, tags, share,counter,category,wordcount]
     # meta library
     meta_library:
       # 默认文章作者
@@ -217,14 +217,14 @@ comments:
   valine:
     appId: s8dE0yUauCj0iMqdHm6smjEz-9Nh9j0Va
     appKey: d3pLxNmIzKVLi1XGfmHcdOcp
-    # js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
+    js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
     path: # 全局评论地址
     placeholder: 快来评论吧~  # 评论占位提示
     meta: nick,mail,link # valine comment header info
-    requiredFields: [] #['nick','mail',"link"]必填项
+    requiredFields: ['nick',"link"] #['nick','mail',"link"]必填项
     enableQQ: true # Unstable avatar link
     recordIP: false # Record commenter IP
-    avatar: robohash # gravatar style https://valine.js.org/avatar
+    avatar: monsterid # gravatar style https://valine.js.org/avatar
     pageSize: 6 # comment list page size
     lang: zh-cn
     highlight: true
@@ -286,7 +286,7 @@ comments:
 ############################### Sidebar ############################### > start
 sidebar:
   # 主页、分类、归档等独立页面
-  for_page: [blogger, category, tagcloud, qrcode,webinfo]
+  for_page: [blogger, category, tagcloud, qrcode, webinfo]
   # layout: docs/post 这类文章页面
   for_post: [toc,tagcloud]
   # 侧边栏组件库
@@ -326,7 +326,7 @@ sidebar:
     # category widget
     category:
       class: category
-      display: [desktop] # [desktop, mobile]
+      display: [desktop, mobile] # [desktop, mobile]
       header:
         icon: fas fa-folder-open
         title: 文章分类
@@ -493,19 +493,20 @@ plugins:
   ######## Plugins for SEO:
 
   # npm i hexo-wordcount
+  # 文章浏览次数
   wordcount:
-    enable: #true
+    enable: true
 
   ######## Plugins for ...
   # Button Ripple Effect
   nodewaves:
-    enable: #true
+    enable: true
     css: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css
     js: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js
 
   # fontawesome animation
   fontawesome_animation:
-    enable: #true
+    enable: true
     css: https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css
 
   # Typing Effects
@@ -706,13 +707,14 @@ color_scheme:
   # 通用颜色
   common:
     # 主题色
-    theme: '#44D7B6'
+    theme: '#2196f3'
+    # theme: '#44D7B6'
     # 链接色
-    link: '#2196f3'
+    link: '#0B5E9E'
     # 按钮色
-    button: '#44D7B6'
+    button: '#58b3f9'
     # 鼠标放到交互元素上时的色
-    hover: '#ff5722'
+    hover: '#ff5613'
     # 主题色块内部的文字颜色
     inner: '#fff'
     # 选中区域文字的背景颜色
