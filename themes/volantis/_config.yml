@@ -500,7 +500,7 @@ plugins:
   ######## Plugins for ...
   # Button Ripple Effect
   nodewaves:
-    enable: true
+    enable: #true
     css: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css
     js: https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js
 
