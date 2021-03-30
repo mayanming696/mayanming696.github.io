@@ -68,7 +68,7 @@ function setAPlayerObserver() {
 		updateAPlayerControllerStatus();
 		onUpdateAPlayerVolume();
 		APlayerController.observer = true;
-		console.log('APlayerController ready!');
+		// console.log('APlayerController ready!');
 
 	} catch (error) {
 		delete APlayerController.observer;
@@ -151,11 +151,11 @@ function updateTitle() {
 	}
 }
 var checkrightmenu = setInterval(function () {
-  console.log(0)
+//   console.log(0)
   if (!document.querySelectorAll('meting-js')[0].meta) return
   if (!document.querySelectorAll('meting-js')[0].meta.id) return
   clearInterval(checkrightmenu)
   checkAPlayer();
-  console.log(1)
+//   console.log(1)
 }, 1000)
 

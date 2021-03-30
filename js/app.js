@@ -1,6 +1,6 @@
 /* eslint-disable */
 var customSearch;
-
+console.log("jinru")
 // 函数防抖 (只执行最后一次点击)
 var Debounce = (fn, t) =>{
 	let delay = t || 25;
