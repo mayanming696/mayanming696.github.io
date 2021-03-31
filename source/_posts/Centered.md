@@ -21,6 +21,7 @@ tags:
 
 ``` bash
 text-align: center;
+object-fit: cover; //对图片进行剪切，保留原始比例：
 ```
 
 

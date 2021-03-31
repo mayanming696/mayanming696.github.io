@@ -117,7 +117,6 @@ theme: volantis
 deploy:
 - type: git
   repo: git@github.com:mayanming696/mayanming696.github.io.git,master
-  coding: https://e.coding.net/mayanming696/mayanming696/mayanming696.com.git,master
 - type: baidu_url_submitter #新加的主动推送 ```
 
 # 网站图标，更多尺寸等图标请使用import方式批量导入
