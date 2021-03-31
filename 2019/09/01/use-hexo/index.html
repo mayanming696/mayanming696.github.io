@@ -765,9 +765,9 @@
     <meting-js
       theme='#1BCDFC'
       autoplay='true'
-      volume='0.7'
+      volume='0.4'
       loop='all'
-      order='list'
+      order='random'
       fixed='false'
       list-max-height='320px'
       server='netease'
@@ -1438,10 +1438,10 @@ var loadCSS = function( href, before, media, attributes ){
   <script>
   let APlayerController = new Object();
   APlayerController.id = '6667656986';  // 设定全局音乐播放ID
-  APlayerController.volume = '0.7';
+  APlayerController.volume = '0.4';
   loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css", window.volantis.loadcss);
   // APlayer 需要在  MetingJS 之前加载
-  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js")
+  loadScript("https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js")
   window.volantis.LoadMetingJS=0
   var checkAPlayer = setInterval(function () {
     if (!window.APlayer) return
