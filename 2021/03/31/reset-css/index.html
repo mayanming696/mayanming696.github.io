@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>JS浮点数计算问题 - Mayanming Blog</title>
+  <title>浅谈RESET.CSS - Mayanming Blog</title>
   
-    <meta name="keywords" content="JavaScript">
+    <meta name="keywords" content="CSS3">
   
 
   
-    <meta name="description" content="记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。">
+    <meta name="description" content="大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细 查看。">
   
 
   <!-- feed -->
@@ -354,7 +354,7 @@
   
     <div class='headimg-div'>
       <a class='headimg-a'>
-        <img class='headimg' src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/jsnumber.png'/>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/reset.png'/>
       </a>
     </div>
   
@@ -363,7 +363,7 @@
     
     
       <h1 class="title">
-        JS浮点数计算问题
+        浅谈RESET.CSS
       </h1>
       <div class='new-meta-box'>
         
@@ -387,7 +387,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年3月5日</p>
+    <p>发布于：2021年3月31日</p>
   </a>
 </div>
 
@@ -398,7 +398,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="JS浮点数计算问题" data-path="/2021/03/05/JSNumber/">
+      <div id="lc-pv" data-title="浅谈RESET.CSS" data-path="/2021/03/31/reset-css/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -414,7 +414,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：646字</p>
+      <p>字数：643字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -431,9 +431,9 @@
             
 <div class="new-meta-item comments-count">
   
-  <a href="/2021/03/05/JSNumber/#comments">
+  <a href="/2021/03/31/reset-css/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/03/05/JSNumber/">0</span>
+    <span class="valine-comment-count" data-xid="/2021/03/31/reset-css/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -447,69 +447,30 @@
 
 
   
-  <p>记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。</p>
+  <div class="note quote"><p>大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细 查看。</p></div>
 <a id="more"></a>
 
-<h2 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h2><p>在JS中，整数的运算<span class='p red'>基本简单</span>可以保证精确；但是<span class='p red'>小数的运算，可能会得到一个不精确的结果</span>。所以，千万不要使用JS进行对精确度要求比较高的运算。</p>
-<p>例如最简单的测试例子：</p>
-<pre><code class="bash">    var textNumber = 0.1 + 0.2;
-    console.log(textNumber);  //打印结果：0.30000000000000004</code></pre>
-<p>具体根本原因：计算机在做运算时，所有的运算都要转换成二进制去计算。然而，有些数字转换成二进制之后，无法精确表示，因此存在浮点数的计算不精确的问题。</p>
-<h2 id="JS处理精度数字运算方法"><a href="#JS处理精度数字运算方法" class="headerlink" title="JS处理精度数字运算方法"></a>JS处理精度数字运算方法</h2><details cyan open><summary> 1.JS处理精度浮点数运算方法 </summary>
+<h2 id="RESET-CSS发现"><a href="#RESET-CSS发现" class="headerlink" title="RESET.CSS发现"></a>RESET.CSS发现</h2><p>这是我今天在百度搜索第一的reset.css文件复制的代码，甚至我的项目大部分样式重置也是大多数这样(惭愧)。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">/* v2.0 | 20110126</span><br><span class="line">   License: none (public domain)</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">html, body, div, span, applet, object, iframe,</span><br><span class="line">h1, h2, h3, h4, h5, h6, p, blockquote, pre,</span><br><span class="line">a, abbr, acronym, address, big, cite, code,</span><br><span class="line">del, dfn, em, img, ins, kbd, q, s, samp,</span><br><span class="line">small, strike, strong, sub, sup, tt, var,</span><br><span class="line">b, u, i, center,</span><br><span class="line">dl, dt, dd, ol, ul, li,</span><br><span class="line">fieldset, form, label, legend,</span><br><span class="line">table, caption, tbody, tfoot, thead, tr, th, td,</span><br><span class="line">article, aside, canvas, details, embed, </span><br><span class="line">figure, figcaption, footer, header, hgroup, </span><br><span class="line">menu, nav, output, ruby, section, summary,</span><br><span class="line">time, mark, audio, video &#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">	border: 0;</span><br><span class="line">	font-size: 100%;</span><br><span class="line">	font: inherit;</span><br><span class="line">	vertical-align: baseline;</span><br><span class="line">&#125;</span><br><span class="line">/* HTML5 display-role reset <span class="keyword">for</span> older browsers */</span><br><span class="line">article, aside, details, figcaption, figure, </span><br><span class="line">footer, header, hgroup, menu, nav, section &#123;</span><br><span class="line">	display: block;</span><br><span class="line">&#125;</span><br><span class="line">body &#123;</span><br><span class="line">	line-height: 1;</span><br><span class="line">&#125;</span><br><span class="line">h1, h2, h3, h4, h5, h6 &#123;</span><br><span class="line">    font-size: 100%;</span><br><span class="line">    font-weight: normal;</span><br><span class="line">&#125;</span><br><span class="line">ol, ul &#123;</span><br><span class="line">	list-style: none;</span><br><span class="line">&#125;</span><br><span class="line">blockquote, q &#123;</span><br><span class="line">	quotes: none;</span><br><span class="line">&#125;</span><br><span class="line">blockquote:before, blockquote:after,</span><br><span class="line">q:before, q:after &#123;</span><br><span class="line">	content: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">	content: none;</span><br><span class="line">&#125;</span><br><span class="line">table &#123;</span><br><span class="line">	border-collapse: collapse;</span><br><span class="line">	border-spacing: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们引入的 <span class='p blue'>reset.css文件</span>的作用是为了不同浏览器再默认样式上的差别(特别是IE浏览器)，但是现在浏览器在这方面的区别真的比较小了，可是看到有些RESET文件代码还是特别的多</p>
+<h2 id="RESET-CSS-存在的问题"><a href="#RESET-CSS-存在的问题" class="headerlink" title="RESET.CSS(存在的问题)"></a>RESET.CSS(存在的问题)</h2><p>现在认真看这样的样式，发现很多问题总结两点</p>
+<details cyan blue><summary> 1.为了统一方便 </summary>
               <div class='content'>
-              <p>如果需要的计算结果不需要特别高精度可以 <span class='p red'>toFix()</span> 对浮点数进行截取。在进行计算。</p>
+              <p>例如块级元素根本没存在margin,padding<br>甚至一些项目都不怎么出现的标签都存在了<br>之前说过前端优化的,压缩代码,冗余代码这样徒增太多(积少成多)</p>
               </div>
             </details>
 
-<details cyan open><summary> 2.JS处理精度浮点数运算方法 </summary>
+<details cyan blue><summary> 2.甚至将一些标签存在的意义都去除 </summary>
               <div class='content'>
-              <p>在实际中，浮点数计算精确度复杂，因此对数学运算精确度使用开源库，例如：<a target="_blank" rel="noopener" href="https://github.com/MikeMcl/decimal.js/">decimal.js</a> ,<a target="_blank" rel="noopener" href="https://github.com/josdejong/mathjs">math.js</a>。这些都是开源并且比较成熟，直接使用。</p><ul><li>Math.js：属于很全面的运算库，文件很大，压缩后的文件就有500kb。如果你的项目涉及到大型的复杂运算，可以使用 Math.js。</li><li>decimal.js：属于轻量的运算库，压缩后的文件只有32kb。大多数项目的数学运算，使用 decimal.js 足够了。</li></ul>
+              <p>例如，h1~h6 标签的语义网页中的标题，如果去除了默认的加粗样式上跟p,span样式上没有区别个人感觉不妥当。</p>
               </div>
             </details>
-<p>在使用这两个个开源库时，既可以用 cdn 的方式引入，也可以用 npm 包的方式引入。</p>
-<h3 id="decimal-js语法例子"><a href="#decimal-js语法例子" class="headerlink" title="decimal.js语法例子"></a>decimal.js语法例子</h3><pre><code class="bash">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;UTF-8&quot; /&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-        &lt;title&gt;Document&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;script src=&quot;https://cdn.bootcdn.net/ajax/libs/decimal.js/10.2.0/decimal.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script&gt;
-            console.log(&#39;加法：&#39;);
-            var a = 0.1;
-            var b = 0.2;
-            console.log(a + b);
-            console.log(new Decimal(a).add(new Decimal(b)).toNumber());
 
-            console.log(&#39;减法：&#39;);
-            var a = 1.0;
-            var b = 0.7;
-            console.log(a - b);
-            console.log(new Decimal(a).sub(new Decimal(b)).toNumber());
+<h2 id="Normalize-css"><a href="#Normalize-css" class="headerlink" title="Normalize.css"></a>Normalize.css</h2><p>发现这个样式重置比较规范,而且都有注解</p>
+<span class='btn regular'><a class="button" target="_blank" rel="noopener" href='https://necolas.github.io/normalize.css/5.0.0/normalize.css/' title='Normalize.css'><i class='fas fa-download'></i>Normalize.css</a></span>
 
-            console.log(&#39;乘法：&#39;);
-            var a = 1.01;
-            var b = 1.003;
-            console.log(a * b);
-            console.log(new Decimal(a).mul(new Decimal(b)).toNumber());
-
-            console.log(&#39;除法：&#39;);
-            var a = 0.029;
-            var b = 10;
-            console.log(a / b);
-            console.log(new Decimal(a).div(new Decimal(b)).toNumber());
-        &lt;/script&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-<h3 id="math-js语法例子"><a href="#math-js语法例子" class="headerlink" title="math.js语法例子"></a>math.js语法例子</h3><pre><code class="bash">math.add( ) 加
-
-math.subtract( )减
-math.divide( ) 除
-
-math.multiply( )乘
-</code></pre>
+<h2 id="使用样式重置"><a href="#使用样式重置" class="headerlink" title="使用样式重置"></a>使用样式重置</h2><p>真正适合项目的，才是合适的这里并不是说一定要用<span class='p red'>Normalize.css文件</span>，也不是说<span class='p blue'>Normalize.css文件</span>就一定比 <span class='p blue'>reset.css文件</span> 好。<br>只是相同条件下，可是Normalize.css 也并不是所有的样式重置我们真实项目就一定用到，那对于项目来说还是冗余代码。<br>适合项目团队的配置过合适的修改的才是最好的。</p>
 
   
   
@@ -529,10 +490,10 @@ math.multiply( )乘
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-05T10:48:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-31T14:13:46+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月5日</p>
+    <p>更新于：2021年3月31日</p>
   </a>
 </div>
 
@@ -541,7 +502,7 @@ math.multiply( )乘
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>JavaScript</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CSS3/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CSS3</p></a></div>
 
 
         
@@ -554,7 +515,7 @@ math.multiply( )乘
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/03/05/JSNumber/&title=JS浮点数计算问题 - Mayanming Blog&summary=记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/03/31/reset-css/&title=浅谈RESET.CSS - Mayanming Blog&summary=大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细 查看。"
           
           >
           
@@ -566,7 +527,7 @@ math.multiply( )乘
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/03/05/JSNumber/&title=JS浮点数计算问题 - Mayanming Blog&summary=记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/03/31/reset-css/&title=浅谈RESET.CSS - Mayanming Blog&summary=大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细 查看。"
           
           >
           
@@ -578,7 +539,7 @@ math.multiply( )乘
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/03/05/JSNumber/&title=JS浮点数计算问题 - Mayanming Blog&summary=记录某次真实项目需要计算高精度浮点数，原生JS进行高浮点数计算出现偏差大。"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/03/31/reset-css/&title=浅谈RESET.CSS - Mayanming Blog&summary=大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细 查看。"
           
           >
           
@@ -603,7 +564,7 @@ math.multiply( )乘
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="JS浮点数计算问题" data-path="/2021/03/05/JSNumber/">
+      <div id="lc-pv" data-title="浅谈RESET.CSS" data-path="/2021/03/31/reset-css/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -624,7 +585,7 @@ math.multiply( )乘
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：646字</p>
+      <p>字数：643字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -647,8 +608,9 @@ math.multiply( )乘
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/03/25/Centered/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Html各标签水平垂直居中方法</p>
+      
+        <a class='next' href='/2021/03/25/Centered/'>
+          <p class='title'>Html各标签水平垂直居中方法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>标签水平垂直居中全攻略，我一定要把你居中。业务经常遇到一定死要你水平垂直居中。我来解决。
 
 
@@ -656,17 +618,6 @@ math.multiply( )乘
 
 给父容器设置：
 12text-align: cente...</p>
-        </a>
-      
-      
-        <a class='next' href='/2021/01/27/Css-transition/'>
-          <p class='title'>CSS动画效果<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>真实项目需要引用一些效果(前端交互)，手写完后感觉还可以就想多了解下遇到大神的博客详解，我想跟自己说我想做一个切图仔。
-
-
-
-先上大神的信息
-ChokCocohttps://www.cnblog...</p>
         </a>
       
     </div>
@@ -709,7 +660,7 @@ ChokCocohttps://www.cnblog...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="toc-text">项目背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS%E5%A4%84%E7%90%86%E7%B2%BE%E5%BA%A6%E6%95%B0%E5%AD%97%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-text">JS处理精度数字运算方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#decimal-js%E8%AF%AD%E6%B3%95%E4%BE%8B%E5%AD%90"><span class="toc-text">decimal.js语法例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#math-js%E8%AF%AD%E6%B3%95%E4%BE%8B%E5%AD%90"><span class="toc-text">math.js语法例子</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#RESET-CSS%E5%8F%91%E7%8E%B0"><span class="toc-text">RESET.CSS发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RESET-CSS-%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">RESET.CSS(存在的问题)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normalize-css"><span class="toc-text">Normalize.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%A0%B7%E5%BC%8F%E9%87%8D%E7%BD%AE"><span class="toc-text">使用样式重置</span></a></li></ol>
     </div>
   </section>
 
@@ -751,7 +702,7 @@ ChokCocohttps://www.cnblog...</p>
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="JS浮点数计算问题";
+  pdata.postTitle="浅谈RESET.CSS";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mayanming.com/2021/03/31/reset-css/</loc>
+    
+    <lastmod>2021-03-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://mayanming.com/2021/03/25/Centered/</loc>
     
-    <lastmod>2021-03-26</lastmod>
+    <lastmod>2021-03-31</lastmod>
     
   </url>
   
@@ -67,7 +74,7 @@
 
   <url>
     <loc>https://mayanming.com/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,63 +82,63 @@
   
   <url>
     <loc>https://mayanming.com/tags/Html/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://mayanming.com/tags/CSS3/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://mayanming.com/tags/JavaScript/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://mayanming.com/tags/Vue/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://mayanming.com/tags/Ajax/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://mayanming.com/tags/%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://mayanming.com/tags/CDN/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://mayanming.com/tags/Hexo/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://mayanming.com/tags/%E4%BD%9C%E6%96%87/</loc>
-    <lastmod>2021-03-30</lastmod>
+    <lastmod>2021-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
