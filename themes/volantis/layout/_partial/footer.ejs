@@ -1,55 +1,231 @@
 <% if (theme.site_footer) { %>
-  <%
-  var layout = theme.site_footer.layout;
-  if (config.theme_config && config.theme_config.footer && config.theme_config.footer.layout) {
-    layout = config.theme_config.footer.layout;
-  }
-  %>
-  <footer class="footer clearfix">
-    <br><br>
-    <% layout.forEach(function(item){ %>
-      <% if (item == 'social') { %>
-        <br>
-        <div class="social-wrapper">
-          <% (theme.site_footer.social||[]).forEach(function(value){ %>
-            <% if (value.url && (value.icon || value.img || value.avatar)) { %>
-              <a href="<%= url_for(value.url) %>"
-                class="social <%- value.icon %> flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-                <% if (value.img) { %>
-                  <img src="<%- value.img %>"/>
-                <% } else if (value.avatar) { %>
-                  <img src="<%- value.avatar %>" style="border-radius:120px"/>
+  <% var layout=theme.site_footer.layout; if (config.theme_config && config.theme_config.footer &&
+    config.theme_config.footer.layout) { layout=config.theme_config.footer.layout; } %>
+    <footer class="footer clearfix">
+      <br><br>
+      <% layout.forEach(function(item){ %>
+        <% if (item=='social' ) { %>
+          <br>
+          <div class="social-wrapper">
+            <% (theme.site_footer.social||[]).forEach(function(value){ %>
+              <% if (value.url && (value.icon || value.img || value.avatar)) { %>
+                <a href="<%= url_for(value.url) %>" class="social <%- value.icon %> flat-btn" target="_blank"
+                  rel="external nofollow noopener noreferrer">
+                  <% if (value.img) { %>
+                    <img src="<%- value.img %>" />
+                    <% } else if (value.avatar) { %>
+                      <img src="<%- value.avatar %>" style="border-radius:120px" />
+                      <% } %>
+                </a>
                 <% } %>
-              </a>
-            <% } %>
-          <% }) %>
-        </div>
-      <% } else if (item == 'aplayer') { %>
-        <div class="aplayer-container">
-          <%- partial('../_third-party/aplayer/layout', {post: null, where: 'footer'}) %>
-        </div>
-      <% } else if (item == 'license') { %>
-        <div><%- markdown(__('footer.license')) %></div>
-      <% } else if (item == 'info') { %>
-        <%- __('footer.use') %>
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/<%- theme.info.theme_version %>" target="_blank" class="codename">Volantis</a>
-        <%- __('footer.theme') %><% if (theme.analytics.busuanzi) { %><%- __('symbol.comma') %><%- __('footer.total_views') %>
-          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          <%- __('footer.times') %>
-        <% } %>
-      <% } else if (item == 'source') { %>
-        <%- markdown(__('footer.site_source', '[Volantis](https://github.com/volantis-x/hexo-theme-volantis/tree/'+theme.info.theme_version+')', 'GitHub', 'https://github.com/volantis-x/volantis-docs')) %>
-      <% } else if (item == 'copyright') { %>
-        <div class='copyright'>
-        <%- markdown(theme.site_footer.copyright) %>
-        </div>
-      <% } else { %>
-        <% if (item in theme.site_footer) { %>
-          <div><%- markdown(theme.site_footer[item]) %></div>
-        <% } %>
-      <% } %>
-    <% }) %>
-  </footer>
-<% } %>
+                  <% }) %>
+          </div>
+          <% } else if (item=='aplayer' ) { %>
+            <div class="aplayer-container">
+              <%- partial('../_third-party/aplayer/layout', {post: null, where: 'footer' }) %>
+            </div>
+            <% } else if (item=='license' ) { %>
+              <div>
+                <%- markdown(__('footer.license')) %>
+              </div>
+              <% } else if (item=='info' ) { %>
+                <%- __('footer.use') %>
+                  <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/<%- theme.info.theme_version %>"
+                    target="_blank" class="codename">Volantis</a>
+                  <%- __('footer.theme') %>
+                    <% if (theme.analytics.busuanzi) { %>
+                      <%- __('symbol.comma') %>
+                        <%- __('footer.total_views') %>
+                          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw"
+                              aria-hidden="true"></i></span>
+                          <%- __('footer.times') %>
+                            <% } %>
+                              <% } else if (item=='source' ) { %>
+                                <%-
+                                  markdown(__('footer.site_source', '[Volantis](https://github.com/volantis-x/hexo-theme-volantis/tree/'
+                                  +theme.info.theme_version+')', 'GitHub'
+                                  , 'https://github.com/volantis-x/volantis-docs' )) %>
+                                  <% } else if (item=='copyright' ) { %>
+                                    <div class='copyright'>
+                                      <%- markdown(theme.site_footer.copyright) %>
+                                    </div>
+                                    <% } else { %>
+                                      <% if (item in theme.site_footer) { %>
+                                        <div>
+                                          <%- markdown(theme.site_footer[item]) %>
+                                        </div>
+                                        <% } %>
+                                          <% } %>
+                                            <% }) %>
+    </footer>
+    <% } %>
+
+      <div id="RightDownBtn">
+        <a onclick="switchNightMode()" title="切换暗黑模式">
+          <div style=" width: 2em;height: 2em;" class="icon">
+            <img id="sun" src="https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/sun.svg">
+            <img id="moon" src="https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/moon.svg">
+          </div>
+        </a>
+      </div>
+      <script>
+        function switchNightMode() {
+          $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($("body")), setTimeout(
+            function () {
+              var DarkMode = document.cookie.replace(/(?:(?:^|.*;\s*)DarkMode\s*\=\s*([^;]*).*$)|^.*$/, "$1") ||
+                '0';
+              (DarkMode == '0') ? ($("html").addClass("DarkMode"), document.cookie = "DarkMode=1;path=/",
+                console.log('夜间模式开启'),
+                document.getElementsByClassName('sr')[0].setAttribute('data-user-color-scheme', 'dark'),
+                $('#moon').hide(),
+                $('#sun').show()) :
+                ($("html").removeClass("DarkMode"),
+                  document.cookie = "DarkMode=0;path=/",
+                  console.log('夜间模式关闭'),
+                  document.getElementsByClassName('sr')[0].removeAttribute('data-user-color-scheme', ''),
+                  $('#moon').show(),
+                  $('#sun').hide())
+              setTimeout(function () {
+                $(".Cuteen_DarkSky").fadeOut(1e3, function () {
+                  $(this).remove()
+                })
+              }, 2e3)
+            }), 50
+        }
+        function checkNightMode() {
+          var DarkMode = document.cookie.replace(/(?:(?:^|.*;\s*)DarkMode\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+          (DarkMode == '0') ? document.getElementById('sun').style.display = 'none' : document.getElementById('moon').style.display = 'none'
+        }
+        checkNightMode()
+      </script>
+      <style>
+        #RightDownBtn {
+          position: fixed;
+          left: 1.875rem;
+          bottom: 1.875rem;
+          padding: 0.3125rem 0.625rem;
+          background-color: transparent;
+          border-radius: 0.1875rem;
+          transition: 0.3s ease all;
+          z-index: 1;
+          align-items: flex-end;
+          flex-direction: column;
+          display: -moz-flex;
+          display: flex;
+          float: right;
+        }
+
+        #RightDownBtn>a,
+        #RightDownBtn>label {
+          width: 1.5em;
+          height: 1.5em;
+          margin: 0.3125rem 0;
+          transition: .2s cubic-bezier(.25, .46, .45, .94);
+        }
+
+        /* font color */
+        .DarkMode #page,
+        .DarkMode #colophon,
+        .DarkMode #vcomments .vbtn,
+        .DarkMode .art-content #archives .al_mon_list .al_mon,
+        .DarkMode .art-content #archives .al_mon_list span,
+        .DarkMode body,
+        .DarkMode .art-content #archives .al_mon_list .al_mon,
+        .DarkMode .art-content #archives .al_mon_list span,
+        .DarkMode button,
+        .DarkMode .art .art-content #archives a,
+        .DarkMode textarea,
+        .DarkMode strong,
+        .DarkMode a,
+        .DarkMode p,
+        .DarkMode li,
+        .DarkMode .label {
+          color: rgba(255, 255, 255, .6);
+        }
+
+
+        .DarkMode #page,
+        .DarkMode body,
+        .DarkMode #colophon,
+        .DarkMode #main-container,
+        .DarkMode #page .yya,
+        .DarkMode #content,
+        .DarkMode #contentss,
+        .DarkMode #footer {
+          background-color: #292a2d;
+        }
+
+        .DarkMode strong,
+        .DarkMode img {
+          filter: brightness(.7);
+        }
+
+        /* sun and noon */
+        .Cuteen_DarkSky,
+        .Cuteen_DarkSky:before {
+          content: "";
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: 88888888
+        }
+
+        .Cuteen_DarkSky {
+          background: linear-gradient(#feb8b0, #fef9db)
+        }
+
+        .Cuteen_DarkSky:before {
+          transition: 2s ease all;
+          opacity: 0;
+          background: linear-gradient(#4c3f6d, #6c62bb, #93b1ed)
+        }
+
+        .DarkMode .Cuteen_DarkSky:before {
+          opacity: 1
+        }
+
+        .Cuteen_DarkPlanet {
+          z-index: 99999999;
+          position: fixed;
+          left: -50%;
+          top: -50%;
+          width: 200%;
+          height: 200%;
+          -webkit-animation: CuteenPlanetMove 2s cubic-bezier(.7, 0, 0, 1);
+          animation: CuteenPlanetMove 2s cubic-bezier(.7, 0, 0, 1);
+          transform-origin: center bottom
+        }
+
+        @-webkit-keyframes CuteenPlanetMove {
+          0% {
+            transform: rotate(0)
+          }
+
+          to {
+            transform: rotate(360deg)
+          }
+        }
+
+        @keyframes CuteenPlanetMove {
+          0% {
+            transform: rotate(0)
+          }
+
+          to {
+            transform: rotate(360deg)
+          }
+        }
+
+        .Cuteen_DarkPlanet:after {
+          position: absolute;
+          left: 35%;
+          top: 40%;
+          width: 9.375rem;
+          height: 9.375rem;
+          border-radius: 50%;
+          content: "";
+          background: linear-gradient(#fefefe, #fffbe8)
+        }
+      </style>
