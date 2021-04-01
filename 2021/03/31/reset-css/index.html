@@ -25,7 +25,7 @@
   
 
   
-    <meta name="description" content="大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细 查看。">
+    <meta name="description" content="大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细查看。">
   
 
   <!-- feed -->
@@ -427,7 +427,7 @@
 
 
   
-  <div class="note quote"><p>大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细 查看。</p></div>
+  <div class="note quote"><p>大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细查看。</p></div>
 <a id="more"></a>
 
 <h2 id="RESET-CSS发现"><a href="#RESET-CSS发现" class="headerlink" title="RESET.CSS发现"></a>RESET.CSS发现</h2><p>这是我今天在百度搜索第一的reset.css文件复制的代码，甚至我的项目大部分样式重置也是大多数这样(惭愧)。</p>
@@ -470,10 +470,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-31T14:13:46+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-01T16:58:17+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月31日</p>
+    <p>更新于：2021年4月1日</p>
   </a>
 </div>
 
@@ -495,7 +495,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/03/31/reset-css/&title=浅谈RESET.CSS - Mayanming Blog&summary=大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细 查看。"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/03/31/reset-css/&title=浅谈RESET.CSS - Mayanming Blog&summary=大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细查看。"
           
           >
           
@@ -507,7 +507,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/03/31/reset-css/&title=浅谈RESET.CSS - Mayanming Blog&summary=大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细 查看。"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/03/31/reset-css/&title=浅谈RESET.CSS - Mayanming Blog&summary=大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细查看。"
           
           >
           
@@ -519,7 +519,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/03/31/reset-css/&title=浅谈RESET.CSS - Mayanming Blog&summary=大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细 查看。"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/03/31/reset-css/&title=浅谈RESET.CSS - Mayanming Blog&summary=大部分时候,作为前端我们写CSS样式时候都会重置一些默认样式，就有了引入reset.css(早期),大部分都是没有仔细查看。"
           
           >
           
@@ -833,118 +833,40 @@
         }
 
         #RightDownBtn>a,
-        #RightDownBtn>label {
-          width: 1.5em;
-          height: 1.5em;
+        #RightDownBtn>div{
+          width: 2em;
+          height: 2em;
           margin: 0.3125rem 0;
-          transition: .2s cubic-bezier(.25, .46, .45, .94);
+        }
+        #sun:hover,#moon:hover{
+          animation:beat .8s infinite ease-in;
         }
 
-        /* font color */
-        .DarkMode #page,
-        .DarkMode #colophon,
-        .DarkMode #vcomments .vbtn,
-        .DarkMode .art-content #archives .al_mon_list .al_mon,
-        .DarkMode .art-content #archives .al_mon_list span,
-        .DarkMode body,
-        .DarkMode .art-content #archives .al_mon_list .al_mon,
-        .DarkMode .art-content #archives .al_mon_list span,
-        .DarkMode button,
-        .DarkMode .art .art-content #archives a,
-        .DarkMode textarea,
-        .DarkMode strong,
-        .DarkMode a,
-        .DarkMode p,
-        .DarkMode li,
-        .DarkMode .label {
-          color: rgba(255, 255, 255, .6);
-        }
-
-
-        .DarkMode #page,
-        .DarkMode body,
-        .DarkMode #colophon,
-        .DarkMode #main-container,
-        .DarkMode #page .yya,
-        .DarkMode #content,
-        .DarkMode #contentss,
-        .DarkMode #footer {
-          background-color: #292a2d;
-        }
-
-        .DarkMode strong,
-        .DarkMode img {
-          filter: brightness(.7);
-        }
-
-        /* sun and noon */
-        .Cuteen_DarkSky,
-        .Cuteen_DarkSky:before {
-          content: "";
-          position: fixed;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          z-index: 88888888
-        }
-
-        .Cuteen_DarkSky {
-          background: linear-gradient(#feb8b0, #fef9db)
-        }
-
-        .Cuteen_DarkSky:before {
-          transition: 2s ease all;
-          opacity: 0;
-          background: linear-gradient(#4c3f6d, #6c62bb, #93b1ed)
-        }
-
-        .DarkMode .Cuteen_DarkSky:before {
-          opacity: 1
-        }
-
-        .Cuteen_DarkPlanet {
-          z-index: 99999999;
-          position: fixed;
-          left: -50%;
-          top: -50%;
-          width: 200%;
-          height: 200%;
-          -webkit-animation: CuteenPlanetMove 2s cubic-bezier(.7, 0, 0, 1);
-          animation: CuteenPlanetMove 2s cubic-bezier(.7, 0, 0, 1);
-          transform-origin: center bottom
-        }
-
-        @-webkit-keyframes CuteenPlanetMove {
-          0% {
-            transform: rotate(0)
-          }
-
-          to {
-            transform: rotate(360deg)
-          }
-        }
-
-        @keyframes CuteenPlanetMove {
-          0% {
-            transform: rotate(0)
-          }
-
-          to {
-            transform: rotate(360deg)
-          }
-        }
-
-        .Cuteen_DarkPlanet:after {
-          position: absolute;
-          left: 35%;
-          top: 40%;
-          width: 9.375rem;
-          height: 9.375rem;
-          border-radius: 50%;
-          content: "";
-          background: linear-gradient(#fefefe, #fffbe8)
-        }
+@keyframes beat{
+  0%{
+    transform:scale(1) rotate(-5deg);
+  }
+  
+  40%{
+    transform:scale(1) rotate(-45deg);
+  }
+  
+  55%{
+    transform:scale(1.8) rotate(-30deg);
+  }
+  
+  70%{
+    transform:scale(1) rotate(-45deg);
+  }
+  
+  85%{
+    transform:scale(1.8) rotate(-60deg);
+  }
+  
+  100%{
+    transform:scale(1) rotate(-5deg);
+  }
+}
       </style>
       <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>

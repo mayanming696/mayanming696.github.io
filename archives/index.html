@@ -668,7 +668,7 @@
         <div class="webinfo-item">
           <div>最后修改源码时间：</div>
           
-            <div id="last-update" style="display: none;">Thu Apr 01 2021 09:18:26 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Thu Apr 01 2021 17:40:50 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2021-04-01 日</div>
           
         </div>
@@ -893,118 +893,40 @@
         }
 
         #RightDownBtn>a,
-        #RightDownBtn>label {
-          width: 1.5em;
-          height: 1.5em;
+        #RightDownBtn>div{
+          width: 2em;
+          height: 2em;
           margin: 0.3125rem 0;
-          transition: .2s cubic-bezier(.25, .46, .45, .94);
+        }
+        #sun:hover,#moon:hover{
+          animation:beat .8s infinite ease-in;
         }
 
-        /* font color */
-        .DarkMode #page,
-        .DarkMode #colophon,
-        .DarkMode #vcomments .vbtn,
-        .DarkMode .art-content #archives .al_mon_list .al_mon,
-        .DarkMode .art-content #archives .al_mon_list span,
-        .DarkMode body,
-        .DarkMode .art-content #archives .al_mon_list .al_mon,
-        .DarkMode .art-content #archives .al_mon_list span,
-        .DarkMode button,
-        .DarkMode .art .art-content #archives a,
-        .DarkMode textarea,
-        .DarkMode strong,
-        .DarkMode a,
-        .DarkMode p,
-        .DarkMode li,
-        .DarkMode .label {
-          color: rgba(255, 255, 255, .6);
-        }
-
-
-        .DarkMode #page,
-        .DarkMode body,
-        .DarkMode #colophon,
-        .DarkMode #main-container,
-        .DarkMode #page .yya,
-        .DarkMode #content,
-        .DarkMode #contentss,
-        .DarkMode #footer {
-          background-color: #292a2d;
-        }
-
-        .DarkMode strong,
-        .DarkMode img {
-          filter: brightness(.7);
-        }
-
-        /* sun and noon */
-        .Cuteen_DarkSky,
-        .Cuteen_DarkSky:before {
-          content: "";
-          position: fixed;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          z-index: 88888888
-        }
-
-        .Cuteen_DarkSky {
-          background: linear-gradient(#feb8b0, #fef9db)
-        }
-
-        .Cuteen_DarkSky:before {
-          transition: 2s ease all;
-          opacity: 0;
-          background: linear-gradient(#4c3f6d, #6c62bb, #93b1ed)
-        }
-
-        .DarkMode .Cuteen_DarkSky:before {
-          opacity: 1
-        }
-
-        .Cuteen_DarkPlanet {
-          z-index: 99999999;
-          position: fixed;
-          left: -50%;
-          top: -50%;
-          width: 200%;
-          height: 200%;
-          -webkit-animation: CuteenPlanetMove 2s cubic-bezier(.7, 0, 0, 1);
-          animation: CuteenPlanetMove 2s cubic-bezier(.7, 0, 0, 1);
-          transform-origin: center bottom
-        }
-
-        @-webkit-keyframes CuteenPlanetMove {
-          0% {
-            transform: rotate(0)
-          }
-
-          to {
-            transform: rotate(360deg)
-          }
-        }
-
-        @keyframes CuteenPlanetMove {
-          0% {
-            transform: rotate(0)
-          }
-
-          to {
-            transform: rotate(360deg)
-          }
-        }
-
-        .Cuteen_DarkPlanet:after {
-          position: absolute;
-          left: 35%;
-          top: 40%;
-          width: 9.375rem;
-          height: 9.375rem;
-          border-radius: 50%;
-          content: "";
-          background: linear-gradient(#fefefe, #fffbe8)
-        }
+@keyframes beat{
+  0%{
+    transform:scale(1) rotate(-5deg);
+  }
+  
+  40%{
+    transform:scale(1) rotate(-45deg);
+  }
+  
+  55%{
+    transform:scale(1.8) rotate(-30deg);
+  }
+  
+  70%{
+    transform:scale(1) rotate(-45deg);
+  }
+  
+  85%{
+    transform:scale(1.8) rotate(-60deg);
+  }
+  
+  100%{
+    transform:scale(1) rotate(-5deg);
+  }
+}
       </style>
       <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>
