@@ -153,16 +153,6 @@
             
           
           
-            
-            
-              <li>
-                <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fas fa-moon fa-fw fa-fw'></i>晚安
-                </a>
-              <li>
-            
-          
-          
 				</ul>
 			</div>
       <!-- 天气 -->
@@ -258,16 +248,6 @@
                 </a>
                 
               </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fas fa-moon fa-fw fa-fw'></i>晚安
-                </a>
-              <li>
             
           
             
@@ -748,8 +728,8 @@
         <div class="webinfo-item">
           <div>最后修改源码时间：</div>
           
-            <div id="last-update" style="display: none;">Wed Mar 31 2021 17:27:25 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-03-31 日</div>
+            <div id="last-update" style="display: none;">Thu Apr 01 2021 09:18:26 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-04-01 日</div>
           
         </div>
         
@@ -799,7 +779,7 @@
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-03-31 日';
+            document.getElementById('last-update-show').innerHTML = '2021-04-01 日';
           }
         </script>
         
@@ -837,12 +817,12 @@
       </div>
       
   
-  <footer class="footer clearfix">
-    <br><br>
-    
+    <footer class="footer clearfix">
+      <br><br>
       
-        <div class="aplayer-container">
-          
+        
+            <div class="aplayer-container">
+              
 
   
     <meting-js
@@ -861,69 +841,232 @@
   
 
 
-        </div>
-      
-    
-      
-        <br>
-        <div class="social-wrapper">
-          
+            </div>
             
-              <a href="https://mayanming.com"
-                class="social fas fa-rss flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-                
-              </a>
-            
-          
-            
-              <a href="mailto:543229218@qq.com"
-                class="social fas fa-envelope flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-                
-              </a>
-            
-          
-            
-              <a href="https://github.com/mayanming696"
-                class="social fab fa-github flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-                
-              </a>
-            
-          
-            
-              <a href="https://c.y.qq.com/base/fcgi-bin/u?__=YLyBFAh"
-                class="social fas fa-headphones-alt flat-btn"
-                target="_blank"
-                rel="external nofollow noopener noreferrer">
-                
-              </a>
-            
-          
-        </div>
-      
-    
-      
+                                            
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
-</div>
+          <br>
+          <div class="social-wrapper">
+            
+              
+                <a href="https://mayanming.com" class="social fas fa-rss flat-btn" target="_blank"
+                  rel="external nofollow noopener noreferrer">
+                  
+                </a>
+                
+                  
+              
+                <a href="mailto:543229218@qq.com" class="social fas fa-envelope flat-btn" target="_blank"
+                  rel="external nofollow noopener noreferrer">
+                  
+                </a>
+                
+                  
+              
+                <a href="https://github.com/mayanming696" class="social fab fa-github flat-btn" target="_blank"
+                  rel="external nofollow noopener noreferrer">
+                  
+                </a>
+                
+                  
+              
+                <a href="https://c.y.qq.com/base/fcgi-bin/u?__=YLyBFAh" class="social fas fa-headphones-alt flat-btn" target="_blank"
+                  rel="external nofollow noopener noreferrer">
+                  
+                </a>
+                
+                  
+          </div>
+          
+                                            
         
-      
+                                      
+                                        <div>
+                                          <p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+
+                                        </div>
+                                        
+                                          
+                                            
+        
+                                    <div class='copyright'>
+                                      <p><a href="/">Copyright © 2019-2021</a></p>
+
+                                    </div>
+                                    
+                                            
+    </footer>
     
-      
-        <div class='copyright'>
-        <p><a href="/">Copyright © 2019-2021</a></p>
 
-        </div>
-      
-    
-  </footer>
+      <div id="RightDownBtn">
+        <a onclick="switchNightMode()" title="切换暗黑模式">
+          <div style=" width: 2em;height: 2em;" class="icon">
+            <img id="sun" src="https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/sun.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/sun.svg" srcset="data:image/png;base64,666">
+            <img id="moon" src="https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/moon.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/moon.svg" srcset="data:image/png;base64,666">
+          </div>
+        </a>
+      </div>
+      <script>
+        function switchNightMode() {
+          $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($("body")), setTimeout(
+            function () {
+              var DarkMode = document.cookie.replace(/(?:(?:^|.*;\s*)DarkMode\s*\=\s*([^;]*).*$)|^.*$/, "$1") ||
+                '0';
+              (DarkMode == '0') ? ($("html").addClass("DarkMode"), document.cookie = "DarkMode=1;path=/",
+                console.log('夜间模式开启'),
+                document.getElementsByClassName('sr')[0].setAttribute('data-user-color-scheme', 'dark'),
+                $('#moon').hide(),
+                $('#sun').show()) :
+                ($("html").removeClass("DarkMode"),
+                  document.cookie = "DarkMode=0;path=/",
+                  console.log('夜间模式关闭'),
+                  document.getElementsByClassName('sr')[0].removeAttribute('data-user-color-scheme', ''),
+                  $('#moon').show(),
+                  $('#sun').hide())
+              setTimeout(function () {
+                $(".Cuteen_DarkSky").fadeOut(1e3, function () {
+                  $(this).remove()
+                })
+              }, 2e3)
+            }), 50
+        }
+        function checkNightMode() {
+          var DarkMode = document.cookie.replace(/(?:(?:^|.*;\s*)DarkMode\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+          (DarkMode == '0') ? document.getElementById('sun').style.display = 'none' : document.getElementById('moon').style.display = 'none'
+        }
+        checkNightMode()
+      </script>
+      <style>
+        #RightDownBtn {
+          position: fixed;
+          left: 1.875rem;
+          bottom: 1.875rem;
+          padding: 0.3125rem 0.625rem;
+          background-color: transparent;
+          border-radius: 0.1875rem;
+          transition: 0.3s ease all;
+          z-index: 1;
+          align-items: flex-end;
+          flex-direction: column;
+          display: -moz-flex;
+          display: flex;
+          float: right;
+        }
+
+        #RightDownBtn>a,
+        #RightDownBtn>label {
+          width: 1.5em;
+          height: 1.5em;
+          margin: 0.3125rem 0;
+          transition: .2s cubic-bezier(.25, .46, .45, .94);
+        }
+
+        /* font color */
+        .DarkMode #page,
+        .DarkMode #colophon,
+        .DarkMode #vcomments .vbtn,
+        .DarkMode .art-content #archives .al_mon_list .al_mon,
+        .DarkMode .art-content #archives .al_mon_list span,
+        .DarkMode body,
+        .DarkMode .art-content #archives .al_mon_list .al_mon,
+        .DarkMode .art-content #archives .al_mon_list span,
+        .DarkMode button,
+        .DarkMode .art .art-content #archives a,
+        .DarkMode textarea,
+        .DarkMode strong,
+        .DarkMode a,
+        .DarkMode p,
+        .DarkMode li,
+        .DarkMode .label {
+          color: rgba(255, 255, 255, .6);
+        }
 
 
+        .DarkMode #page,
+        .DarkMode body,
+        .DarkMode #colophon,
+        .DarkMode #main-container,
+        .DarkMode #page .yya,
+        .DarkMode #content,
+        .DarkMode #contentss,
+        .DarkMode #footer {
+          background-color: #292a2d;
+        }
+
+        .DarkMode strong,
+        .DarkMode img {
+          filter: brightness(.7);
+        }
+
+        /* sun and noon */
+        .Cuteen_DarkSky,
+        .Cuteen_DarkSky:before {
+          content: "";
+          position: fixed;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: 88888888
+        }
+
+        .Cuteen_DarkSky {
+          background: linear-gradient(#feb8b0, #fef9db)
+        }
+
+        .Cuteen_DarkSky:before {
+          transition: 2s ease all;
+          opacity: 0;
+          background: linear-gradient(#4c3f6d, #6c62bb, #93b1ed)
+        }
+
+        .DarkMode .Cuteen_DarkSky:before {
+          opacity: 1
+        }
+
+        .Cuteen_DarkPlanet {
+          z-index: 99999999;
+          position: fixed;
+          left: -50%;
+          top: -50%;
+          width: 200%;
+          height: 200%;
+          -webkit-animation: CuteenPlanetMove 2s cubic-bezier(.7, 0, 0, 1);
+          animation: CuteenPlanetMove 2s cubic-bezier(.7, 0, 0, 1);
+          transform-origin: center bottom
+        }
+
+        @-webkit-keyframes CuteenPlanetMove {
+          0% {
+            transform: rotate(0)
+          }
+
+          to {
+            transform: rotate(360deg)
+          }
+        }
+
+        @keyframes CuteenPlanetMove {
+          0% {
+            transform: rotate(0)
+          }
+
+          to {
+            transform: rotate(360deg)
+          }
+        }
+
+        .Cuteen_DarkPlanet:after {
+          position: absolute;
+          left: 35%;
+          top: 40%;
+          width: 9.375rem;
+          height: 9.375rem;
+          border-radius: 50%;
+          content: "";
+          background: linear-gradient(#fefefe, #fffbe8)
+        }
+      </style>
       <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>
   </div>
