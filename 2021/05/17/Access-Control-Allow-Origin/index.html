@@ -25,6 +25,8 @@
   
 
   
+    <meta name="description" content="uni-app 使用H5页面请求时,出现跨域问题。">
+  
 
   <!-- feed -->
   
@@ -402,7 +404,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：431字</p>
+      <p>字数：469字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -436,6 +438,7 @@
 
   
   <div class="note success"><p>uni-app 使用H5页面请求时,出现跨域问题。</p></div>
+<a id="more"></a>
 
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
 <li>HBuilderX 3.1.13</li>
@@ -456,7 +459,8 @@
 
 <p>此配置表示所有 <span class='p red'>/api</span> 开头的接口都会自动拼接上 <span class='p red'>http://text.com:8086</span>。例如上面的例子就会变成 <span class='p red'>http://text.com:8086/api/shopCode/</span></p>
 <p>不过经常我们的接口没有相似的前缀来区分，此时就需要pathRewrite来对path重写。</p>
-<p> “h5” : {<br>        “devServer” : {<br>            “port” : 8080,<br>            “https” : false,<br>            “disableHostCheck” : true,<br>            “proxy” : {<br>                “/api” :{<br>                    “target” : “<a href="http://text.com:8086&quot;">http://text.com:8086&quot;</a>,<br>                    “changeOrigin” : true,<br>                    “secure” : false<br>                     “pathRewrite” : {<br>                        “^/api” : “”<br>                    }<br>                }<br>            }<br>        }<br> }</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;h5&quot;</span> : &#123;</span><br><span class="line">       <span class="string">&quot;devServer&quot;</span> : &#123;</span><br><span class="line">		<span class="string">&quot;port&quot;</span> : 8080,</span><br><span class="line">		<span class="string">&quot;https&quot;</span> : <span class="literal">false</span>,</span><br><span class="line">           <span class="string">&quot;disableHostCheck&quot;</span> : <span class="literal">true</span>,</span><br><span class="line">		<span class="string">&quot;proxy&quot;</span> : &#123;</span><br><span class="line">			<span class="string">&quot;/api&quot;</span> :&#123;</span><br><span class="line">				<span class="string">&quot;target&quot;</span> : <span class="string">&quot;http://text.com:8086&quot;</span>,</span><br><span class="line">                   <span class="string">&quot;changeOrigin&quot;</span> : <span class="literal">true</span>,</span><br><span class="line">                   <span class="string">&quot;secure&quot;</span> : <span class="literal">false</span></span><br><span class="line">				 <span class="string">&quot;pathRewrite&quot;</span> : &#123;</span><br><span class="line">					<span class="string">&quot;^/api&quot;</span> : <span class="string">&quot;&quot;</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p> 这样的话用上面例子的请求就会变成 <span class='p red'>http://text.com:8086/shopCode/</span> 具体需要变成怎么样则看真实项目来重写修改。</p>
 
   
@@ -477,7 +481,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-17T14:09:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-17T16:02:00+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年5月17日</p>
@@ -502,7 +506,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/05/17/Access-Control-Allow-Origin/&title=解决项目跨域问题(uni-app,Vue) - Mayanming Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/05/17/Access-Control-Allow-Origin/&title=解决项目跨域问题(uni-app,Vue) - Mayanming Blog&summary=uni-app 使用H5页面请求时,出现跨域问题。"
           
           >
           
@@ -514,7 +518,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/05/17/Access-Control-Allow-Origin/&title=解决项目跨域问题(uni-app,Vue) - Mayanming Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/05/17/Access-Control-Allow-Origin/&title=解决项目跨域问题(uni-app,Vue) - Mayanming Blog&summary=uni-app 使用H5页面请求时,出现跨域问题。"
           
           >
           
@@ -526,7 +530,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/05/17/Access-Control-Allow-Origin/&title=解决项目跨域问题(uni-app,Vue) - Mayanming Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/05/17/Access-Control-Allow-Origin/&title=解决项目跨域问题(uni-app,Vue) - Mayanming Blog&summary=uni-app 使用H5页面请求时,出现跨域问题。"
           
           >
           
@@ -572,7 +576,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：431字</p>
+      <p>字数：469字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
