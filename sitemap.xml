@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mayanming.com/2019/10/03/postpage-optimization/</loc>
+    
+    <lastmod>2021-05-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://mayanming.com/2017/04/23/love-story/</loc>
     
     <lastmod>2021-05-21</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://mayanming.com/2021/03/05/JSNumber/</loc>
     
     <lastmod>2021-03-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://mayanming.com/2019/10/03/postpage-optimization/</loc>
-    
-    <lastmod>2021-03-01</lastmod>
     
   </url>
   
@@ -102,14 +102,14 @@
   </url>
   
   <url>
-    <loc>https://mayanming.com/tags/JavaScript/</loc>
+    <loc>https://mayanming.com/tags/CSS3/</loc>
     <lastmod>2021-05-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://mayanming.com/tags/CSS3/</loc>
+    <loc>https://mayanming.com/tags/JavaScript/</loc>
     <lastmod>2021-05-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -130,7 +130,7 @@
   </url>
   
   <url>
-    <loc>https://mayanming.com/tags/%E4%BC%98%E5%8C%96/</loc>
+    <loc>https://mayanming.com/tags/POP/</loc>
     <lastmod>2021-05-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
