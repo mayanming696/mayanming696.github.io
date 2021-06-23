@@ -1,11 +1,11 @@
 ---
-title: '六月江南,风景久曾忆'
+title: 'Love-Story'
 headimg: 'https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/love.png'
 date: 2017-04-23 05:20:00
-summary: 优美词句
+summary: Love
 cover: true
 tags:
-- 作文
+- Love Story
 ---
 
 {% note success, He got down on one knee， took out the ring and said piously \"Marry me\".%}
