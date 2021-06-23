@@ -19,13 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>使用jsDelivr 开源公共 CDN - Mayanming Blog</title>
+  <title>Vue-Router - Mayanming Blog</title>
   
-    <meta name="keywords" content="CDN">
+    <meta name="keywords" content="Vue">
   
 
   
-    <meta name="description" content="记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速">
+    <meta name="description" content="Vue 路由的代码解析">
   
 
   <!-- feed -->
@@ -344,7 +344,7 @@
   
     <div class='headimg-div'>
       <a class='headimg-a'>
-        <img class='headimg' src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/logo-horizontal.svg'/>
+        <img class='headimg' src='https://cdn.jsdelivr.net/gh/mayanming696/CDN/image/Vue-Router.png'/>
       </a>
     </div>
   
@@ -353,7 +353,7 @@
     
     
       <h1 class="title">
-        使用jsDelivr 开源公共 CDN
+        Vue-Router
       </h1>
       <div class='new-meta-box'>
         
@@ -377,7 +377,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月12日</p>
+    <p>发布于：2021年6月23日</p>
   </a>
 </div>
 
@@ -388,7 +388,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="使用jsDelivr 开源公共 CDN" data-path="/2020/12/12/use-cdn/">
+      <div id="lc-pv" data-title="Vue-Router" data-path="/2021/06/23/Vue-Router/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -404,13 +404,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：398字</p>
+      <p>字数：1.2k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：5分钟</p>
     </a>
   </div>
 
@@ -421,9 +421,9 @@
             
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/12/12/use-cdn/#comments">
+  <a href="/2021/06/23/Vue-Router/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/12/12/use-cdn/">0</span>
+    <span class="valine-comment-count" data-xid="/2021/06/23/Vue-Router/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -437,27 +437,32 @@
 
 
   
-  <p>记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速</p>
+  <p>Vue 路由的代码解析</p>
 <a id="more"></a>
 
-<h2 id="新建Github仓库"><a href="#新建Github仓库" class="headerlink" title="新建Github仓库"></a>新建Github仓库</h2><p><img src="new-Github.jpg" class="lazyload" data-srcset="new-Github.jpg" srcset="data:image/png;base64,666" alt="新建githun仓库"></p>
-<h2 id="连接Github仓库"><a href="#连接Github仓库" class="headerlink" title="连接Github仓库"></a>连接Github仓库</h2><p>在本地目录右键 Git Bash Here，执行以下命令：</p>
-<pre><code class="bash">git clone 你的CDN仓库地址</code></pre>
-<h2 id="上传你所需要加速资源"><a href="#上传你所需要加速资源" class="headerlink" title="上传你所需要加速资源"></a>上传你所需要加速资源</h2><p>复制需要上传的资源到本地git仓库 <span class='p blue'>（注：jsDelivr不支持加载超过20M的资源）</span>，<br>在本地存放需加速资源git仓库目录下右键 Git Bash Here，执行以下命令：</p>
-<pre><code class="bash">git status //查看状态
-git add .  //添加所有文件到暂存区
-git commit -m &#39;提交的描述&#39;   //把文件提交到仓库
-git push   //推送至远程仓库</code></pre>
-<h2 id="发布仓库"><a href="#发布仓库" class="headerlink" title="发布仓库"></a>发布仓库</h2><p>在github 你的CDN加速仓库里面的项目里面点击 <span class='p red'>Releases</span> 发布</p>
-<ul>
-<li>进入可设置版本号</li>
-</ul>
-<h2 id="使用jsDelivr引用资源"><a href="#使用jsDelivr引用资源" class="headerlink" title="使用jsDelivr引用资源"></a>使用jsDelivr引用资源</h2><p>使用方法 <span class='p red'>https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</span> </p>
-<p>注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源，除此之外还可以使用某个范围内的版本，查看所有资源等，具体使用方法如下：</p>
-<pre><code class="bash">https://cdn.jsdelivr.net/gh/user/repo@version/file // 加载任何Github发布、提交或分支
-https://cdn.jsdelivr.net/gh/jquery/jquery@3.2/dist/jquery.min.js // 使用版本范围而不是特定版本
-https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js  // 使用版本范围而不是特定版本
-https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该版本以获取最新版本</code></pre>
+<h2 id="Vue-router-安装"><a href="#Vue-router-安装" class="headerlink" title="Vue router 安装"></a>Vue router 安装</h2><p>其实 <span class='p red'>Vue router</span>是一个<span class='p red'>Vue</span>项目的插件，基本都是会使用他所以就必备项目搭配脚手架npm安装如果安装较慢或者失败就换成国内镜像(cnpm)。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router --save-dev</span><br></pre></td></tr></table></figure>
+
+<h2 id="解析-router-文件"><a href="#解析-router-文件" class="headerlink" title="解析 router 文件"></a>解析 router 文件</h2><p>我们使用Vue全家桶后,自动生成了项目默认目录基础等,<span class='p red'>src/router/index.js</span> 文件，这就是我们路由的核心文件了。如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import Vue from <span class="string">&#x27;vue&#x27;</span>   //引入Vue</span><br><span class="line">import Router from <span class="string">&#x27;vue-router&#x27;</span>  //引入vue-router</span><br><span class="line">import Index from <span class="string">&#x27;@/src/view/Index&#x27;</span>  //引入根目录下的Hello.vue组件</span><br><span class="line"></span><br><span class="line">Vue.use(Router)  //Vue全局使用Router</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default new Router(&#123;</span><br><span class="line">  routes: [              //配置路由，这里是个数组</span><br><span class="line">    &#123;                    //每一个链接都是一个对象,默认首页是第一个</span><br><span class="line">      path: <span class="string">&#x27;/&#x27;</span>,         //链接路径</span><br><span class="line">      name: <span class="string">&#x27;Index&#x27;</span>,     //路由名称，</span><br><span class="line">      component: Index   //对应的组件模板</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用-router-跳转"><a href="#使用-router-跳转" class="headerlink" title="使用 router 跳转"></a>使用 router 跳转</h2><p>我们在<span class='p red'>src/view</span>目录下,新建我们<span class='p red'>Second.vue</span>文件，相当于创建我们的首页内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=<span class="string">&quot;secondWarp&quot;</span>&gt;</span><br><span class="line">    &lt;h1&gt;&#123;&#123; msg &#125;&#125;&lt;/h1&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">&#x27;second&#x27;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      msg: <span class="string">&#x27;这是第二个页面进行跳转&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">然后我们需要引入新组件:我们首先在&#123;% span red, router/index.js %&#125;文件上注册引入挂载新组件</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">import Vue from <span class="string">&#x27;vue&#x27;</span>   //引入Vue</span><br><span class="line">import Router from <span class="string">&#x27;vue-router&#x27;</span>  //引入vue-router</span><br><span class="line">import Index from <span class="string">&#x27;@/src/view/Index&#x27;</span>  //引入根目录下的Hello.vue组件</span><br><span class="line">import Second from <span class="string">&#x27;@/src/view/Second&#x27;</span> </span><br><span class="line"></span><br><span class="line">Vue.use(Router)  //Vue全局使用Router</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default new Router(&#123;</span><br><span class="line">  routes: [              //配置路由，这里是个数组</span><br><span class="line">    &#123;                    //每一个链接都是一个对象</span><br><span class="line">      path: <span class="string">&#x27;/&#x27;</span>,         //链接路径</span><br><span class="line">      name: <span class="string">&#x27;Index&#x27;</span>,     //路由名称，</span><br><span class="line">      component: Index   //对应的组件模板</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">      path:<span class="string">&#x27;/second&#x27;</span>,</span><br><span class="line">      name:<span class="string">&#x27;Second&#x27;</span>,</span><br><span class="line">      component:Second</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在方法中调用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$router</span>.push(<span class="string">&#x27;second&#x27;</span>) //在需要的调用方法这样便可以跳转新页面</span><br><span class="line"></span><br><span class="line">//&lt;router-link&gt;标签调用类似于HTML &lt;a&gt; 标签,&lt;router-view&gt;为展示路由内容</span><br><span class="line">   &lt;router-link to=<span class="string">&quot;/&quot;</span>&gt;跳转首页&lt;/router-link&gt;</span><br><span class="line">   &lt;router-link to=<span class="string">&quot;/second&quot;</span>&gt;跳转第二个页面&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这里写着发现自己会混淆 组件调用跟路由跳转的概念，我的理解是组件是包含父组件中于子组件中存在数据的传递，路由的改变是直接URL的变化是无法进行父组件的的数据交互，独立的行为因为他会让该路由初始化状态。否则项目大了不好管理。</p>
+<h2 id="配置子路由"><a href="#配置子路由" class="headerlink" title="配置子路由"></a>配置子路由</h2><p>子路由的情况一般用在一个页面有他的基础模版，然后它下面的页面都隶属于这个模版，只是部分改变样式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import Vue from <span class="string">&#x27;vue&#x27;</span>   </span><br><span class="line">import Router from <span class="string">&#x27;vue-router&#x27;</span>  </span><br><span class="line">import Index from <span class="string">&#x27;@/src/view/Index&#x27;</span>  </span><br><span class="line">import Second from <span class="string">&#x27;@/src/view/Second&#x27;</span> </span><br><span class="line">import Second1 from <span class="string">&#x27;@/src/view/Second1&#x27;</span> </span><br><span class="line">import Second2 from <span class="string">&#x27;@/src/view/Second2&#x27;</span> </span><br><span class="line"></span><br><span class="line">Vue.use(Router) </span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default new Router(&#123;</span><br><span class="line">  routes: [             </span><br><span class="line">    &#123;                    </span><br><span class="line">      path: <span class="string">&#x27;/&#x27;</span>,        </span><br><span class="line">      name: <span class="string">&#x27;Index&#x27;</span>,     </span><br><span class="line">      component: Index   </span><br><span class="line">    &#125;,&#123;</span><br><span class="line">      path:<span class="string">&#x27;/Second&#x27;</span>,</span><br><span class="line">      component:Second,</span><br><span class="line">      //单子路由</span><br><span class="line">      children:[</span><br><span class="line">        &#123;path:<span class="string">&#x27;/&#x27;</span>,component:Second,left:Second1,right:Second2&#125;,</span><br><span class="line">        &#123;path:<span class="string">&#x27;second1&#x27;</span>,component:Second1&#125;,</span><br><span class="line">        &#123;path:<span class="string">&#x27;second2&#x27;</span>,component:Second2&#125;, //name 可以用于一个父页面多个子页面的精准分配</span><br><span class="line">      ]</span><br><span class="line">      //多子路由同页面展示</span><br><span class="line">      compontents:&#123;</span><br><span class="line">　　　　　right:second2,</span><br><span class="line">         left:second1</span><br><span class="line">　　　　&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>想实现多个router-view就要使用components，并在里面配置router-view的name属性对应的组件。default是默认路由，就是不设置路由的router-view都会显示default指向的组件。<br>将此钉子 <span class='p red'>router-view</span>埋于他路径的上一级模板内即可<br>在配置路由文件前，需要先用import引入你所需要的路由文件</p>
+<h2 id="路由配置文件钩子函数"><a href="#路由配置文件钩子函数" class="headerlink" title="路由配置文件钩子函数"></a>路由配置文件钩子函数</h2><p>查看随意一个例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">      path:<span class="string">&#x27;/params/:newsId(\\d+)/:newsTitle&#x27;</span>,</span><br><span class="line">      component:Params,</span><br><span class="line">      beforeEnter:(to,from,next)=&gt;&#123;</span><br><span class="line">        console.log(<span class="string">&#x27;我进入了params模板&#x27;</span>);</span><br><span class="line">        console.log(to);</span><br><span class="line">        console.log(from);</span><br><span class="line">        next();</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>to:路由将要跳转的路径信息，信息是包含在对像里边的。<br>from:路径跳转前的路径信息，也是一个对象的形式。<br>next:路由的控制参数，常用的有next(true)和next(false)。</p>
+<p>在配置文件中的钩子函数，只有一个钩子-beforeEnter，如果我们写在实际内容页面中就可以有两个钩子函数可以使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">&#x27;params&#x27;</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span></span> () &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      msg: <span class="string">&#x27;params page&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteEnter:(to,from,next)=&gt;&#123;</span><br><span class="line">    console.log(<span class="string">&quot;准备进入路由模板&quot;</span>);</span><br><span class="line">    next();</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteLeave: (to, from, next) =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">&quot;准备离开路由模板&quot;</span>);</span><br><span class="line">    next();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
   
   
@@ -477,10 +482,10 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-12T12:20:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-23T17:07:54+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月12日</p>
+    <p>更新于：2021年6月23日</p>
   </a>
 </div>
 
@@ -489,7 +494,7 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CDN/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CDN</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Vue/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Vue</p></a></div>
 
 
         
@@ -502,7 +507,7 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2020/12/12/use-cdn/&title=使用jsDelivr 开源公共 CDN - Mayanming Blog&summary=记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://mayanming.com/2021/06/23/Vue-Router/&title=Vue-Router - Mayanming Blog&summary=Vue 路由的代码解析"
           
           >
           
@@ -514,7 +519,7 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2020/12/12/use-cdn/&title=使用jsDelivr 开源公共 CDN - Mayanming Blog&summary=记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://mayanming.com/2021/06/23/Vue-Router/&title=Vue-Router - Mayanming Blog&summary=Vue 路由的代码解析"
           
           >
           
@@ -526,7 +531,7 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2020/12/12/use-cdn/&title=使用jsDelivr 开源公共 CDN - Mayanming Blog&summary=记录使用开源公共CDN，通过Github+jsDelivr 将资源CDN加速"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://mayanming.com/2021/06/23/Vue-Router/&title=Vue-Router - Mayanming Blog&summary=Vue 路由的代码解析"
           
           >
           
@@ -551,7 +556,7 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="使用jsDelivr 开源公共 CDN" data-path="/2020/12/12/use-cdn/">
+      <div id="lc-pv" data-title="Vue-Router" data-path="/2021/06/23/Vue-Router/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -572,13 +577,13 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：398字</p>
+      <p>字数：1.2k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：5分钟</p>
     </a>
   </div>
 
@@ -595,24 +600,19 @@ https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js // 完全省略该�
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/01/13/Vue-component-parameter/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Vue 父子组件之间传值</p>
-          <p class='content'>Vue 父子组件之间的参数传递解析
-
-
-Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项目需要父组件接口获取数据后(动态)传值并调用子组件，一直都是空值，甚至打印长度...</p>
-        </a>
       
-      
-        <a class='next' href='/2019/10/03/postpage-optimization/'>
-          <p class='title'>前端页面性能优化<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>页面优化以及方向
+        <a class='next' href='/2021/05/17/Access-Control-Allow-Origin/'>
+          <p class='title'>解决项目跨域问题(uni-app,Vue)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>uni-app 使用H5页面请求时,出现跨域问题。
 
 
-1.资源压缩合并，减少Http请求
-合并图片，css,js文件合并，css,js压缩
-图片较多可以使用lazyLoad(懒加载)等技术优化
-使用精灵图，SVG图片，或ico...</p>
+背景
+HBuilderX 3.1.13
+使用H5时候链接测试服的API地址后出现跨域
+切换成IP后台接口成功
+为了方便进行配置跨域代理
+
+...</p>
         </a>
       
     </div>
@@ -655,7 +655,7 @@ Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAGithub%E4%BB%93%E5%BA%93"><span class="toc-text">新建Github仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5Github%E4%BB%93%E5%BA%93"><span class="toc-text">连接Github仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E4%BD%A0%E6%89%80%E9%9C%80%E8%A6%81%E5%8A%A0%E9%80%9F%E8%B5%84%E6%BA%90"><span class="toc-text">上传你所需要加速资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E4%BB%93%E5%BA%93"><span class="toc-text">发布仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8jsDelivr%E5%BC%95%E7%94%A8%E8%B5%84%E6%BA%90"><span class="toc-text">使用jsDelivr引用资源</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-router-%E5%AE%89%E8%A3%85"><span class="toc-text">Vue router 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90-router-%E6%96%87%E4%BB%B6"><span class="toc-text">解析 router 文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-router-%E8%B7%B3%E8%BD%AC"><span class="toc-text">使用 router 跳转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%AD%90%E8%B7%AF%E7%94%B1"><span class="toc-text">配置子路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0"><span class="toc-text">路由配置文件钩子函数</span></a></li></ol>
     </div>
   </section>
 
@@ -697,7 +697,7 @@ Vue 父组件=&gt;子组件（动态传值)遇到问题前提uni-app框架，项
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="使用jsDelivr 开源公共 CDN";
+  pdata.postTitle="Vue-Router";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
